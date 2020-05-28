@@ -1,0 +1,156 @@
+.view {
+  background-color: white;
+  margin-top:10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px 21px 0px 15px;
+  box-sizing: unset;
+  @media (max-width: 959px){
+    height: 40px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+}
+.whiteBg{
+  background: white;
+}
+
+.border {
+  flex: 1 1 0%;
+}
+
+.flex {
+  display: flex;
+
+
+}
+
+.activeButton {
+  background: linear-gradient(to right, rgb(186, 104, 200), rgb(156, 39, 176)) !important;
+  color: white !important;
+}
+
+.offers {
+  width: 60%;
+  overflow: auto;
+  will-change: transform;
+  direction: ltr;
+}
+
+
+.leaflet-container{
+  width:100%;
+  height: 800px;
+}
+
+.langBtn{
+  filter: grayscale(100%);
+}
+
+.langBtnActive{
+  filter: grayscale(0%);
+}
+
+.test{
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+  color: rgb(153, 161, 171);
+  font-size: 11.2px;
+  font-weight: 600;
+  margin-top: 4px;
+  overflow: hidden;
+}
+
+.logoLang{
+  width: 27px;
+  margin-right: 2px;
+}
+
+.buttonContainer{
+  display: flex;
+  @media(max-width:959px){
+    margin: 10px 0px 0px 6px;
+  }
+}
+
+.textTitleMobile{
+  position: fixed;
+  left:50px;
+  margin-top: 10px;
+}
+
+.buttonListMobile{
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  margin-left: 20px;
+}
+
+.expContainerMobile{
+  display: flex;
+  justify-content: center;
+}
+
+.salaryContainerMobile{
+  margin: auto;
+  width: 80%;
+}
+.darkPosition{
+  display: flex;
+  justify-content: flex-end;
+  width: 10%;
+}
+
+.languagePosition{
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+  margin-top:10px;
+}
+.languagePositionMobile{
+  display: flex;
+  margin: 10px 35px 0px 35px;
+  flex-wrap: wrap;
+}
+
+.salaryExpContainer{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  min-width: 355px;
+}
+.filters{
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(243, 246, 248);
+  height: calc(100vh - 240px);
+}
+
+.langButtonContainer{
+  display: flex;
+  margin-right:8px;
+  @media(max-width:959px){
+    margin: 10px 10px 0px 10px;
+  }
+}
+
+.langImg{
+  height: 40px;
+}
+.langButtonMobile{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+
+.iconContainerAdd{
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  padding: 8px;
+}

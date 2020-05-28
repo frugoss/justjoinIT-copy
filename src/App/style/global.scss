@@ -4,8 +4,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 14px;
-  font-family: Roboto, serif;
+  font-family: Open Sans,sans-serif;
+  scroll-behavior: smooth;
 }
 
 .root {
@@ -14,4 +14,6 @@
 
 body {
   color: $font-color;
+  font-size: 14px;
+
 }

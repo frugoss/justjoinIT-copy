@@ -1,0 +1,698 @@
+.main {
+  height: 80px;
+  background: white;
+  border-radius: 10px;
+  margin: 12px;
+  display: flex;
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 2px 0px, rgba(0, 0, 0, 0.04) 0px 1px 5px 0px;
+
+  }
+}
+
+;
+
+.color {
+  flex-basis: 6px;
+  justify-content: flex-start;
+  border-radius: 10px 0 0 10px;
+}
+
+.img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 125px;
+  @media (max-width: 959px) {
+    max-width: 80px;
+    img {
+      width: 50%
+    }
+  }
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flexEnd {
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10px;
+}
+
+.tag {
+  height: 22px;
+  font-size: 11px;
+  line-height: 20px;
+  white-space: nowrap;
+  background-color: rgb(255, 255, 255);
+  color: rgb(153, 161, 171);
+  display: inline-block;
+  margin-left: 6px;
+  text-transform: lowercase;
+  text-overflow: ellipsis;
+  min-width: 1ch;
+  padding: 0px 7px;
+  border-radius: 11px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(224, 224, 224);
+  border-image: initial;
+  overflow: hidden;
+}
+
+
+.offer {
+  height: calc(100vh - 191px);
+  padding: 0px 15px 15px;
+  @media (max-width: 759px) {
+    padding: 0px
+  }
+}
+
+.top {
+  height: 235px;
+  position: relative;
+  margin: 0px 0px 80px;
+}
+
+.banner {
+  height: 100%;
+  border-radius: 0px 0px 4px 4px;
+  padding: 20px 20px 0px;
+  @media(max-width: 959px) {
+    padding: 20px 2px 0px
+  }
+}
+
+.name {
+  color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.logoCircle {
+  flex-shrink: 0;
+  width: 147px;
+  height: 147px;
+  background-color: rgba(255, 255, 255, 0.3);
+  background-clip: padding-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border-width: 10px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.15);
+  border-image: initial;
+
+}
+
+.circle {
+  background-color: rgb(255, 255, 255);
+  width: 107px;
+  height: 107px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.logo {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  margin-right: 0px;
+  background: rgb(255, 255, 255);
+  border-radius: 100px;
+}
+
+.titleSalary {
+  margin: 0px 0px 0px 25px;
+  flex-grow: 1
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.apply {
+  color: rgb(68, 138, 255);
+  background-color: rgb(255, 255, 255);
+  text-transform: none;
+  box-shadow: none;
+  font-size: 1rem;
+  height: 36px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin: 0px 5px 0px auto;
+  border-radius: 20px;
+  padding: 0px 20px;
+  @media (max-width: 520px) {
+    display: none;
+  }
+}
+
+.MuiSvgIcon-root {
+  margin-right: 5px;
+  font-size: 1.2rem;
+}
+
+.mobileColumn {
+
+  display: flex;
+  @media(min-width: 960px) {
+    width: 50%
+  }
+}
+
+.itskills {
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  width: 100%;
+  padding: 0px 15px;
+  @media (max-width: 959px) {
+    padding: 0px 0px;
+    flex-direction: column;
+    margin-top: 40px;
+  }
+}
+
+.skill {
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 2px 0px, rgba(0, 0, 0, 0.06) 0px 1px 5px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  border-radius: 4px;
+  flex: 1 1 0%;
+  margin: 0px 5px;
+  padding: 20px 5px;
+  @media (max-width: 959px) {
+    margin: 0px;
+    border-radius: 0px;
+  }
+}
+
+.skillcircle {
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 2px 0px, rgba(0, 0, 0, 0.06) 0px 1px 5px 0px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  top: 0px;
+  transform: translate(-50%, -50%);
+  background: rgb(255, 255, 255);
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.companydetails {
+  white-space: nowrap;
+  color: rgb(153, 161, 171);
+  font-size: 11px;
+}
+
+.sectionCard {
+  box-shadow: rgba(225, 232, 240, 0.7) 0px 2px 18px 10px;
+  margin-top: 40px;
+  background: rgb(255, 255, 255);
+  border-radius: 5px;
+}
+
+.techStack {
+  box-shadow: rgba(225, 232, 240, 0.7) 0px 2px 18px 10px;
+  margin-top: 40px;
+  background: rgb(255, 255, 255);
+  border-radius: 5px;
+  @media(max-width: 959px) {
+    margin-top: 155px;
+  }
+}
+
+.titleTech {
+  color: rgb(55, 71, 79);
+  font-weight: 600;
+  font-size: 18px;
+  border-bottom: 2px solid rgb(243, 246, 248);
+  padding: 12px 20px;
+}
+
+.insideTech {
+  position: relative;
+  padding: 24px;
+  @media(max-width: 389px) {
+    padding: 17px;
+  }
+}
+
+.techSkills {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px 0px -20px;
+}
+
+
+.techSkill {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 20%;
+  flex: 0 0 20%;
+  margin: 0px 0px 32px;
+}
+
+.description {
+  padding: 30px;
+}
+
+.additionaldesc {
+  color: rgb(55, 71, 79);
+  font-size: 14px;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+.form {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.inputs {
+  width: 100%;
+  margin-top: 20px;
+  padding-right: 30px;
+  padding-left:10px;
+  @media (min-width: 960px) {
+    width: 100%;
+    padding-right:0px;
+    padding-left:0px;
+  }
+}
+.inputsDirection{
+  display: flex;
+  flex-direction: row;
+  @media(max-width:959px){
+    flex-direction: column;
+    width:100%;
+  }
+}
+.dot {
+  background-color: #c7ced6;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.dotClicked {
+  margin-right: 8px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ff4081;
+}
+
+.language {
+  font-weight: 600;
+  font-size: 16px;
+  margin: 5px 0px 2px 0px;
+}
+
+.desc {
+  color: #99a1ab;
+  font-size: 14px;
+}
+
+.backButton {
+  position: absolute;
+  border-radius: 4px;
+  font-weight: 400;
+  cursor: pointer;
+  top: 10px;
+  left: 10px;
+  padding: 2px;
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 28px;
+  height: 28px;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.35);
+  }
+}
+
+.fontSize {
+  @media (max-width: 959px) {
+    font-size: 12px
+  }
+  @media(max-width: 320px) {
+    font-size: 10px
+  }
+}
+
+.fontIconText {
+  @media (max-width: 959px) {
+    font-size: 11px
+  }
+  @media (min-width: 960px) {
+    font-size: 13px;
+  }
+}
+
+.logImg {
+  @media (max-width: 959px) {
+    max-width: 80px;
+    img {
+      width: 100%
+    }
+  }
+  @media(max-width: 321px) {
+    max-width: 50px;
+    img {
+      width: 100%
+    }
+  }
+}
+
+.CV {
+  width: 47%;
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  border: 2px solid #e6e6e6;
+  padding: 10px 10px 10px 14px;
+  border-radius: 5px;
+
+  @media(max-width: 959px) {
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px 10px 10px 14px;
+    margin-left: 0px;
+    margin-right: 0px;
+
+  }
+}
+
+.introCV {
+  width: 100%;
+
+  @media(min-width: 960px) {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 133px;
+  }
+  @media(max-width: 959px) {
+    padding: 20px 20px 0px 20px;
+  }
+}
+
+.about {
+  width: 47%;
+  margin: 20px 0px 0px 20px;
+  @media(max-width: 959px) {
+    width: 100%;
+    margin: 0px;
+  }
+}
+
+.marginName {
+  margin: 20px 10px 0px 20px;
+  @media(max-width: 959px) {
+    margin: 20px 10px 0px 10px;
+  }
+}
+.marginMail{
+  margin: 20px 20px 0px 10px;
+  @media(max-width: 959px) {
+    margin: 20px 10px 0px 10px;
+  }
+}
+
+.dropzone {
+  display: flex;
+  align-items: center;
+  outline: none;
+  @media(max-width: 959px) {
+    font-size: 10px;
+    h3 {
+      font-size: 11px;
+    }
+  }
+
+}
+
+.offersList {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  background-color: rgb(243, 246, 248);
+  @media(max-width: 959px) {
+    padding-bottom: 75px;
+  }
+}
+
+.bottomSection {
+  display: flex;
+  margin-left: 20px;
+  justify-content: space-between;
+  @media(max-width: 959px) {
+    padding-bottom: 30px;
+  }
+}
+
+.techPadding {
+  padding: 0px 50px 20px 15px;
+  @media(max-width: 321px) {
+    padding: 0px 20px 20px 15px;
+  }
+}
+
+.iconCv {
+  display: flex;
+  align-items: center;
+  padding-right: 8px;
+  padding-left: 5px;
+  @media(min-width: 500px) {
+    padding-right: 10px;
+  }
+  @media(max-width: 420px) {
+    font-size: 12px;
+  }
+}
+
+.centerIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fontInsideDialog {
+  @media(max-width: 600px) {
+    font-size: 12px;
+  }
+}
+
+.fontTitleDialog {
+  h2 {
+    @media(max-width: 600px) {
+      font-size: 16px;
+    }
+  }
+}
+
+.CVSent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-flow: column nowrap;
+  padding: 10%;
+}
+
+.salaryStreetDetail {
+  font-size: 18px;
+  @media(max-width: 500px) {
+    font-size: 14px;
+  }
+}
+
+.titleDetail {
+  font-size: 22px;
+  font-weight: 600;
+  @media(max-width: 500px) {
+    font-size: 18px;
+  }
+}
+
+.recruitmentMobile {
+  font-size: 12px;
+  @media(max-width: 400px) {
+    font-size: 10px;
+  }
+}
+
+.iconCvSize {
+  @media(max-width: 420px) {
+    max-width: 18px;
+  }
+}
+
+.detailsDrop {
+  @media(max-width: 700px) {
+    font-size: 10px
+  }
+}
+
+.uploadDrop {
+  margin-left: 8px
+}
+
+.pictureDrop {
+  font-size: 29px;
+  @media(max-width: 700px) {
+    font-size: 22px
+  }
+}
+
+.checkBox {
+  margin-left: 20px;
+  margin-top: 20px;
+  @media(max-width: 959px) {
+    font-size: 12px !important;
+  }
+}
+
+.offerDetailContainer {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  background-color: rgb(243, 246, 248)
+}
+
+.loadingContainer {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadingDimensions {
+  height: 50px;
+  width: 50px;
+}
+
+.companyLogoDimensions {
+  max-width: 70px;
+  max-height: 45px;
+}
+
+.cvContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.captchaStyling {
+  margin-top: 10px;
+  margin-bottom: 40px;
+  font-size: 10px;
+  @media(max-width:560px){
+    font-size: 8px;
+  }
+  @media(min-width:616px){
+    margin-top:16px;
+  }
+}
+
+.logoList {
+  max-width: 85px;
+  max-height: 40px;
+}
+
+.card {
+  width: 100%;
+  flex-direction: column;
+  padding: 8px 0px 8px 0px;
+  justify-content: space-around;
+  display: flex;
+}
+
+.offerLink {
+  text-decoration: none;
+  color: rgb(55, 71, 79);
+}
+
+.businessContainer{
+  color: rgb(153, 161, 171);
+  margin-right: 12px;
+}
+
+.locationContainer{
+  flex-grow: 1;
+  color: rgb(153, 161, 171);
+}
+
+.dashboardCVContainer{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.spanFont{
+  font-weight: 600;
+}
+
+.CVButton{
+  display: flex;
+  color:black;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.processing{
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.offersContainerDesktop {
+  display: flex;
+  height: calc(100vh - 192px);
+  margin-top: 5px
+}
+
+.viewMobile{
+  width: 100%;
+  height: 100%;
+  background-color: rgb(243, 246, 248)
+}
+
+.mapButton{
+  position: fixed;
+  bottom: -4px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 400
+}

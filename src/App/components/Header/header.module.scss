@@ -2,33 +2,74 @@
 @import '../../style/breakpoints';
 
 .headerWrapper {
-  width: 100%;
+  height: 65px;
   border-bottom: 1px solid lighten($font-color, 50);
   background-color: white;
+  flex-direction: row;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+
   .header {
+    width: 55%;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+
     img {
       @include on('medium') {
-        margin-left: 13%;
+        margin-left: 20px;
       }
       margin-left: 5%;
-      margin-top: 50px;
-      width: 140px;
+
+      width: 120px;
+      height: 24.27px;
     }
-    .navigation {
-      @include on('medium') {
-        margin-left: 15%;
-        max-width: 400px;
-        padding: 25px 0 0 0;
-      }
-      padding: 25px 5% 0 5%;
-      width: 100%;
-      justify-content: space-between;
-      flex-direction: row;
-      display: flex;
-    }
+  }
+}
+
+   .navigation-row{
+     display: flex;
+     flex-direction: row;
+   }
+
+   .navigation-column{
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+     justify-content: center;
+     svg{
+       max-width: 24px;
+     }
+   }
+
+.img{
+  width: 120px;
+  margin: 20px 0px 0px 20px;
+}
+
+.double{
+  border-top: 0px solid #e7e9ef;
+  background: #e7e9ef;
+  width: 260px;
+  margin: 20px 0px 0px 0px;
+}
+
+.view{
+  display: flex;
+  flex-direction: column;
+  width: 310px;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexRow{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.hideButton{
+  @media(max-width:1023px){
+    display: none;
   }
 }

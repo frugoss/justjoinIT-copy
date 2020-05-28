@@ -1,0 +1,58 @@
+.dot {
+  background-color: #c7ced6;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+  &:hover{
+    background-color: #9c27b0;
+    border-color: #e6b5ee;
+    cursor:pointer;
+  }
+}
+
+.dotClicked{
+  margin-right: 8px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ff4081;
+  &:hover{
+    background-color: #9c27b0;
+    border-color: #e6b5ee;
+    cursor:pointer;
+  }
+}
+
+.language{
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0px 0px 5px 0px;
+}
+
+.desc{
+  color: #99a1ab;
+  cursor:pointer;
+  font-size: 14px;
+}
+
+.close{
+  font-size: 20px !important;
+  cursor: pointer;
+  &:hover{
+    color: #9c27b0;
+  }
+}
+
+.skillContainer{
+  display: flex;
+  flex-direction: column;
+  padding: 15px 50px 15px 15px;
+}
+
+.techStackList{
+  display: flex;
+  flex-wrap:wrap;
+}

@@ -1,0 +1,36 @@
+.flexRow {
+  display: flex;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.popupContainer{
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.iconSize{
+  max-width:40px;
+  max-height:40px;
+}
+
+.bounce {
+  position:relative;
+  animation: jump 0.8s ease-in-out 0s infinite normal none running;
+  @keyframes jump{
+    0% {
+      top: 0px;
+    }
+    50% {
+      top: -20px;
+    }
+
+    100% {
+      top: 0px;
+    }
+  }
+}
