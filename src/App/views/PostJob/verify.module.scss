@@ -1,0 +1,344 @@
+
+
+.main {
+  width: 97%;
+  height: 80px;
+  background: white;
+  border-radius: 10px;
+  margin: 12px;
+  display: flex;
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 2px 0px, rgba(0, 0, 0, 0.04) 0px 1px 5px 0px;
+
+  }
+}
+
+;
+
+.color {
+  flex-basis: 6px;
+  background: rgb(255, 199, 6);
+  justify-content: flex-start;
+  border-radius: 10px 0 0 10px;
+}
+
+.img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 125px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flexend {
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.tag {
+  height: 22px;
+  font-size: 11px;
+  line-height: 20px;
+  white-space: nowrap;
+  background-color: rgb(255, 255, 255);
+  color: rgb(153, 161, 171);
+  display: inline-block;
+  margin-left: 6px;
+  text-transform: lowercase;
+  text-overflow: ellipsis;
+  min-width: 1ch;
+  padding: 0px 7px;
+  border-radius: 11px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(224, 224, 224);
+  border-image: initial;
+  overflow: hidden;
+}
+
+
+.offer {
+  padding: 0px 15px 15px;
+  background-color: rgb(243, 246, 248)
+}
+
+.top {
+  height: 235px;
+  position: relative;
+  margin: 0px 0px 80px;
+}
+
+.banner{
+  height: 100%;
+  border-radius: 0px 0px 4px 4px;
+  padding: 20px 20px 0px;
+  @media(max-width:959px){
+    padding: 20px 2px 0px
+  }
+}
+
+.card {
+  max-width: 900px;
+  width: 100%;
+  background-color: #FFF;
+  padding: 80px 100px 40px 100px;
+  margin: 20px auto 20px auto;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0 2px 18px 10px rgba(225, 232, 240, 0.7);
+}
+
+.name {
+  color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.logoCircle {
+  flex-shrink: 0;
+  width: 147px;
+  height: 147px;
+  background-color: rgba(255, 255, 255, 0.3);
+  background-clip: padding-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border-width: 10px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.15);
+  border-image: initial;
+}
+
+.circle {
+  background-color: rgb(255, 255, 255);
+  width: 107px;
+  height: 107px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.logo {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  margin-right: 0px;
+  background: rgb(255, 255, 255);
+  border-radius: 100px;
+}
+
+.titlesalary {
+  margin: 0px 0px 0px 25px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.apply {
+  color: rgb(68, 138, 255);
+  background-color: rgb(255, 255, 255);
+  text-transform: none;
+  box-shadow: none;
+  font-size: 1rem;
+  height: 36px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 0px 0px auto;
+  border-radius: 20px;
+  padding: 0px 20px;
+}
+
+.MuiSvgIcon-root {
+  margin-right: 5px;
+  font-size: 1.2rem;
+}
+
+.itskills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  width: 100%;
+  padding: 0px 15px;
+}
+
+.skill {
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 2px 0px, rgba(0, 0, 0, 0.06) 0px 1px 5px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  border-radius: 4px;
+  flex: 1 1 0%;
+  margin: 0px 5px;
+  padding: 20px 5px;
+}
+
+.skillcircle {
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 2px 0px, rgba(0, 0, 0, 0.06) 0px 1px 5px 0px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  top: 0px;
+  transform: translate(-50%, -50%);
+  background: rgb(255, 255, 255);
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.companydetails {
+  white-space: nowrap;
+  color: rgb(153, 161, 171);
+  font-size: 11px;
+}
+
+.techStack {
+  box-shadow: rgba(225, 232, 240, 0.7) 0px 2px 18px 10px;
+  margin-top: 40px;
+  background: rgb(255, 255, 255);
+  border-radius: 5px;
+}
+
+.titleTech {
+  color: rgb(55, 71, 79);
+  font-weight: 600;
+  font-size: 18px;
+  border-bottom: 2px solid rgb(243, 246, 248);
+  padding: 12px 20px;
+}
+
+.insideTech {
+  position: relative;
+  padding: 24px;
+}
+
+.techSkills {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px 0px -20px;
+}
+
+.techSkill {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 20%;
+  flex: 0 0 20%;
+  margin: 0px 0px 32px;
+}
+
+.description {
+  padding: 30px;
+}
+
+.additionaldesc {
+  color: rgb(55, 71, 79);
+  font-size: 14px;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+.form {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.inputs {
+  width: 90%;
+}
+
+.agreements {
+  font-size: 11px;
+  padding: 20px;
+  color: #99a1ab;
+}
+
+.backButton {
+  position: absolute;
+  right: 100px;
+  top: 40px;
+  font-weight: 400;
+  cursor: pointer;
+  color: #545454;
+  &:hover {
+    background-color: #ff5a92;
+  }
+}
+
+.fontSalary{
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.fontTitle{
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.dot {
+  background-color: #c7ced6;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.dotClicked{
+  margin-right: 8px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ff4081;
+}
+
+.language{
+  font-weight: 600;
+  font-size: 16px;
+  margin: 5px 0px 2px 0px;
+}
+
+.desc{
+  color: #99a1ab;
+  font-size: 14px;
+}
+
+.salaryStreetDetail{
+    font-size: 18px;
+    @media(max-width:500px){
+      font-size:14px;
+    }
+  }
+
+.logoImg{
+  max-width: 75px;
+  max-height: 70px
+}
+
+.mapContainer{
+  height: 300px;
+  width: 100%;
+  margin-top: 20px
+}
