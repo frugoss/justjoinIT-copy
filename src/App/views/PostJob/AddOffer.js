@@ -259,7 +259,7 @@ const AddOffer = ({formValues, setFormValues, handleNext}) => {
                                         endAdornment: (
                                             <InputAdornment>
                                                 <NewTooltip title={<>How many people work in a company? <br/><br/>
-                                                    <center>examples:<br/>* 10 - 23<br/> * 300+<br/> * >20</center>
+                                                    <center>examples:<br/>* 10 - 23<br/> * 300+<br/> * <span>&#60</span>20</center>
                                                 </>}>
                                                     <HelpOutlineIcon style={{fontSize:14}} />
                                                 </NewTooltip>

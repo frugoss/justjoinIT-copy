@@ -8,7 +8,14 @@ import {faHandshake} from '@fortawesome/free-solid-svg-icons';
 import List from "@material-ui/core/List";
 import DrawerButton from "../Drawer/DrawerButton";
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import {userInterface} from '../../../utils/const'
 
+
+type TabMenuDrawProps = {
+    user: userInterface,
+    logout: () => void,
+    setOpen: (boolean: boolean) => void
+}
 
 const tabs = [
     {
@@ -35,7 +42,7 @@ const tabs = [
 ];
 
 
-const TabMenuDraw = ({user, logout, setOpen}) => {
+const TabMenuDraw: React.FC<TabMenuDrawProps> = ({user, logout, setOpen}) => {
     return (
         <>
             {user.auth ?

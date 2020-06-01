@@ -6,6 +6,7 @@ import {faNewspaper} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faHandshake} from '@fortawesome/free-solid-svg-icons';
 import TabOffers from "./TabOffers";
+import History from 'history';
 
 
 const tabs = [
@@ -27,9 +28,12 @@ const tabs = [
     }
 ];
 
+type TabMenuProps = {
+    location: History.Location
+}
 
-const TabMenu = ({location}) => {
-    const isActive = destination => location.pathname === destination;
+const TabMenu: React.FC<TabMenuProps> = ({location}) => {
+    const isActive = (destination: string) => location.pathname === destination;
     return (
         <>
             <TabOffers location={location} to="/" text="Job Offers" img={<WorkOutlineOutlinedIcon/>}/>

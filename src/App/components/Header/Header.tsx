@@ -1,5 +1,5 @@
-import React from 'react';
-import {withRouter} from 'react-router-dom';
+import React, {useState} from 'react';
+import {withRouter, RouteComponentProps} from 'react-router-dom';
 import styles from './header.module.scss';
 import jjit from '../../assets/images/jjitLogo.png';
 import Drawer from '@material-ui/core/Drawer';
@@ -9,12 +9,31 @@ import Hidden from '@material-ui/core/Hidden'
 import InsideDrawer from "./Drawer/InsideDrawer";
 import {Link} from 'react-router-dom';
 import Menu from "./Menu"
-import {withStyles} from "@material-ui/core/styles";
+import {withStyles, createStyles} from "@material-ui/core/styles";
 import ButtonBase from "@material-ui/core/ButtonBase";
+import {userInterface} from "../../utils/const";
+
+const StyledButton = withStyles(createStyles({
+    root: {
+        borderRadius: 30,
+        border: 0,
+        color: 'white',
+        height: 42,
+        padding: '0px 22px',
+        backgroundColor: "#ff4081",
+        fontSize: 14,
+        fontWeight: 600,
+        margin: "0px 2px 0px 5px",
+        fontFamily: "Open Sans,sans-serif",
+    },
+}))(ButtonBase);
 
 
-
-const Header = ({location, setUser, user}) => {
+interface HeaderProps extends RouteComponentProps{
+    setUser: ({}) => void,
+    user: userInterface,
+}
+const Header: React.FC<HeaderProps> = ({location, setUser, user}) => {
     const logout = () => {
         setUser({...user, auth: false, offPopup: true})
         try {
@@ -27,23 +46,9 @@ const Header = ({location, setUser, user}) => {
         } catch (err) {
         }
     }
-    const StyledButton = withStyles({
-        root: {
-            borderRadius: 30,
-            border: 0,
-            color: 'white',
-            height: 42,
-            padding: '0px 22px',
-            backgroundColor: "#ff4081",
-            fontSize: 14,
-            fontWeight: 600,
-            margin: "0px 2px 0px 5px",
-            fontFamily: "Open Sans,sans-serif",
-        },
-    })(ButtonBase);
 
 
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
 
     return (
         <>
@@ -51,7 +56,7 @@ const Header = ({location, setUser, user}) => {
             <div className={styles.header}>
                 <Link to="/"><img style={{marginRight: 10}} src={jjit} alt="just join it logo"/></Link>
                 <Hidden smDown>
-                    <Menu location={location} user={user} setUser={setUser} direction="row" />
+                    <Menu location={location} user={user} direction="row" />
                 </Hidden>
             </div>
             <Hidden smDown>
@@ -81,7 +86,7 @@ const Header = ({location, setUser, user}) => {
                         <div className={styles.view}>
                             <img className={styles.img} src={jjit} alt="just join it logo"/>
                             <hr className={styles.double}/>
-                        <Menu setOpen={setOpen} logout={logout} location={location} user={user} setUser={setUser} direction="column" />
+                        <Menu setOpen={setOpen} logout={logout} location={location} user={user} direction="column" />
                         </div>
                     </Hidden>
                 </Drawer>

@@ -13,8 +13,21 @@ import jjit from "../../../assets/images/jjitLogo.png";
 import styles from "./drawer.module.scss"
 
 
+interface userInterface {
+        auth: boolean;
+        name: string;
+        userID: string;
+        loggedPopup: boolean;
+        offPopup: boolean;
+        createPopup: boolean;
+        addPopup: boolean;
+}
+type InsideDrawerProps = {
+    user:  userInterface,
+    setOpen: (boolean:boolean) => void
+}
 
-const InsideDrawer = ({user, setOpen}) => {
+const InsideDrawer: React.FC<InsideDrawerProps> = ({user, setOpen}) => {
     const buttons = [
         {
             to: '/facebook',

@@ -3,10 +3,10 @@ import {Link} from 'react-router-dom';
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, createStyles } from '@material-ui/core/styles';
 
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(createStyles({
   root: {
     color: "#B0BAC9",
     fontSize: 14,
@@ -17,9 +17,14 @@ const useStyles = makeStyles({
     alineHeight: 56,
     padding: "6px 6px 5px 0px",
   }
-});
-
-const TabDraw = ({to, text, img, setOpen}) => {
+}));
+type TabDrawProps = {
+  to: string,
+  text: string,
+  img: React.ReactNode,
+  setOpen: (boolean:boolean) => void
+}
+const TabDraw: React.FC<TabDrawProps> = ({to, text, img, setOpen}) => {
   const classy = useStyles();
   return (
       <>

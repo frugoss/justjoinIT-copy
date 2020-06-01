@@ -1,17 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import styles from './tab.module.scss';
 import Button from '@material-ui/core/Button';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, createStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(createStyles({
   root: {
     textTransform:"none",
     marginBottom:4,
     width: 140
-  }});
-const Tab = ({ text, to, isActive, img }) => {
+  }}));
+type TabProps = {
+  text: string,
+  to: string,
+  isActive: boolean,
+  img: React.ReactNode
+}
+const Tab: React.FC<TabProps> = ({ text, to, isActive, img }) => {
   const buttonClass = useStyles();
   return (
       <Link to={to} style={{textDecoration: "none"}}>
@@ -19,13 +24,5 @@ const Tab = ({ text, to, isActive, img }) => {
       </Link>
   );
 }
-
-Tab.propTypes = {
-  isActive: PropTypes.bool.isRequired,
-  text: PropTypes.string.isRequired,
-  to: PropTypes.string.isRequired,
-  img: PropTypes.node.isRequired,
-};
-
 
 export default Tab;
