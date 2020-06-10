@@ -29,12 +29,12 @@ const StyledButton = withStyles(createStyles({
 }))(ButtonBase);
 
 
-interface HeaderProps extends RouteComponentProps{
-    setUser: ({}) => void,
+interface HeaderProps extends RouteComponentProps {
+    setUser: React.Dispatch<React.SetStateAction<userInterface>>,
     user: userInterface,
 }
 const Header: React.FC<HeaderProps> = ({location, setUser, user}) => {
-    const logout = () => {
+    const logout: () => void = () => {
         setUser({...user, auth: false, offPopup: true})
         try {
             fetch("http://192.168.10.25:7000/devs/logout", {

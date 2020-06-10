@@ -22,7 +22,7 @@ type TabDrawProps = {
   to: string,
   text: string,
   img: React.ReactNode,
-  setOpen: (boolean:boolean) => void
+  setOpen:  React.Dispatch<React.SetStateAction<boolean>>
 }
 const TabDraw: React.FC<TabDrawProps> = ({to, text, img, setOpen}) => {
   const classy = useStyles();

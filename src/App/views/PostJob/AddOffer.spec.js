@@ -1,8 +1,8 @@
 import React from 'react';
 import {Router} from 'react-router-dom';
-import AddOffer from "./AddOffer";
+import AddOffer from "App/views/PostJob/AddOffer";
 import {fireEvent} from '@testing-library/react';
-import {renderWithRouter} from '../../utils/tests';
+import {renderWithRouter} from 'App/utils/tests';
 
 jest.mock('react-trix',  () => ({TrixEditor : () => <div>Fajny trix</div> }))
 test("Test AddOffer render errors", () => {

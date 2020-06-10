@@ -2,7 +2,7 @@ import React from 'react';
 import "@testing-library/jest-dom/extend-expect"
 import SignIn from "./SignIn";
 import {fireEvent, waitFor, screen} from '@testing-library/react';
-import {renderWithRouter} from '../../utils/tests';
+import {renderWithRouter} from 'App/utils/tests';
 
 test("Test signing without filled fields", async () => {
     const fakeLoginResponse = 'Email or password is wrong';

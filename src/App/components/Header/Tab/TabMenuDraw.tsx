@@ -14,7 +14,7 @@ import {userInterface} from '../../../utils/const'
 type TabMenuDrawProps = {
     user: userInterface,
     logout: () => void,
-    setOpen: (boolean: boolean) => void
+    setOpen:  React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const tabs = [

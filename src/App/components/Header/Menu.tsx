@@ -11,7 +11,7 @@ type MenuProps = {
     user: userInterface,
     direction: string,
     location: History.Location,
-    setOpen?: (boolean: boolean) => void
+    setOpen?:  React.Dispatch<React.SetStateAction<boolean>>
 }
 const Menu: React.FC<MenuProps> = ({logout, user, direction, location, setOpen}) => {
 

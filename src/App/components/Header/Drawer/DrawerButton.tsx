@@ -10,7 +10,7 @@ type DrawerButtonProps = {
     to: string,
     text: string,
     img: React.ReactNode,
-    setOpen: (boolean:boolean) => void,
+    setOpen:  React.Dispatch<React.SetStateAction<boolean>>,
     logout?: () => void
 }
 const useStyles = makeStyles(createStyles({
