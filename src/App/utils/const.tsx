@@ -10,29 +10,7 @@ export interface userInterface {
     addPopup?: boolean
 }
 
-export interface formInterface{
-    _id?: string,
-    agreements?: string,
-    city?: string,
-    company?: string,
-    companyIndustry?: string,
-    companySize?: string,
-    coordinates?: [{lat: number, lng: number}],
-    currency?: string,
-    description?: string,
-    email?: string,
-    employment?: string,
-    experience?: string,
-    logo?: string,
-    maxSalary?: number,
-    minSalary?: number,
-    street?: string,
-    techStack: [{language: string, lvl:number}?],
-    technology?: [{color: string, background: string, img: string, name:string }],
-    title?: string,
-    userID?: string,
-    website?: string
-}
+
 export interface offerInterface {
     _id: string,
     agreements: string,
@@ -40,7 +18,7 @@ export interface offerInterface {
     company: string,
     companyIndustry: string,
     companySize: string,
-    coordinates: [{lat: number, lng: number}],
+    coordinates: [{ lat: number, lng: number }],
     currency: string,
     description: string,
     email: string,
@@ -50,13 +28,34 @@ export interface offerInterface {
     maxSalary: number,
     minSalary: number,
     street: string,
-    techStack: [{language: string, lvl:number}],
-    technology: [{color: string, background: string, img: string, name:string }],
+    techStack: [{ language: string, lvl: number }],
+    technology: [{ color: string, background: string, img: string, name: string }],
     title: string,
     userID: string,
-    website: string}
-
-
+    website: string,
+}
+export interface formInterface {
+    agreements: string,
+    city: string,
+    company: string,
+    companyIndustry: string,
+    companySize: string,
+    coordinates: [{ lat: number, lng: number }],
+    currency: string,
+    description: string,
+    email: string,
+    employment: string,
+    experience: string,
+    logo: string | undefined,
+    maxSalary: number,
+    minSalary: number,
+    street: string,
+    techStack: [{ language: string, lvl: number }],
+    technology: [{ color: string, background: string, img: string, name: string }],
+    title: string,
+    userID: string,
+    website: string,
+}
 
 export interface applicationInterface {
     checkbox: boolean,

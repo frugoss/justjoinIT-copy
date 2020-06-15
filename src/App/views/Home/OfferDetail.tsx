@@ -124,7 +124,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({offersList, match, history, fi
     let desc;
     const checkboxData = [
         {label: 'Processing data in future recruitment', value: Boolean}]
-    const required = (value: string | number) => (value ? undefined : `Field is required`);
+    const required = (value: string) => (value ? undefined : `Field is required`);
     const mail = (value: string) => {
         const reMail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if (reMail.test(String(value).toLowerCase())) {
@@ -146,7 +146,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({offersList, match, history, fi
 
         acceptedFiles.forEach(file => (
             <li>
-                {file.path} - {file.size} bytes
+                {(file as any).path} - {file.size} bytes
             </li>
         ));
 

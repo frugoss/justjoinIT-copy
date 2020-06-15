@@ -1,8 +1,15 @@
 import React from 'react';
 import styles from "./skill.module.scss"
 import HighlightOffIcon from '@material-ui/icons/HighlightOff';
+import {formInterface} from "../../utils/const";
 
-const Skill = ({formValues, onChange, techStackElement}) => {
+
+type SkillProps = {
+    formValues: formInterface,
+    onChange: (event: any) => void,
+    techStackElement: {language?: string, lvl?: number}
+}
+const Skill: React.FC<SkillProps> = ({formValues, onChange, techStackElement}) => {
     const experience = [
         {
             id: 1,
@@ -25,7 +32,7 @@ const Skill = ({formValues, onChange, techStackElement}) => {
             desc: "Master",
         }
     ];
-    let index;
+    let index:number;
     const techStack = formValues.techStack.filter((e, i) => {
         if (e.language === techStackElement.language) {
             index = i;
@@ -34,7 +41,7 @@ const Skill = ({formValues, onChange, techStackElement}) => {
         return false;
     })[0];
     const expDesc = experience.filter(e => e.id === techStack.lvl)[0].desc;
-    const getSkillLevelUpdate = (lvl) => {
+    const getSkillLevelUpdate = (lvl:number) => {
         let updatedTechStack = formValues.techStack.map((e, i) => {
             if (i === index) {
                 return {...techStack, lvl: lvl};
@@ -58,7 +65,7 @@ const Skill = ({formValues, onChange, techStackElement}) => {
     return (
         <div className={styles.skillContainer}>
             <div style={{display: "flex"}}>
-                {experience.map((lvl,index) => <span key={index} className={techStack.lvl >= lvl.id ? styles.dotClicked : styles.dot}
+                {experience.map((lvl,index) => <span key={index} className={techStack.lvl && techStack.lvl >= lvl.id ? styles.dotClicked : styles.dot}
                                              onClick={() => onChange(getSkillLevelUpdate(lvl.id))}/>
                 )}
                 <HighlightOffIcon className={styles.close} onClick={() => {
@@ -68,8 +75,8 @@ const Skill = ({formValues, onChange, techStackElement}) => {
 
             <span className={styles.language}>{techStackElement.language}</span>
             <span className={styles.desc} onClick={() => {
-                if (techStack.lvl <= 4) {
-                    onChange(getSkillLevelUpdate(techStack.lvl + 1))
+                if (techStack.lvl && techStack.lvl <= 4) {
+                    onChange(getSkillLevelUpdate(techStack.lvl && techStack.lvl + 1))
                 } else {
                     onChange(getSkillLevelUpdate(1))
                 }

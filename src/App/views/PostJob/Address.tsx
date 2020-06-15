@@ -1,14 +1,19 @@
 import React, {useEffect} from 'react'
 import {TextField} from 'mui-rff'
-import {makeStyles} from "@material-ui/core/styles";
+import {makeStyles, createStyles} from "@material-ui/core/styles";
+// @ts-ignore
 import * as opencage from "opencage-api-client";
 import {useForm} from 'react-final-form';
 import styles from './addoffer.module.scss'
+import {formInterface} from "../../utils/const";
 
-
-const Address = ({ values, required}) => {
+type AddressProps = {
+    values: formInterface,
+    required: (value: string | number) => (undefined | "Field is required")
+}
+const Address: React.FC<AddressProps> = ({ values, required}) => {
     const {change} = useForm();
-    const useStylesField = makeStyles({
+    const useStylesField = makeStyles(createStyles({
         textField: {
             backgroundColor: "transparent",
             border: "none",
@@ -26,7 +31,7 @@ const Address = ({ values, required}) => {
             font: "inherit",
             fontSize: "inherit",
         },
-    });
+    }));
     const classesField = useStylesField();
 
     let fullAddress = "Marszałkowska 10, Warszawa"
@@ -42,7 +47,7 @@ const Address = ({ values, required}) => {
                 language: "pl",
                 pretty: 1
             })
-                .then(response => {
+                .then((response: { results: { geometry: any; }[]; }) => {
                     if (response.results[0] === undefined) {
                     } else {
                         change('coordinates', response.results[0].geometry);

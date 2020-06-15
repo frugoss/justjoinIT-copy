@@ -13,7 +13,7 @@ import Button from "@material-ui/core/Button";
 import {makeStyles, createStyles} from "@material-ui/core/styles";
 import BackgroundOffer from "../../assets/images/BackgroundOffer.png";
 import NumberFormat from "react-number-format";
-import {userInterface, formInterface} from "../../utils/const";
+import {formInterface, userInterface} from "../../utils/const";
 import {History} from "history";
 
 
@@ -68,8 +68,8 @@ const Verify: React.FC<VerifyProps> = ({setUser, user, history, formValues, setA
     ];
 
     let pointerIcon = new L.Icon({
-        iconUrl: formValues.technology.img,
-        iconRetinaUrl: formValues.technology.img,
+        iconUrl: formValues.technology && formValues.technology[0].img,
+        iconRetinaUrl: formValues.technology && formValues.technology[0].img,
         iconAnchor: [5, 55],
         popupAnchor: [10, -44],
         iconSize: [40, 40],
@@ -105,7 +105,7 @@ const Verify: React.FC<VerifyProps> = ({setUser, user, history, formValues, setA
                 </div>
             <div className={styles.top}>
                 <div className={styles.banner}
-                     style={{background: `url(${BackgroundOffer}) center center / cover no-repeat, linear-gradient(30deg, ${formValues.technology[0].background})`}}>
+                     style={{background: `url(${BackgroundOffer}) center center / cover no-repeat, linear-gradient(30deg, ${formValues.technology && formValues.technology[0].background})`}}>
                     <div className={styles.name}>
                         <div className={styles.logoCircle}>
                             <div className={styles.circle}>
@@ -170,7 +170,7 @@ const Verify: React.FC<VerifyProps> = ({setUser, user, history, formValues, setA
                                 return (
                                 <div key={index} style={{padding: "0px 50px 10px 15px"}}>
                                     <div style={{display: "flex"}}>
-                                    {experience.map((lvl, nestedIndex) => <span key={nestedIndex} className={stack.lvl >= lvl.id ? styles.dotClicked : styles.dot}/>)}
+                                    {experience.map((lvl, nestedIndex) => <span key={nestedIndex} className={stack.lvl && stack.lvl >= lvl.id ? styles.dotClicked : styles.dot}/>)}
 
                                     </div>
                                     <div className={styles.language}>
@@ -192,12 +192,12 @@ const Verify: React.FC<VerifyProps> = ({setUser, user, history, formValues, setA
                     </div>
                 </div>
                 <div className={styles.mapContainer}>
-                <Map center={formValues.coordinates} zoom={12}>
+                <Map center={formValues.coordinates && formValues.coordinates[0]} zoom={12}>
                     <TileLayer
                         attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
-                    <Marker position={formValues.coordinates} icon={pointerIcon}>
+                    <Marker position={formValues.coordinates && formValues.coordinates[0]} icon={pointerIcon}>
                     </Marker>
                 </Map>
                 </div>

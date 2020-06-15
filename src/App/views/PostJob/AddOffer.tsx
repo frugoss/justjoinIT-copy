@@ -1,10 +1,10 @@
-import React, {useCallback} from 'react';
+import React, {ReactText, useCallback} from 'react';
 import styles from "./addoffer.module.scss"
 import {useDropzone} from "react-dropzone";
 import AddAPhotoOutlinedIcon from '@material-ui/icons/AddAPhotoOutlined';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import Tooltip from '@material-ui/core/Tooltip';
-import {makeStyles} from '@material-ui/core/styles';
+import {makeStyles, createStyles} from '@material-ui/core/styles';
 import TextArea from '@material-ui/core/TextareaAutosize'
 import MenuItem from "@material-ui/core/MenuItem";
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
@@ -25,10 +25,14 @@ import Address from './Address'
 import {agreements} from "./const";
 import QuestionMark from '../../assets/images/QuestionMark.png'
 import InputAdornment from '@material-ui/core/InputAdornment';
+import {formInterface} from "../../utils/const";
 
 
+interface trixEditorInterface extends ReactText {
 
-const NewTooltip = withStyles((theme) => ({
+}
+
+const NewTooltip = withStyles(createStyles({
     tooltip: {
         backgroundColor: "black",
         color: 'white',
@@ -36,17 +40,7 @@ const NewTooltip = withStyles((theme) => ({
     },
 }))(Tooltip);
 
-const useStyles = makeStyles({
-    button: {
-        "&:hover": {
-            backgroundColor: "transparent"
-        },
-        padding: 0,
-
-    }
-});
-
-const useStylesField = makeStyles({
+const useStylesField = makeStyles(createStyles({
     textField: {
         backgroundColor: "transparent",
         border: "none",
@@ -82,27 +76,10 @@ const useStylesField = makeStyles({
         fontSize: "inherit",
 
     }
-});
+}));
 
-const useStylesFieldError = makeStyles({
-    root: {
-        backgroundColor: "transparent",
-        borderBottom: "1px solid#d50000",
-        outline: "none",
-        height: "3rem",
-        width: "100%",
-        margin: "0 0 20px 0",
-        padding: 0,
-        boxShadow: "none",
-        boxSizing: "content-box",
-        transition: "all 0.3s",
-        color: "inherit",
-        font: "inherit",
-        fontSize: "inherit",
-    },
-});
 
-const useStylesStep = makeStyles({
+const useStylesStep = makeStyles(createStyles({
     button: {
         "&:hover": {
             backgroundColor: "#ff5a92;",
@@ -117,9 +94,9 @@ const useStylesStep = makeStyles({
 
 
     }
-})
+}))
 
-const useStyleDesc = makeStyles({
+const useStyleDesc = makeStyles(createStyles({
     textField: {
         width: "98%",
         height: 200,
@@ -129,9 +106,9 @@ const useStyleDesc = makeStyles({
         fontSize: 12,
         borderRadius: 4
     },
-})
+}))
 
-const useStyleDescErr = makeStyles({
+const useStyleDescErr = makeStyles(createStyles({
     textField: {
         width: "98%",
         height: 200,
@@ -141,15 +118,26 @@ const useStyleDescErr = makeStyles({
         fontSize: 12,
         borderRadius: 4
     },
-})
+}))
 
 
-function Dropzone({setFormValues, formValues, onChange, values, error}) {
+type DropzoneProps = {
+    setFormValues: React.Dispatch<React.SetStateAction<formInterface>>,
+    formValues: formInterface
+    onChange: (acceptedFiles: ArrayBuffer | null | string | undefined) => void
+    values: { logo: string | undefined},
+    error: string
+
+}
+
+
+const Dropzone:React.FC<DropzoneProps> = ({setFormValues, formValues, onChange, values, error}) => {
     const onDrop = useCallback(files => {
         let file = files[0]
         const reader = new FileReader();
-        reader.onload = (event) => {
-            onChange(event.target.result)
+        reader.onload = (_event:Event) => {
+                onChange(reader.result)
+
         };
         reader.readAsDataURL(file);
     }, [])
@@ -183,32 +171,31 @@ function Dropzone({setFormValues, formValues, onChange, values, error}) {
     );
 }
 
-const AddOffer = ({formValues, setFormValues, handleNext}) => {
+type AddOfferProps = {
+    formValues: formInterface,
+    setFormValues:  React.Dispatch<React.SetStateAction<formInterface>>,
+    handleNext: () => void
+}
+const AddOffer:React.FC<AddOfferProps> = ({formValues, setFormValues, handleNext}) => {
 
-    const changeFormValue = (key, value) => {
-        setFormValues({
-            ...formValues,
-            [key]: value
-        })
-    }
+
     const classesField = useStylesField();
-    const classesFieldError = useStylesFieldError();
     const classStep = useStylesStep();
     const classDesc = useStyleDesc()
     const classDescErr = useStyleDescErr()
 
-    const onSubmit = values => {
+    const onSubmit = (values:formInterface) => {
         setFormValues({...formValues, ...values})
         handleNext();
     }
-    const required = value => (value ? undefined : `Field is required`);
-    const agreementRequired = value => (value !== agreements ? undefined : `Field is required`);
-    const technologyRequired = value => (value ? value.img === QuestionMark : '');
+    const required = (value: string | number) => (value ? undefined : `Field is required`);
+    const agreementRequired = (value: string) => (value !== agreements ? undefined : `Field is required`);
+    const technologyRequired = (value:{img:string}) => (value ? value.img === QuestionMark : '');
 
-    const arrayNotEmpty =  value => {
+    const arrayNotEmpty =  (value: []) => {
         return value ? value.length === 0 : `Field is required`;
     }
-    const emailWeb = value => {
+    const emailWeb = (value: string) => {
         const re = /^(https?:\/\/)?(www\.)?([a-zA-Z0-9]+(-?[a-zA-Z0-9])*\.)+[\w]{2,}(\/\S*)?$/
         const re2 = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if (re.test(String(value).toLowerCase()) || re2.test(String(value).toLowerCase())) {
@@ -217,7 +204,7 @@ const AddOffer = ({formValues, setFormValues, handleNext}) => {
             return "Email or link is invalid"
         }
     }
-    const website = value => {
+    const website = (value: string) => {
         const re = /^(https?:\/\/)?(www\.)?([a-zA-Z0-9]+(-?[a-zA-Z0-9])*\.)+[\w]{2,}(\/\S*)?$/;
         if (re.test(String(value).toLowerCase())) {
             return undefined
@@ -227,11 +214,13 @@ const AddOffer = ({formValues, setFormValues, handleNext}) => {
     }
     const checkboxData = [
         {label: 'Fully Remote', value: Boolean}]
+    // @ts-ignore
+    // @ts-ignore
     return (
         <div className={styles.addOfferContainer}>
 
             <div className={styles.card}>
-                <Link to={"/add"} styles={{textDecoration: "none"}}>
+                <Link to={"/add"} style={{textDecoration: "none"}}>
                     <div className={styles.backButton}>
                         <ArrowBackIcon style={{verticalAlign: "middle"}}/> Back
                     </div>
@@ -239,7 +228,7 @@ const AddOffer = ({formValues, setFormValues, handleNext}) => {
                 <Form
                     initialValues={formValues}
                     onSubmit={onSubmit}
-                    render={({handleSubmit, form, values}) => (
+                    render={({handleSubmit, values}) => (
                         <form className={styles.form} onSubmit={handleSubmit} noValidate>
                             <div className={styles.row}>
                                 <Field name="logo" validate={required}>
@@ -257,9 +246,9 @@ const AddOffer = ({formValues, setFormValues, handleNext}) => {
                                                InputLabelProps={{shrink: true}} name="companySize" placeholder="10 - 23"
                                                label="Company size" required={true}  InputProps={{
                                         endAdornment: (
-                                            <InputAdornment>
+                                            <InputAdornment position={"end"}>
                                                 <NewTooltip title={<>How many people work in a company? <br/><br/>
-                                                    <center>examples:<br/>* 10 - 23<br/> * 300+<br/> * <span>&#60</span>20</center>
+                                                    examples:<br/>* 10 - 23<br/> * 300+<br/> * <span>&#60</span>20
                                                 </>}>
                                                     <HelpOutlineIcon style={{fontSize:14}} />
                                                 </NewTooltip>
@@ -362,9 +351,9 @@ const AddOffer = ({formValues, setFormValues, handleNext}) => {
                                                name="minSalary"
                                                label="Monthly salary from (invoice net)" type="number"InputProps={{
                                         endAdornment: (
-                                            <InputAdornment>
+                                            <InputAdornment position={"end"}>
                                         <NewTooltip style={{position:"absolute", right: 5, top: 30}}
-                                                    title={<><center>How much the candidate will earn monthly.<br/>  <br/> <b>With B2B</b> <br/> It is the net amount without VAT. <br/>  <br/> <b>With Permanent or Mandate contract</b> <br/>It is the gross amount.</center>
+                                                    title={<>How much the candidate will earn monthly.<br/>  <br/> <b>With B2B</b> <br/> It is the net amount without VAT. <br/>  <br/> <b>With Permanent or Mandate contract</b> <br/>It is the gross amount.
                                                     </>}>
 
                                                 <HelpOutlineIcon style={{fontSize: 14}}/>
@@ -401,11 +390,11 @@ const AddOffer = ({formValues, setFormValues, handleNext}) => {
 
                                     <div style={{width:"100%"}}>
                                         <h3 className={styles.titleMargin}>Tech Stack <NewTooltip
-                                            title={<><center>Tech StackIn this section you should put in tech stack and skill
+                                            title={<>Tech StackIn this section you should put in tech stack and skill
                                                 level required from the candidate.<br/><br/> You can do it by selecting
                                                 existing technology or writing a new one <b>(25 characters
                                                     limit)</b><br/><br/>
-                                                examples:<br/>* Java<br/> * Git<br/> * React</center>
+                                                examples:<br/>* Java<br/> * Git<br/> * React
                                             </>}>
                                                 <HelpOutlineIcon style={{fontSize: 14}}/>
                                         </NewTooltip></h3>
@@ -413,8 +402,7 @@ const AddOffer = ({formValues, setFormValues, handleNext}) => {
                                             {props => (
                                         <div style={{padding: "0 0.75rem", marginLeft: 10}}>
 
-                                                <TechStack onChange={props.input.onChange} fieldRenderProps={props} formValues={values}
-                                                           className={props.meta.error && props.meta.touched ? classesFieldError.root : classesField.textField}/>
+                                                <TechStack onChange={props.input.onChange} fieldRenderProps={props} formValues={values}/>
                                         </div>
                                             )}
                                         </Field>
@@ -423,12 +411,12 @@ const AddOffer = ({formValues, setFormValues, handleNext}) => {
                                 {props => (
                                     <div style={{width:"100%"}}>
                                         <h3 className={styles.titleMargin}>Job description <NewTooltip
-                                            title={<><center>This section should contain: "about us", "your responsibilities", "our requirements", "nice to have", "we offer". </center></>}>
+                                            title={<>This section should contain: "about us", "your responsibilities", "our requirements", "nice to have", "we offer".</>}>
                                                 <HelpOutlineIcon style={{fontSize: 14}}/>
                                         </NewTooltip></h3>
 
                                          <TrixEditor value={props.input.value} className={props.meta.error && props.meta.touched ? styles.trixError: styles.trix}
-                                                        onChange={html => props.input.onChange(html)}/>
+                                                        onChange={(html:string) => props.input.onChange(html)}/>
                                     </div>
                                 )}
                             </Field>
@@ -438,7 +426,7 @@ const AddOffer = ({formValues, setFormValues, handleNext}) => {
                             </div>
 
                             <div className={styles.flexWidth}>
-                                    <Address changeFormValue={changeFormValue} formValues={formValues} values={values} required={required}/>
+                                    <Address values={values} required={required}/>
 
 
                                 <div className={styles.checkboxContainer}>
@@ -456,7 +444,7 @@ const AddOffer = ({formValues, setFormValues, handleNext}) => {
                             </div>
                             <div style={{height: 300, width: "100%"}}>
 
-                            <MapPreview img={values && values.technology && values.technology.img} coordinates={values.coordinates}/>
+                            <MapPreview img={values && values.technology && values.technology[0].img} coordinates={values.coordinates && values.coordinates[0]}/>
 
                             </div>
                             <Field name="technology" validate={technologyRequired}>
