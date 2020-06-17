@@ -40,21 +40,24 @@ const Address: React.FC<AddressProps> = ({ values, required}) => {
     }
     useEffect(() => {
         if (fullAddress !== " ") {
+            console.log("fetchu idzie")
             opencage.geocode({
                 key: "7e19a11fe0654ef8ba6c34d56cb9b83d",
                 q: fullAddress,
                 limit: 1,
-                language: "pl",
-                pretty: 1
+                language: "pl"
             })
-                .then((response: { results: { geometry: any; }[]; }) => {
-                    if (response.results[0] === undefined) {
-                    } else {
-                        change('coordinates', response.results[0].geometry);
-                    }
+                .then((response: any) => {
+                        change('coordinates', [response.results[0].geometry]);
+
                 })
+                .catch((error:any) => Promise.resolve(error)
+
+            )
         }
     }, [fullAddress])
+
+    console.log(fullAddress, values)
 
     return (
         <>

@@ -6,6 +6,7 @@ import QuestionMark from '../../assets/images/QuestionMark.png';
 
 
 const MapPreview = ({coordinates={lat: 52.2154531, lng: 21.0207946}, img=QuestionMark}) => {
+    console.log(img)
     let pointerIcon = new L.Icon({
         iconUrl: img,
         iconRetinaUrl: img,
@@ -13,10 +14,11 @@ const MapPreview = ({coordinates={lat: 52.2154531, lng: 21.0207946}, img=Questio
         popupAnchor: [10, -44],
         iconSize: [40, 40],
     });
+
+    console.log(coordinates)
     return (
         <>
-            {
-                coordinates !== undefined ? <Map center={coordinates} zoom={12}>
+            <Map center={coordinates} zoom={12}>
                         <TileLayer
                             attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -24,8 +26,6 @@ const MapPreview = ({coordinates={lat: 52.2154531, lng: 21.0207946}, img=Questio
                         <Marker position={coordinates} icon={pointerIcon}>
                         </Marker>
                     </Map>
-                    : ""
-            }
         </>
     )
 }

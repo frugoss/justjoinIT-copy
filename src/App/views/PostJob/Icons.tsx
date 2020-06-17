@@ -13,9 +13,9 @@ type IconsProps = {
 const Icons: React.FC<IconsProps> = ({name, to, img, onChange, color, background}) => {
     return (
         <div className={styles.iconContainerAdd}>
-            <ButtonBase disableRipple onClick={() => {
-                onChange({name: to, img, background, color})
-            }}
+            <ButtonBase disableRipple onClick={() =>
+                onChange([{name: to, img, background, color}])
+            }
             >
                 <img className={styles.langImg} src={img} alt="Logo"/> </ButtonBase>
             <div className={styles.test}>{name}</div>

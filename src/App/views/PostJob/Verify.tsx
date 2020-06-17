@@ -26,6 +26,7 @@ type VerifyProps = {
     fetchOffers: () => void
 }
 const Verify: React.FC<VerifyProps> = ({setUser, user, history, formValues, setActiveStep, fetchOffers}) => {
+    const coordinates:{lng: number, lat: number} = formValues.coordinates![0]
     const useStylesStep = makeStyles(createStyles({
         button: {
             "&:hover":{
@@ -197,7 +198,7 @@ const Verify: React.FC<VerifyProps> = ({setUser, user, history, formValues, setA
                         attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
-                    <Marker position={formValues.coordinates && formValues.coordinates[0]} icon={pointerIcon}>
+                    <Marker position={coordinates} icon={pointerIcon}>
                     </Marker>
                 </Map>
                 </div>

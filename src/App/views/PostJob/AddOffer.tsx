@@ -1,4 +1,4 @@
-import React, {ReactText, useCallback} from 'react';
+import React, {useCallback} from 'react';
 import styles from "./addoffer.module.scss"
 import {useDropzone} from "react-dropzone";
 import AddAPhotoOutlinedIcon from '@material-ui/icons/AddAPhotoOutlined';
@@ -28,9 +28,7 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import {formInterface} from "../../utils/const";
 
 
-interface trixEditorInterface extends ReactText {
 
-}
 
 const NewTooltip = withStyles(createStyles({
     tooltip: {
@@ -125,7 +123,7 @@ type DropzoneProps = {
     setFormValues: React.Dispatch<React.SetStateAction<formInterface>>,
     formValues: formInterface
     onChange: (acceptedFiles: ArrayBuffer | null | string | undefined) => void
-    values: { logo: string | undefined},
+    values: formInterface,
     error: string
 
 }
@@ -178,7 +176,6 @@ type AddOfferProps = {
 }
 const AddOffer:React.FC<AddOfferProps> = ({formValues, setFormValues, handleNext}) => {
 
-
     const classesField = useStylesField();
     const classStep = useStylesStep();
     const classDesc = useStyleDesc()
@@ -190,7 +187,7 @@ const AddOffer:React.FC<AddOfferProps> = ({formValues, setFormValues, handleNext
     }
     const required = (value: string | number) => (value ? undefined : `Field is required`);
     const agreementRequired = (value: string) => (value !== agreements ? undefined : `Field is required`);
-    const technologyRequired = (value:{img:string}) => (value ? value.img === QuestionMark : '');
+    const technologyRequired = (value:{img:string}) => (value && value.img !== QuestionMark ? undefined: ' ');
 
     const arrayNotEmpty =  (value: []) => {
         return value ? value.length === 0 : `Field is required`;
@@ -214,8 +211,7 @@ const AddOffer:React.FC<AddOfferProps> = ({formValues, setFormValues, handleNext
     }
     const checkboxData = [
         {label: 'Fully Remote', value: Boolean}]
-    // @ts-ignore
-    // @ts-ignore
+
     return (
         <div className={styles.addOfferContainer}>
 
@@ -365,7 +361,7 @@ const AddOffer:React.FC<AddOfferProps> = ({formValues, setFormValues, handleNext
 
                                 </div>
                                 <div className={styles.widthPadding}>
-                                    <TextField fieldProps={{parse: (value) => Number(value)}} className={classesField.textField}
+                                    <TextField fieldProps={{format: (value:number) => value === 0 ? "" : value, parse: (value) => Number(value)}} className={classesField.textField}
                                                name="maxSalary"
                                                label="Monthly salary to (invoice net)" type="number"/>
                                 </div>
@@ -408,17 +404,20 @@ const AddOffer:React.FC<AddOfferProps> = ({formValues, setFormValues, handleNext
                                         </Field>
                                     </div>
                             <Field name="description" validate={required}>
-                                {props => (
-                                    <div style={{width:"100%"}}>
-                                        <h3 className={styles.titleMargin}>Job description <NewTooltip
-                                            title={<>This section should contain: "about us", "your responsibilities", "our requirements", "nice to have", "we offer".</>}>
+                                {props => {
+                                    const trixValue = String(props.input.value)
+                                    return(
+                                        <div style={{width:"100%"}}>
+                                            <h3 className={styles.titleMargin}>Job description <NewTooltip
+                                                title={<>This section should contain: "about us", "your responsibilities", "our requirements", "nice to have", "we offer".</>}>
                                                 <HelpOutlineIcon style={{fontSize: 14}}/>
-                                        </NewTooltip></h3>
+                                            </NewTooltip></h3>
 
-                                         <TrixEditor value={props.input.value} className={props.meta.error && props.meta.touched ? styles.trixError: styles.trix}
+                                            <TrixEditor mergeTags={[]} value={trixValue} className={props.meta.error && props.meta.touched ? styles.trixError: styles.trix}
                                                         onChange={(html:string) => props.input.onChange(html)}/>
-                                    </div>
-                                )}
+                                        </div>
+                                    )
+                                }}
                             </Field>
                             <div className={styles.flexWidth}>
 
@@ -443,8 +442,8 @@ const AddOffer:React.FC<AddOfferProps> = ({formValues, setFormValues, handleNext
 
                             </div>
                             <div style={{height: 300, width: "100%"}}>
-
-                            <MapPreview img={values && values.technology && values.technology[0].img} coordinates={values.coordinates && values.coordinates[0]}/>
+                                {console.log(values.technology && values.technology[0])}
+                            <MapPreview img={values.technology && values.technology[0] && values.technology[0].img} coordinates={values.coordinates && values.coordinates[0]}/>
 
                             </div>
                             <Field name="technology" validate={technologyRequired}>

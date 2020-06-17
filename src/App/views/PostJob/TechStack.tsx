@@ -7,7 +7,7 @@ import styles from './skill.module.scss'
 import {formInterface} from "../../utils/const";
 import {FieldRenderProps} from "react-final-form";
 
-const filter = createFilterOptions()
+
 const languages = LanguageList;
 
 
@@ -26,7 +26,7 @@ const TechStack: React.FC<TechStackProps> = ({onChange, formValues, fieldRenderP
                 disableClearable
                 freeSolo
                 inputValue={inputValue}
-                onInputChange={((e:React.ChangeEvent<{}>) => setInputValue(e ? e.target.value || "" : ""))}
+                onInputChange={((_event, value) => setInputValue(value ? value : ""))}
                 onChange={(_event, newValue) => {
                     if (typeof newValue === "string") {
                         onChange([...formValues.techStack, {language: newValue, lvl: 1}])
@@ -35,9 +35,9 @@ const TechStack: React.FC<TechStackProps> = ({onChange, formValues, fieldRenderP
                     }
                     setInputValue("");
                 }}
-                filterOptions={(options, params) => {
-                    let filtered = filter(options, params);
-                    const isAdded = (needle:string, haystack:{language:string, lvl:number}[]) => {
+                filterOptions={(options, state) => {
+                    let filteredOptions = createFilterOptions({stringify: (option:{language:string}) => option.language})(options, state)
+                    const isAdded = (needle:string, haystack:{language?:string, lvl?:number}[]) => {
                         let exist = false;
                         haystack.forEach((element:{language?:string, lvl?:number}) => {
                             if (needle === element.language) {
@@ -46,12 +46,12 @@ const TechStack: React.FC<TechStackProps> = ({onChange, formValues, fieldRenderP
                         });
                         return exist;
                     };
-                    if (params.inputValue !== "" && !isAdded(params.inputValue, formValues.techStack)) {
-                        filtered.push({
-                            language: `${params.inputValue}`
+                    if (state.inputValue !== "" && !isAdded(state.inputValue, formValues.techStack)) {
+                        filteredOptions.push({
+                            language: `${state.inputValue}`
                         });
                     };
-                    filtered = filtered.filter((item:{language:string, lvl:number}) => {
+                    filteredOptions = filteredOptions.filter((item) => {
                             let exist = true;
                             formValues.techStack.forEach(element => {
                                     if (item.language === element.language) {
@@ -62,7 +62,7 @@ const TechStack: React.FC<TechStackProps> = ({onChange, formValues, fieldRenderP
                             return exist;
                         }
                     );
-                    return filtered;
+                    return filteredOptions;
                 }}
                 id="tech-stack"
                 options={languages}
