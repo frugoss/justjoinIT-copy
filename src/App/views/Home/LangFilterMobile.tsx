@@ -33,6 +33,10 @@ const useStyles = makeStyles(createStyles({
         position: "fixed",
         left:20,
         marginDown: 10
+    },
+
+    divider: {
+        marginTop:45
     }
 }));
 const Transition = React.forwardRef(function Transition(
@@ -48,7 +52,7 @@ type LangFilterMobileProps = {
     updateFilters: (key:string, value:string) => void
 }
 const LangFilterMobile: React.FC<LangFilterMobileProps> = ({filters, language, updateFilters}) => {
-    const buttonClass = useStyles()
+    const classes = useStyles()
     const [open, setOpen] = useState(false);
 
     const handleClickOpen = () => {
@@ -65,18 +69,18 @@ const LangFilterMobile: React.FC<LangFilterMobileProps> = ({filters, language, u
     const imgFiltered = language.filter(item => item.to === filters.language)
     return (
         <>
-            <Button className={imgFiltered[0] && isActive(imgFiltered[0].to, filters.language) && imgFiltered[0].to !== "all" ? `${styles.activeButton} ${buttonClass.root}` : buttonClass.root} variant="outlined" onClick={handleClickOpen}>
+            <Button className={imgFiltered[0] && isActive(imgFiltered[0].to, filters.language) && imgFiltered[0].to !== "all" ? `${styles.activeButton} ${classes.root}` : classes.root} variant="outlined" onClick={handleClickOpen}>
                 {imgFiltered[0] ? <div className={styles.langButtonMobile}><img alt="logo" className={styles.logoLang} src={imgFiltered[0].img}/> {imgFiltered[0].name}</div> : "Technology"}
             </Button>
             <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
                 <div onClick={handleClose}>
-                    <IconButton className={buttonClass.close} edge="start" color="inherit"
+                    <IconButton className={classes.close} edge="start" color="inherit"
                                 onClick={handleClose} aria-label="close">
                         <CloseIcon/>
                     </IconButton>
                     <h2 className={styles.textTitleMobile}>Language</h2>
                 </div>
-                <Divider style={{marginTop:45}} />
+                <Divider className={classes.divider} />
                 <div className={styles.languagePositionMobile}>
                     <AllButtonMobile setOpen={setOpen} filters={filters} name="All" to="all" key="all"
                                      updateFilters={updateFilters}

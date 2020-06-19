@@ -4,6 +4,7 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import { makeStyles,createStyles } from '@material-ui/core/styles';
+import styles from './drawer.module.scss'
 
 
 type DrawerButtonProps = {
@@ -23,19 +24,25 @@ const useStyles = makeStyles(createStyles({
         width: "100%",
         alineHeight: 56,
         padding: "6px 6px 5px 0px",
+    },
+    listItem: {
+        width: 310
+    },
+    listIcon: {
+        marginLeft: 5
     }
 }));
 
 const DrawerButton: React.FC<DrawerButtonProps> = ({to, text, img, setOpen, logout}) => {
-    const classy = useStyles();
+    const classes = useStyles();
     return (
         <>
-            <Link  onClick={() => setOpen(false)} to={to} style={{textDecoration: "none"}}>
-                <ListItem onClick={to === "/" ? () => logout && logout() : () => ""} style={{width:310}}>
-                    <ListItemIcon style={{marginLeft:5}}>
+            <Link  onClick={() => setOpen(false)} to={to} className={styles.linkStyle}>
+                <ListItem onClick={to === "/" ? () => logout && logout() : () => ""} className={classes.listItem}>
+                    <ListItemIcon className={classes.listIcon}>
                         {img}
                     </ListItemIcon>
-                    <ListItemText  className={classy.root} primary={text} />
+                    <ListItemText  className={classes.root} primary={text} />
                 </ListItem>
             </Link>
         </>

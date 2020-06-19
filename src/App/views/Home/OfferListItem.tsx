@@ -9,16 +9,21 @@ import {Link} from "react-router-dom";
 import React, {useState} from "react";
 import OfferListItemCV from './OfferListItemCV'
 import {applicationInterface, offerInterface} from "../../utils/const";
+import {makeStyles, createStyles} from "@material-ui/core/styles";
 
-
+const useStyles = makeStyles(createStyles({
+    margin: {
+        marginRight: 4
+    }
+}))
 
 type OfferListItemProps = {
     offer: offerInterface,
     applications: applicationInterface[] | undefined
 }
 const OfferListItem: React.FC<OfferListItemProps> = ({offer, applications}) => {
+    const classes = useStyles()
     const [open, setOpen] = useState(false);
-
     const handleClickOpen = () => {
         setOpen(true);
     };
@@ -62,8 +67,8 @@ const OfferListItem: React.FC<OfferListItemProps> = ({offer, applications}) => {
                 </div>
                 <div className={styles.card}>
                     <div className={`${styles.flex} ${styles.fontSize}`}>
-                        <div style={{flexGrow: 1}}><h3>{offer.title}</h3></div>
-                        <div className={styles.flexEnd} style={{color: "rgb(30, 198, 108)"}}><NumberFormat
+                        <div><h3>{offer.title}</h3></div>
+                        <div className={styles.salary}><NumberFormat
                             value={offer.minSalary} thousandSeparator={" "}
                             displayType={'text'}/> - <NumberFormat value={offer.maxSalary}
                                                                    thousandSeparator={" "}
@@ -74,14 +79,14 @@ const OfferListItem: React.FC<OfferListItemProps> = ({offer, applications}) => {
                         <div className={styles.businessContainer}><BusinessIcon
                             fontSize={"inherit"}/> {offer.company} </div>
                         <div className={styles.locationContainer}><LocationOnRoundedIcon
-                            style={{marginRight: 4}} fontSize={"inherit"}/>{offer.city}</div>
+                           className={classes.margin} fontSize={"inherit"}/>{offer.city}</div>
                         <Hidden smDown>
                             <div className={styles.flexEnd}>
                                 {offer.techStack.map((element, index) => {
                                     if (index < 3) {
                                         return <div key={index}  className={styles.tag}>{element.language}</div>
                                     } else {
-                                        return ""
+                                        return null
                                     }
                                 })}
                             </div>

@@ -68,7 +68,17 @@ const OfferDetail: React.FC<OfferDetailProps> = ({offersList, match, history, fi
             transition: "all 0.3s ease-out 0s",
             height: 40,
             margin: "5px 20px 20px 20px"
-        }
+        },
+        arrow: {
+            verticalAlign: "middle",
+            color: "white"
+        },
+        businessIcon: {color: "#FF5252"},
+        peopleIcon: {color: "#fb8c00"},
+        fileIcon: {color: "#ab47bc"},
+        chartIcon: {color: "#66BB6A"}
+
+
     }));
 
     const classes = useStyles();
@@ -183,7 +193,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({offersList, match, history, fi
                             <div className={styles.backButton} onClick={() =>
                                 history.push(`/${filters.city}/${filters.language}/${filters.experience}/${filters.salarymin}/${filters.salarymax}`)
                             }>
-                                <ArrowBackIcon style={{verticalAlign: "middle", color: "white"}}/>
+                                <ArrowBackIcon className={classes.arrow}/>
                             </div>
                             <div className={styles.name}>
 
@@ -205,43 +215,43 @@ const OfferDetail: React.FC<OfferDetailProps> = ({offersList, match, history, fi
                                     </div>
 
                                 </div>
-                                <div style={{display: "flex", flexDirection: "row", justifyContent: "flex-end"}}>
+                                <div className={styles.flexJustify}>
                                        <div className={styles.apply}>
-                                           <a href="#apply" style={{textDecoration:"none"}}><ButtonBase><MailIcon/> Apply </ButtonBase></a>
+                                           <a href="#apply" className={styles.linkRoute}><ButtonBase><MailIcon/> Apply </ButtonBase></a>
                                         </div>
                                 </div>
 
 
                             </div>
                         </div>
-                        <div className={styles.itskills}>
+                        <div className={styles.itSkills}>
                             <div className={styles.mobileColumn}>
                                 <div className={styles.skill}>
-                                    <div className={styles.skillcircle}><BusinessIcon style={{color: "#FF5252"}}/></div>
-                                    <a  href={`https://${offer.website}`}  rel="noopener noreferrer" target="_blank" style={{textDecoration: "none"}}>{offer.company}</a>
-                                    <div className={styles.companydetails}>Company Name</div>
+                                    <div className={styles.skillCircle}><BusinessIcon className={classes.businessIcon}/></div>
+                                    <a  href={`https://${offer.website}`}  rel="noopener noreferrer" target="_blank" className={styles.linkRoute}>{offer.company}</a>
+                                    <div className={styles.companyDetails}>Company Name</div>
 
                                 </div>
                                 <div className={styles.skill}>
-                                    <div className={styles.skillcircle}><PeopleIcon style={{color: "#fb8c00"}}/></div>
+                                    <div className={styles.skillCircle}><PeopleIcon className={classes.peopleIcon}/></div>
                                     <span>{offer.companySize}</span>
-                                    <div className={styles.companydetails}>Company Size</div>
+                                    <div className={styles.companyDetails}>Company Size</div>
 
                                 </div>
                             </div>
                             <div className={styles.mobileColumn}>
                                 <div className={styles.skill}>
-                                    <div className={styles.skillcircle}><InsertDriveFileIcon
-                                        style={{color: "#ab47bc"}}/></div>
+                                    <div className={styles.skillCircle}><InsertDriveFileIcon
+                                        className={classes.fileIcon}/></div>
                                     <span>{offer.employment}</span>
-                                    <div className={styles.companydetails}>EMP. type</div>
+                                    <div className={styles.companyDetails}>EMP. type</div>
 
                                 </div>
                                 <div className={styles.skill}>
-                                    <div className={styles.skillcircle}><ShowChartIcon style={{color: "#66BB6A"}}/>
+                                    <div className={styles.skillCircle}><ShowChartIcon className={classes.chartIcon}/>
                                     </div>
                                     <div>{offer.experience}</div>
-                                    <div className={styles.companydetails}>EXP. lvl</div>
+                                    <div className={styles.companyDetails}>EXP. lvl</div>
 
                                 </div>
                             </div>
@@ -256,7 +266,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({offersList, match, history, fi
                                         desc = experience.filter(e => stack.lvl === e.id)[0].desc
                                         return (
                                             <div key={i} className={styles.techPadding}>
-                                                <div style={{display: "flex"}}>
+                                                <div className={styles.flexRow}>
                                                     {experience.map((lvl, index) => <span key={index}
                                                                                           className={stack.lvl >= lvl.id ? styles.dotClicked : styles.dot}/>)}
 
@@ -276,7 +286,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({offersList, match, history, fi
                         <div className={styles.sectionCard}>
                             <div className={styles.titleTech}>Description</div>
                             <div className={styles.description}>
-                                <div className={styles.additionaldesc}>
+                                <div className={styles.additionalDesc}>
                                     {ReactHtmlParser(offer.description)}
                                 </div>
                             </div>
@@ -383,8 +393,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({offersList, match, history, fi
                                     )}
                                 />
                                 </div>
-                                <div className={styles.CVSent} style={{display: CVSent ? "flex" : "none"}}><img alt="cv-sent" src={CVSentIcon}/><span style={{color: "rgb(153, 161, 171)",
-                                    margin: "20px 0px 5px 0px"}}>Great! Your application was successfully sent to: </span><span style={{color:"#47b300"}}>{offer.company}</span></div>
+                                <div className={styles.CVSent} style={{display: CVSent ? "flex" : "none"}}><img alt="cv-sent" src={CVSentIcon}/><span className={styles.spanSent}>Great! Your application was successfully sent to: </span><span className={styles.spanSentCompany}>{offer.company}</span></div>
 
                         </div>
 

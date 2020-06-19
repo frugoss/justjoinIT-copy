@@ -38,7 +38,7 @@ const FilterButtonMobile: React.FC<FilterButtonMobileProps> = ({name, to, isActi
     const classes = useStyles();
     return (
         <>
-            <Link to={`/${to}/${filters.language}/${filters.experience}/${filters.salarymin}/${filters.salarymax}`} style={{textDecoration: "none"}}>
+            <Link to={`/${to}/${filters.language}/${filters.experience}/${filters.salarymin}/${filters.salarymax}`} className={styles.linkRoute}>
                 <ButtonBase onClick={() => {
                     updateFilters("city",to)
                     setOpen(false)

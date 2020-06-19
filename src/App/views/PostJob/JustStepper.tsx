@@ -7,8 +7,11 @@ import Verify from "./Verify"
 import styles from './addoffer.module.scss'
 import {formInterface, userInterface} from "../../utils/const";
 import {RouteComponentProps, withRouter} from 'react-router-dom'
+import {makeStyles, createStyles} from "@material-ui/core/styles/";
 
-
+const useStyles = makeStyles(createStyles({
+    stepper: {background: "rgb(243, 246, 248)"}
+}))
 function getSteps() {
     return ['Create', 'Verify & Publish'];
 }
@@ -19,6 +22,7 @@ interface JustStepperProps extends RouteComponentProps {
     fetchOffers: () => void
 }
 const JustStepper: React.FC<JustStepperProps> = ({user, history, setUser, fetchOffers}) => {
+    const classes = useStyles()
     const [activeStep, setActiveStep] = useState(0);
     const [formValues, setFormValues] = useState<formInterface>({
         techStack: [],
@@ -38,7 +42,7 @@ const JustStepper: React.FC<JustStepperProps> = ({user, history, setUser, fetchO
 
     return (
             <div className={styles.stepperContainer}>
-            <Stepper style={{background: "rgb(243, 246, 248)"}} activeStep={activeStep}>
+            <Stepper className={classes.stepper} activeStep={activeStep}>
                 {steps.map((label) => {
                     const stepProps = {};
                     const labelProps = {};

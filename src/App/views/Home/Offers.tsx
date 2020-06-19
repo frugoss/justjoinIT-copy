@@ -22,6 +22,9 @@ const useStyles = makeStyles(createStyles({
         width: 56,
         height: 56,
     },
+    whiteIcon: {
+        color: "white"
+    }
 
 }));
 
@@ -57,9 +60,7 @@ const Offers: React.FC<OffersProps> = ({offersList, filters, fetching, setHideFi
                     </Switch>
 
 
-                    <div style={{
-                        width: "90%"
-                    }}>
+                    <div className={styles.width90}>
                         <Switch>
 
                             <Route path="/offers/:offerTitle"
@@ -72,7 +73,7 @@ const Offers: React.FC<OffersProps> = ({offersList, filters, fetching, setHideFi
                 </div>
             </Hidden>
             <Hidden mdUp>
-                <div style={{display: "flex", height: hideFilter ? "calc(100vh - 65px)" :"calc(100vh - 120px)"}}>
+                <div className={styles.flexRow} style={{height: hideFilter ? "calc(100vh - 65px)" :"calc(100vh - 120px)"}}>
                     <div className={styles.viewMobile} style={{
                         display: mobileViewMode.view === "map" ? "none" : "block"
                     }}>
@@ -88,9 +89,8 @@ const Offers: React.FC<OffersProps> = ({offersList, filters, fetching, setHideFi
                         </Switch>
                     </div>
                     <div style={{
-                        display: mobileViewMode.view === "map" ? "block" : "none",
-                        width: "100%"
-                    }}>
+                        display: mobileViewMode.view === "map" ? "block" : "none"
+                    }} className={styles.width100}>
                         <Switch>
 
                             <Route path="/offers/:offerTitle"
@@ -110,8 +110,8 @@ const Offers: React.FC<OffersProps> = ({offersList, filters, fetching, setHideFi
                                 ...mobileViewMode,
                                 view: mobileViewMode.view === "list" ? "map" : "list"
                             })
-                        }}> {mobileViewMode.view === "list" ? <MapIcon style={{color: "white"}}/> :
-                            <ArrowBackIcon style={{color: "white"}}/>} </ButtonBase>
+                        }}> {mobileViewMode.view === "list" ? <MapIcon className={classes.whiteIcon}/> :
+                            <ArrowBackIcon className={classes.whiteIcon}/>} </ButtonBase>
                     </div>
 
                 </div>

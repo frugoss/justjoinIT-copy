@@ -6,11 +6,12 @@ import LanguageList from "../../assets/LanguageList.json"
 import styles from './skill.module.scss'
 import {formInterface} from "../../utils/const";
 import {FieldRenderProps} from "react-final-form";
+import {makeStyles, createStyles} from "@material-ui/styles";
 
-
+const useStyles = makeStyles(createStyles({
+   autocomplete: {width: 264}
+}))
 const languages = LanguageList;
-
-
 
 type TechStackProps = {
     onChange: (event: any) => void
@@ -19,7 +20,7 @@ type TechStackProps = {
 }
 const TechStack: React.FC<TechStackProps> = ({onChange, formValues, fieldRenderProps}) => {
     const [inputValue, setInputValue] = useState("");
-
+    const classes = useStyles()
     return (
         <>
             <Autocomplete
@@ -73,7 +74,7 @@ const TechStack: React.FC<TechStackProps> = ({onChange, formValues, fieldRenderP
                         return option ? option.language : ""
                     }
                 }}
-                style={{width: 264}}
+                className={classes.autocomplete}
                 renderInput={params => (
                     <TextField
                         error={fieldRenderProps.meta.error && fieldRenderProps.meta.touched}

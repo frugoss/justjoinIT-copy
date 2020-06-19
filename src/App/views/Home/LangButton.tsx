@@ -16,7 +16,7 @@ const LangButton:React.FC<LangButtonProps> = ({to, name, isActive, img, filters,
     return (
         <div className={styles.langButtonContainer}>
             <Link to={`/${filters.city}/${to}/${filters.experience}/${filters.salarymin}/${filters.salarymax}`}
-                  style={{textDecoration: "none"}}>
+                  className={styles.linkRoute}>
                 <ButtonBase disableRipple onClick={() => updateFilters("language", to)}
                             className={isActive ? styles.langBtnActive : styles.langBtn}
                 >

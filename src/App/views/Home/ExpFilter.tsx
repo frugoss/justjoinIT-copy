@@ -29,6 +29,9 @@ const useStyles = makeStyles(createStyles({
     position:{
         marginRight:3,
         fontSize: 17
+    },
+    menu:{
+        marginTop:37
     }
 }));
 
@@ -59,7 +62,7 @@ const ExpFilter: React.FC<ExpFilterProps> = ({filters, updateFilters}) => {
                <TrendingUpIcon className={buttonClass.position}/>Exp. {filters.experience !== "all" ? filters.experience : ""} level <ArrowDropDownIcon/>
             </Button>
             <Menu
-                style={{marginTop:37}}
+                className={buttonClass.menu}
                 id="exp-menu"
                 anchorEl={anchorEl}
                 open={Boolean(anchorEl)}

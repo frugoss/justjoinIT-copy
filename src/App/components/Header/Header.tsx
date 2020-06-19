@@ -54,21 +54,21 @@ const Header: React.FC<HeaderProps> = ({location, setUser, user}) => {
         <>
         <div className={styles.headerWrapper}>
             <div className={styles.header}>
-                <Link to="/"><img style={{marginRight: 10}} src={jjit} alt="just join it logo"/></Link>
+                <Link to="/"><img className={styles.margin} src={jjit} alt="just join it logo"/></Link>
                 <Hidden smDown>
                     <Menu location={location} user={user} direction="row" />
                 </Hidden>
             </div>
             <Hidden smDown>
             <div className={styles.flexRow}>
-                <Link className={styles.hideButton} style={{textDecoration: "none"}} to={"/add"}>
+                <Link className={styles.hideButton} to={"/add"}>
                     <StyledButton>Post a job</StyledButton>
                 </Link>
                 {!user.auth ?
-                    <Link style={{textDecoration: "none"}} to={"/devs"}> <StyledButton
+                    <Link className={styles.linkStyle} to={"/devs"}> <StyledButton
                         style={{backgroundColor: "#ab47bc"}}>Sign
                         in</StyledButton></Link> :
-                    <Link style={{textDecoration: "none"}} to={"/"}> <StyledButton onClick={() => logout()} style={{
+                    <Link className={styles.linkStyle} to={"/"}> <StyledButton onClick={() => logout()} style={{
                         backgroundColor: "#ab47bc"
                     }}>Logout {user && user.name ? user.name.slice(0, user.name.indexOf('@')) : ""}</StyledButton></Link>
                 }

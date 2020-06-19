@@ -32,6 +32,9 @@ const useStyles = makeStyles(createStyles({
         position: "fixed",
         left:20,
         marginDown: 10
+    },
+    divider: {
+        marginTop:45
     }
 }));
 
@@ -49,7 +52,7 @@ type CityFilterMobile = {
     cities: cityInterface[]
 }
 const CityFilterMobile: React.FC<CityFilterMobile> = ({ filters, cities, updateFilters}) => {
-    const buttonClass = useStyles()
+    const classes = useStyles()
 
     const text = "Location"
       const [open, setOpen] = React.useState(false);
@@ -67,17 +70,17 @@ const CityFilterMobile: React.FC<CityFilterMobile> = ({ filters, cities, updateF
 const polishCity = cities.filter(city => city.to === filters.city)
 return (
 <>
-    <Button className={polishCity[0] && isActive(polishCity[0].to, filters.city) && polishCity[0].to !== "all" ? `${styles.activeButton} ${buttonClass.root}` : buttonClass.root} variant="outlined" onClick={handleClickOpen}>
+    <Button className={polishCity[0] && isActive(polishCity[0].to, filters.city) && polishCity[0].to !== "all" ? `${styles.activeButton} ${classes.root}` : classes.root} variant="outlined" onClick={handleClickOpen}>
         {polishCity[0] && polishCity[0] && polishCity[0].name !== "All" ? polishCity[0].name : "Location" }
     </Button>
     <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
             <div onClick={handleClose}>
-                <IconButton className={buttonClass.close} edge="start" color="inherit" onClick={handleClose} aria-label="close">
+                <IconButton className={classes.close} edge="start" color="inherit" onClick={handleClose} aria-label="close">
                     <CloseIcon />
                 </IconButton>
         <h2 className={styles.textTitleMobile}>{text}</h2>
             </div>
-        <Divider style={{marginTop:45}} />
+        <Divider className={classes.divider} />
             <div className={styles.buttonListMobile}>
         {cities && cities.map(({name, to}) => (
 

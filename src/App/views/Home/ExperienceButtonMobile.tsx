@@ -35,7 +35,7 @@ const ExperienceButtonMobile: React.FC<ExperienceButtonMobileProps> = ({name, is
     const classes = useStyles();
     return (
         <>
-            <Link to={`/${filters.city}/${filters.language}/${name.toLowerCase()}/${filters.salarymin}/${filters.salarymax}`} style={{textDecoration: "none"}}>
+            <Link to={`/${filters.city}/${filters.language}/${name.toLowerCase()}/${filters.salarymin}/${filters.salarymax}`} className={styles.linkRoute}>
                 <ButtonBase onClick={() => {
                     updateFilters("experience",name.toLowerCase())
                 }} className={isActive ? styles.activeButton : ''}

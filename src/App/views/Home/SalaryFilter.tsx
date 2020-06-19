@@ -4,7 +4,6 @@ import Popover from '@material-ui/core/Popover';
 import { makeStyles, createStyles } from '@material-ui/core/styles';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
-import Typography from "@material-ui/core/Typography";
 import Slider from "@material-ui/core/Slider";
 import styles from "./home.module.scss";
 import {filtersInterface} from "../../utils/const";
@@ -32,6 +31,9 @@ const useStyles = makeStyles(createStyles({
             borderColor: "rgb(186, 104, 200)",
             backgroundColor: "white"
         }
+    },
+    icon: {
+        marginRight:3, fontSize:17
     }
 }));
 
@@ -71,7 +73,7 @@ const SalaryFilter: React.FC<SalaryFilterProps> = ({valuetext, filters, handleSl
     return(
         <>
             <Button  aria-describedby={id} onClick={handleClick} className={(Number(filters.salarymin) !== 0 || Number(filters.salarymax) !== 50) ? `${styles.activeButton} ${buttonClass.root}` : buttonClass.root} variant="outlined">
-               <AttachMoneyIcon style={{marginRight:3, fontSize:17}}/> Salary {salaryCases} <ArrowDropDownIcon/>
+               <AttachMoneyIcon className={buttonClass.icon}/> Salary {salaryCases} <ArrowDropDownIcon/>
             </Button>
             <Popover
                 id={id}
@@ -87,11 +89,9 @@ const SalaryFilter: React.FC<SalaryFilterProps> = ({valuetext, filters, handleSl
                     horizontal: 'center',
                 }}
             >
-                <div style={{width:250, marginLeft:50, height:65, marginTop: 10}}>
-                    <h4 style={{fontSize:16, marginLeft:30}}>In thousands (PLN)</h4>
-                    <div style={{width:200}}>
-                        <Typography id="range-slider" gutterBottom>
-                        </Typography>
+                <div className={styles.salaryContainer}>
+                    <h4 className={styles.salaryHeader}>In thousands (PLN)</h4>
+                    <div className={styles.sliderWidth}>
                         <Slider
                             className={sliderClass.root}
                             max={50}

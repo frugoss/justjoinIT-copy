@@ -28,7 +28,7 @@ const TabOffers: React.FC<TabOffersProps> = ({location, text, to, img}) => {
     }
     return (
 
-        <Link to={to} style={{textDecoration: "none"}}>
+        <Link to={to} className={styles.linkStyle}>
             <Button
                     className={`${styles.tab} ${buttonClass.root} ${isActive ? styles.activeTab : ''}`} startIcon={img}>{text}</Button>
         </Link>

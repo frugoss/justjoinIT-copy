@@ -31,7 +31,7 @@ const AllButton: React.FC<AllButtonProps> = ({to, name, isActive, filters, updat
     const classes = useStyles();
     return (
         <div className={styles.buttonContainer}>
-            <Link to={`/${filters.city}/${to}/${filters.experience}`} style={{textDecoration:"none", marginRight:10}}>
+            <Link to={`/${filters.city}/${to}/${filters.experience}`} className={styles.linkRouteAllBtn}>
                 <ButtonBase  onClick={() => updateFilters("language",to)}  disableRipple
                             className={isActive ? styles.activeButton : ""}
                             classes={{root: classes.root}}>

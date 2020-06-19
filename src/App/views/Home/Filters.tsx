@@ -107,7 +107,7 @@ const Filters: React.FC<FiltersProps> = ({filters, history,updateFilters, setFil
                 <div className={styles.view}>
                     <div className={styles.border}>
                         <div className={styles.flex}>
-                            <div style={{width: "100%"}}>
+                            <div className={styles.width100}>
                                 {cities.map(({name, to}) => (
                                         <FilterButton filters={filters} name={name} to={to} key={to}
                                                       isActive={isActive(to, filters.city)} updateFilters={updateFilters}>
@@ -155,13 +155,13 @@ const Filters: React.FC<FiltersProps> = ({filters, history,updateFilters, setFil
             </Hidden>
             <Hidden mdUp>
                 <div style={{display: hideFilter ? "none" : "flex", margin: "10px"}}>
-                    <div style={{marginRight: 15}}>
+                    <div className={styles.marginRight15}>
                         <CityFilterMobile filters={filters} cities={cities} updateFilters={updateFilters}/>
                     </div>
-                    <div style={{marginRight: 15}}>
+                    <div className={styles.marginRight15}>
                         <LangFilterMobile language={language} filters={filters} updateFilters={updateFilters}/>
                     </div>
-                    <div style={{marginRight: 15}}>
+                    <div className={styles.marginRight15}>
                         <ExpSalaryFilterMobile updateFilter={updateFilters} valuetext={valuetext}
                                                handleSliderChangeCommitted={handleSliderChangeCommitted}
                                                salaryFilter={salaryFilter} handleSliderChange={handleSliderChange}

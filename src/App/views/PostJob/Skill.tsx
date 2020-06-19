@@ -2,6 +2,7 @@ import React from 'react';
 import styles from "./skill.module.scss"
 import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 import {formInterface} from "../../utils/const";
+import {experience} from "./const";
 
 
 type SkillProps = {
@@ -10,28 +11,6 @@ type SkillProps = {
     techStackElement: {language?: string, lvl?: number}
 }
 const Skill: React.FC<SkillProps> = ({formValues, onChange, techStackElement}) => {
-    const experience = [
-        {
-            id: 1,
-            desc: "Nice to have"
-        },
-        {
-            id: 2,
-            desc: "Junior"
-        },
-        {
-            id: 3,
-            desc: "Regular"
-        },
-        {
-            id: 4,
-            desc: "Advanced"
-        },
-        {
-            id: 5,
-            desc: "Master",
-        }
-    ];
     let index:number;
     const techStack = formValues.techStack.filter((e, i) => {
         if (e.language === techStackElement.language) {
@@ -64,7 +43,7 @@ const Skill: React.FC<SkillProps> = ({formValues, onChange, techStackElement}) =
 
     return (
         <div className={styles.skillContainer}>
-            <div style={{display: "flex"}}>
+            <div className={styles.flex}>
                 {experience.map((lvl,index) => <span key={index} className={techStack.lvl && techStack.lvl >= lvl.id ? styles.dotClicked : styles.dot}
                                              onClick={() => onChange(getSkillLevelUpdate(lvl.id))}/>
                 )}

@@ -38,7 +38,7 @@ const FilterButton: React.FC<FilterButtonProps> = ({name, to, isActive, filters,
     const classes = useStyles();
     return (
         <>
-            <Link to={`/${to}/${filters.language}/${filters.experience}/${filters.salarymin}/${filters.salarymax}`} style={{textDecoration: "none"}}>
+            <Link to={`/${to}/${filters.language}/${filters.experience}/${filters.salarymin}/${filters.salarymax}`} className={styles.linkRoute}>
                 <ButtonBase onClick={() => updateFilters("city",to)} className={isActive ? `${styles.activeButton} ${classes.root}` : classes.root}
                             >{name}</ButtonBase>
             </Link>

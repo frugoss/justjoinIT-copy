@@ -7,6 +7,7 @@ import styles from "./offers.module.scss";
 import CheckIcon from "@material-ui/icons/Check";
 import React from "react";
 import {applicationInterface} from "../../utils/const";
+import {makeStyles, createStyles} from '@material-ui/core/styles'
 
 type OfferListItemCVProps = {
     setOpen:React.Dispatch<React.SetStateAction<boolean>>,
@@ -14,12 +15,19 @@ type OfferListItemCVProps = {
     open: boolean,
     title: string,
 }
+
+const useStyles = makeStyles(createStyles({
+    dialog: {padding: "16px 16px 0px 16px"},
+    checkIcon: {fontSize: 17, color: "#47b300"},
+    clearIcon: {fontSize: 17, color: "#FF6347"}
+
+    }))
 const OfferListItemCV: React.FC <OfferListItemCVProps> = ({setOpen, showCvs, open, title}) => {
     const handleClose = (e: React.MouseEvent<HTMLButtonElement>) => {
         setOpen(false);
         e.preventDefault();
     };
-
+const classes = useStyles()
     return (
 
         <Dialog onClick={e => {
@@ -27,7 +35,7 @@ const OfferListItemCV: React.FC <OfferListItemCVProps> = ({setOpen, showCvs, ope
             e.stopPropagation();
         }} onClose={handleClose} open={open}>
             <div className={styles.fontTitleDialog}>
-            <DialogTitle  style={{padding: "16px 16px 0px 16px"}} id="simple-dialog-title"><IconButton edge="start"
+            <DialogTitle  className={classes.dialog} id="simple-dialog-title"><IconButton edge="start"
                                                                                                       color="inherit"
                                                                                                       onClick={handleClose}
                                                                                                       aria-label="close">
@@ -47,11 +55,11 @@ const OfferListItemCV: React.FC <OfferListItemCVProps> = ({setOpen, showCvs, ope
                             <div className={styles.processing}><span className={styles.recruitmentMobile}>Processing data in future
                                 recruitment: </span>{application.checkbox ?
                                     <div className={styles.centerIcon}><CheckIcon
-                                        style={{fontSize: 17, color: "#47b300"}}/></div> :
+                                        className={classes.checkIcon}/></div> :
                                     <div className={styles.centerIcon}><ClearIcon
-                                        style={{fontSize: 17, color: "#FF6347"}}/>
+                                        className={classes.clearIcon}/>
                                     </div>}</div>
-                            <hr style={{marginBottom: 8}}/>
+                            <hr className={styles.hrStyle}/>
                         </div>) : ""}
             </DialogContent>
         </Dialog>

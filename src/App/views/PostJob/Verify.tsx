@@ -15,6 +15,7 @@ import BackgroundOffer from "../../assets/images/BackgroundOffer.png";
 import NumberFormat from "react-number-format";
 import {formInterface, userInterface} from "../../utils/const";
 import {History} from "history";
+import {experience} from "./const";
 
 
 type VerifyProps = {
@@ -41,32 +42,26 @@ const Verify: React.FC<VerifyProps> = ({setUser, user, history, formValues, setA
             marginTop: 20
 
 
+        },
+        arrow: {
+            verticalAlign: "middle",
+    },
+    businessIcon: {
+        color: "#FF5252"
+    },
+        peopleIcon:{
+            color: "#fb8c00"
+        },
+        fileIcon: {
+            color: "#ab47bc"
+        },
+        chartIcon: {
+            color: "#66BB6A"
         }
+
+
     }))
     const classStep = useStylesStep();
-
-    const experience = [
-        {
-            id: 1,
-            desc: "Nice to have"
-        },
-        {
-            id: 2,
-            desc: "Junior"
-        },
-        {
-            id: 3,
-            desc: "Regular"
-        },
-        {
-            id: 4,
-            desc: "Advanced"
-        },
-        {
-            id: 5,
-            desc: "Master",
-        }
-    ];
 
     let pointerIcon = new L.Icon({
         iconUrl: formValues.technology && formValues.technology[0].img,
@@ -102,7 +97,7 @@ const Verify: React.FC<VerifyProps> = ({setUser, user, history, formValues, setA
         <div className={styles.offer}>
             <div className={styles.card}>
                 <div className={styles.backButton} onClick={() => setActiveStep(0)}>
-                    <ArrowBackIcon style={{verticalAlign: "middle"}}/> BACK
+                    <ArrowBackIcon className={classStep.arrow}/> BACK
                 </div>
             <div className={styles.top}>
                 <div className={styles.banner}
@@ -113,7 +108,7 @@ const Verify: React.FC<VerifyProps> = ({setUser, user, history, formValues, setA
                                 <img className={styles.logoImg} src={formValues.logo} alt="logo"/>
                             </div>
                         </div>
-                        <div className={styles.titlesalary}>
+                        <div className={styles.titleSalary}>
                               <span className={styles.salaryStreetDetail}><NumberFormat value={formValues.minSalary} thousandSeparator={" "}
                                                                                         displayType={'text'}/> - <NumberFormat value={formValues.maxSalary}
                                                                                                                                thousandSeparator={" "}
@@ -132,29 +127,29 @@ const Verify: React.FC<VerifyProps> = ({setUser, user, history, formValues, setA
 
                     </div>
                 </div>
-                <div className={styles.itskills}>
+                <div className={styles.itSkills}>
                     <div className={styles.skill}>
-                        <div className={styles.skillcircle}><BusinessIcon style={{color: "#FF5252"}}/></div>
-                        <a href={formValues.email} style={{textDecoration: "none"}}>{formValues.company}</a>
-                        <div className={styles.companydetails}>Company Name</div>
+                        <div className={styles.skillCircle}><BusinessIcon className={classStep.businessIcon}/></div>
+                        <a href={formValues.email} className={styles.linkStyle}>{formValues.company}</a>
+                        <div className={styles.companyDetails}>Company Name</div>
 
                     </div>
                     <div className={styles.skill}>
-                        <div className={styles.skillcircle}><PeopleIcon style={{color: "#fb8c00"}}/></div>
+                        <div className={styles.skillCircle}><PeopleIcon className={classStep.peopleIcon}/></div>
                         <span>{formValues.companySize}</span>
-                        <div className={styles.companydetails}>Company Size</div>
+                        <div className={styles.companyDetails}>Company Size</div>
 
                     </div>
                     <div className={styles.skill}>
-                        <div className={styles.skillcircle}><InsertDriveFileIcon style={{color: "#ab47bc"}}/></div>
+                        <div className={styles.skillCircle}><InsertDriveFileIcon className={classStep.fileIcon}/></div>
                         <span>{formValues.employment}</span>
-                        <div className={styles.companydetails}>EMP. type</div>
+                        <div className={styles.companyDetails}>EMP. type</div>
 
                     </div>
                     <div className={styles.skill}>
-                        <div className={styles.skillcircle}><ShowChartIcon style={{color: "#66BB6A"}}/></div>
+                        <div className={styles.skillCircle}><ShowChartIcon className={classStep.chartIcon}/></div>
                         <span>{formValues.experience}</span>
-                        <div className={styles.companydetails}>EXP. lvl</div>
+                        <div className={styles.companyDetails}>EXP. lvl</div>
 
                     </div>
 
@@ -169,8 +164,8 @@ const Verify: React.FC<VerifyProps> = ({setUser, user, history, formValues, setA
                             {formValues.techStack.map((stack,index) => {
                                 desc = experience.filter(e => stack.lvl === e.id)[0].desc
                                 return (
-                                <div key={index} style={{padding: "0px 50px 10px 15px"}}>
-                                    <div style={{display: "flex"}}>
+                                <div key={index} className={styles.tagsPadding}>
+                                    <div className={styles.flexRow}>
                                     {experience.map((lvl, nestedIndex) => <span key={nestedIndex} className={stack.lvl && stack.lvl >= lvl.id ? styles.dotClicked : styles.dot}/>)}
 
                                     </div>
@@ -202,7 +197,7 @@ const Verify: React.FC<VerifyProps> = ({setUser, user, history, formValues, setA
                     </Marker>
                 </Map>
                 </div>
-                <div className={styles.techStack} style={{marginTop: 0}}>
+                <div className={styles.agreementsContainer}>
                     <div className={styles.titleTech}>Agreements</div>
                     <div className={styles.agreements}>
                         {formValues.agreements}

@@ -32,7 +32,7 @@ const AllButtonMobile: React.FC<AllButtonMobileProps> = ({to, name, isActive, fi
     const classes = useStyles();
     return (
         <div className={styles.buttonContainer}>
-            <Link to={`/${filters.city}/${to}/${filters.experience}`} style={{textDecoration: "none", marginRight: 10}}>
+            <Link to={`/${filters.city}/${to}/${filters.experience}`} className={styles.linkRouteAllBtn}>
                 <ButtonBase onClick={() => {
                     updateFilters("language", to)
                     setOpen(false)

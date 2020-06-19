@@ -72,8 +72,34 @@ const useStylesField = makeStyles(createStyles({
         color: "inherit",
         font: "inherit",
         fontSize: "inherit",
+    },
+    iconAlignment: {
+        verticalAlign: "middle"
+    },
+    outlineIcon: {
+    fontSize:14
+    },
+    selectMargin: {
+        marginTop:20,
+        backgroundColor: "transparent",
+        border: "none",
+        borderBottom: "0px solid #9e9e9e",
+        borderRadius: 0,
+        outline: "none",
+        height: "3rem",
+        width: "100%",
+        margin: "0 0 0px 0",
+        padding: 0,
+        boxShadow: "none",
+        boxSizing: "content-box",
+        transition: "all 0.3s",
+        color: "inherit",
+        font: "inherit",
+        fontSize: "inherit",
+    },
 
-    }
+    outlineFont: {fontSize: 14}
+
 }));
 
 
@@ -89,8 +115,6 @@ const useStylesStep = makeStyles(createStyles({
         borderRadius: 20,
         width: 130,
         marginTop: 20
-
-
     }
 }))
 
@@ -104,10 +128,7 @@ const useStyleDesc = makeStyles(createStyles({
         fontSize: 12,
         borderRadius: 4
     },
-}))
-
-const useStyleDescErr = makeStyles(createStyles({
-    textField: {
+    error: {
         width: "98%",
         height: 200,
         border: "1px solid#d50000",
@@ -179,7 +200,6 @@ const AddOffer:React.FC<AddOfferProps> = ({formValues, setFormValues, handleNext
     const classesField = useStylesField();
     const classStep = useStylesStep();
     const classDesc = useStyleDesc()
-    const classDescErr = useStyleDescErr()
 
     const onSubmit = (values:formInterface) => {
         setFormValues({...formValues, ...values})
@@ -216,9 +236,9 @@ const AddOffer:React.FC<AddOfferProps> = ({formValues, setFormValues, handleNext
         <div className={styles.addOfferContainer}>
 
             <div className={styles.card}>
-                <Link to={"/add"} style={{textDecoration: "none"}}>
+                <Link to={"/add"} className={styles.linkRoute}>
                     <div className={styles.backButton}>
-                        <ArrowBackIcon style={{verticalAlign: "middle"}}/> Back
+                        <ArrowBackIcon className={classesField.iconAlignment}/> Back
                     </div>
                 </Link>
                 <Form
@@ -244,9 +264,9 @@ const AddOffer:React.FC<AddOfferProps> = ({formValues, setFormValues, handleNext
                                         endAdornment: (
                                             <InputAdornment position={"end"}>
                                                 <NewTooltip title={<>How many people work in a company? <br/><br/>
-                                                    examples:<br/>* 10 - 23<br/> * 300+<br/> * <span>&#60</span>20
+                                                    examples:<br/>* 10 - 23<br/> * 300+<br/> * {'>'}20<br/>
                                                 </>}>
-                                                    <HelpOutlineIcon style={{fontSize:14}} />
+                                                    <HelpOutlineIcon className={classesField.outlineIcon} />
                                                 </NewTooltip>
                                             </InputAdornment>
                                         ),
@@ -256,7 +276,7 @@ const AddOffer:React.FC<AddOfferProps> = ({formValues, setFormValues, handleNext
                                 </div>
 
 
-                                <div className={styles.topContainer} style={{marginTop: 68}}>
+                                <div className={styles.topContainerCompany} >
 
                                     <Select
                                         name="companyType"
@@ -274,12 +294,11 @@ const AddOffer:React.FC<AddOfferProps> = ({formValues, setFormValues, handleNext
                                         <MenuItem value="Corporation">Corporation</MenuItem>
                                         <MenuItem value="Other">Other</MenuItem>
                                     </Select>
-                                    <Select style={{marginTop:20}}
+                                    <Select className={classesField.selectMargin}
                                         name="companyIndustry"
                                         fieldProps={{validate: required}}
                                         required={true}
                                         displayEmpty
-                                        className={classesField.selectField}
                                     >
                                         <MenuItem disabled value="">
                                             Choose company industry
@@ -348,11 +367,11 @@ const AddOffer:React.FC<AddOfferProps> = ({formValues, setFormValues, handleNext
                                                label="Monthly salary from (invoice net)" type="number"InputProps={{
                                         endAdornment: (
                                             <InputAdornment position={"end"}>
-                                        <NewTooltip style={{position:"absolute", right: 5, top: 30}}
+                                        <NewTooltip
                                                     title={<>How much the candidate will earn monthly.<br/>  <br/> <b>With B2B</b> <br/> It is the net amount without VAT. <br/>  <br/> <b>With Permanent or Mandate contract</b> <br/>It is the gross amount.
                                                     </>}>
 
-                                                <HelpOutlineIcon style={{fontSize: 14}}/>
+                                                <HelpOutlineIcon className={classesField.outlineFont}/>
 
                                         </NewTooltip>
                                             </InputAdornment>
@@ -384,7 +403,7 @@ const AddOffer:React.FC<AddOfferProps> = ({formValues, setFormValues, handleNext
 
                             </div>
 
-                                    <div style={{width:"100%"}}>
+                                    <div className={styles.width100}>
                                         <h3 className={styles.titleMargin}>Tech Stack <NewTooltip
                                             title={<>Tech StackIn this section you should put in tech stack and skill
                                                 level required from the candidate.<br/><br/> You can do it by selecting
@@ -392,11 +411,11 @@ const AddOffer:React.FC<AddOfferProps> = ({formValues, setFormValues, handleNext
                                                     limit)</b><br/><br/>
                                                 examples:<br/>* Java<br/> * Git<br/> * React
                                             </>}>
-                                                <HelpOutlineIcon style={{fontSize: 14}}/>
+                                                <HelpOutlineIcon className={classesField.outlineFont}/>
                                         </NewTooltip></h3>
                                         <Field name="techStack" validate={arrayNotEmpty}>
                                             {props => (
-                                        <div style={{padding: "0 0.75rem", marginLeft: 10}}>
+                                        <div className={styles.techStackContainer}>
 
                                                 <TechStack onChange={props.input.onChange} fieldRenderProps={props} formValues={values}/>
                                         </div>
@@ -407,10 +426,10 @@ const AddOffer:React.FC<AddOfferProps> = ({formValues, setFormValues, handleNext
                                 {props => {
                                     const trixValue = String(props.input.value)
                                     return(
-                                        <div style={{width:"100%"}}>
+                                        <div className={styles.width100}>
                                             <h3 className={styles.titleMargin}>Job description <NewTooltip
                                                 title={<>This section should contain: "about us", "your responsibilities", "our requirements", "nice to have", "we offer".</>}>
-                                                <HelpOutlineIcon style={{fontSize: 14}}/>
+                                                <HelpOutlineIcon className={classesField.outlineFont}/>
                                             </NewTooltip></h3>
 
                                             <TrixEditor mergeTags={[]} value={trixValue} className={props.meta.error && props.meta.touched ? styles.trixError: styles.trix}
@@ -441,8 +460,7 @@ const AddOffer:React.FC<AddOfferProps> = ({formValues, setFormValues, handleNext
                                 </div>
 
                             </div>
-                            <div style={{height: 300, width: "100%"}}>
-                                {console.log(values.technology && values.technology[0])}
+                            <div className={styles.mapContainer}>
                             <MapPreview img={values.technology && values.technology[0] && values.technology[0].img} coordinates={values.coordinates && values.coordinates[0]}/>
 
                             </div>
@@ -475,12 +493,12 @@ const AddOffer:React.FC<AddOfferProps> = ({formValues, setFormValues, handleNext
                                                label="Enter apply email or paste link" required={true}/>
                                 </div>
                                 <h3 className={styles.titleMargin}>Agreements</h3>
-                                <h4 className={styles.titleMargin} style={{color: "lightGrey"}}>Information clause</h4>
+                                <h4 className={styles.headerInformation}>Information clause</h4>
                                 <Field name="agreements" validate={agreementRequired}>
                                     {props =>(
                                 <div className={styles.agreements}>
 
-                                    <TextArea className={props.meta.error && props.meta.touched ? classDescErr.textField :classDesc.textField}
+                                    <TextArea className={props.meta.error && props.meta.touched ? classDesc.error :classDesc.textField}
                                               value={props.input.value ? props.input.value : ""}
                                               onChange={e => props.input.onChange(e.target.value)}/>
                                     {props.meta.error && props.meta.touched && <span className={styles.agreemErr}>Please fill company name and address</span>}

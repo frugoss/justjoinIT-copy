@@ -47,7 +47,7 @@ const OffersMap: React.FC<OffersMapProps> = ({offers, history, setMobileViewMode
 
                         <Link key={index} to={`/offers/${slugify(`${offer.company}-${offer.title}`, {
                             lower: true
-                        })}`} style={{textDecoration: "none", color: "rgb(55, 71, 79)"}}>
+                        })}`} className={styles.linkStyle}>
                             <div>
                                 <Marker onMouseOver={(e:Leaflet.LeafletMouseEvent) => {
                                     e.target.openPopup();

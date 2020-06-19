@@ -12,12 +12,20 @@ import {Link, RouteComponentProps, withRouter} from "react-router-dom";
 import Alert from "@material-ui/lab/Alert";
 import Hidden from "@material-ui/core/Hidden";
 import {userInterface} from "../../utils/const";
+import {createStyles, makeStyles} from "@material-ui/core/styles";
 
 
 interface SignUpProps extends RouteComponentProps {
     user: userInterface,
     setUser: React.Dispatch<React.SetStateAction<userInterface>>,
 }
+
+const useStyles = makeStyles(createStyles({
+    root: {
+        width: 396,
+        marginBottom: 15
+    }
+}))
 
 const SignUp: React.FC<SignUpProps> = ({history, user, setUser}) => {
     const [values, setValues] = useState({
@@ -45,6 +53,7 @@ const SignUp: React.FC<SignUpProps> = ({history, user, setUser}) => {
         } catch (err) {
         }
     };
+    const classAlert = useStyles()
     return (
         <>
         <div className={styles.row}>
@@ -62,12 +71,12 @@ const SignUp: React.FC<SignUpProps> = ({history, user, setUser}) => {
                 </div>
                 <div className={styles.row}>
                     <hr className={styles.double}/>
-                    <span style={{fontWeight: 300}}>Or</span>
+                    <span className={styles.spanWeight}>Or</span>
                     <hr className={styles.double}/>
                 </div>
                 <form onSubmit={register}>
                     <Inputs error={formError} values={values} setValues={setValues}/>
-                    {formError ? <Alert style={{width:396, marginBottom: 15}} variant="filled" severity="error">
+                    {formError ? <Alert className={classAlert.root} variant="filled" severity="error">
                             {formError} </Alert> : ""}
                     <div className={styles.bottomSign}>
                         <Button type="submit" className={styles.btn} variant="contained" color="secondary">Register</Button>

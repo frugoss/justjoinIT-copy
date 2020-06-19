@@ -13,6 +13,7 @@ import {withRouter, RouteComponentProps} from 'react-router-dom';
 import Alert from '@material-ui/lab/Alert';
 import Snackbar from "@material-ui/core/Snackbar";
 import Slide from "@material-ui/core/Slide";
+import { makeStyles, createStyles } from '@material-ui/core/styles';
 import Hidden from "@material-ui/core/Hidden";
 import {userInterface} from "../../utils/const";
 import {TransitionProps} from "@material-ui/core/transitions";
@@ -21,6 +22,12 @@ interface SignInProps extends RouteComponentProps {
     user: userInterface,
     setUser: React.Dispatch<React.SetStateAction<userInterface>>
 }
+const useStyles = makeStyles(createStyles({
+    root: {
+        width: 396,
+        marginBottom: 15
+    }
+}))
 
 const SignIn: React.FC<SignInProps> = ({setUser, user}) => {
     function SlideTransition (props:TransitionProps) {
@@ -46,7 +53,6 @@ const SignIn: React.FC<SignInProps> = ({setUser, user}) => {
             if (response.ok) {
                 response.text().then().then(text => {
                     setUser({...user, name: values.email, auth: true, userID: text, loggedPopup:true})
-                    console.log(text)
                 })
 
             } else {
@@ -59,7 +65,7 @@ const SignIn: React.FC<SignInProps> = ({setUser, user}) => {
         }
 
     };
-
+    const classAlert = useStyles()
     return (
         <div className={styles.row}>
             <Snackbar open={user.createPopup} TransitionComponent={SlideTransition} anchorOrigin={{vertical:'top', horizontal:'center'}} autoHideDuration={3000} onClose={handleClose}>
@@ -81,12 +87,12 @@ const SignIn: React.FC<SignInProps> = ({setUser, user}) => {
                 </div>
                 <div className={styles.row}>
                     <hr className={styles.double}/>
-                    <span style={{fontWeight: 300}}>Or</span>
+                    <span className={styles.spanWeight} >Or</span>
                     <hr className={styles.double}/>
                 </div>
                 <form onSubmit={login}>
                     <Inputs error={formError} values={values} setValues={setValues}/>
-                    {formError ? <Alert style={{width:396, marginBottom: 15}} variant="filled" severity="error">
+                    {formError ? <Alert className={classAlert.root} variant="filled" severity="error">
                         {formError}
                     </Alert> : ""}
                     <div className={styles.bottomSign}>

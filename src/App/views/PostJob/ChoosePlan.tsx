@@ -17,8 +17,8 @@ const ChoosePlan = () => {
             </div>
             <div className={styles.cards}>
                 <h1 className={styles.h1offer}>Poznaj ogłoszenia na Just Join IT</h1>
-                <div className={styles.pricetable}>
-                    <div className={styles.card} style={{paddingLeft: 30}}>
+                <div className={styles.priceTable}>
+                    <div className={styles.paddingLeft}>
                         <div className={styles.package}>
                             <div className={styles.header}>
                                 <div className={styles.title}>
@@ -34,50 +34,50 @@ const ChoosePlan = () => {
                                 <ul className={styles.benefits}>
                                     <li className={styles.point}>
                                         <div className={styles.iconActive}>
-                                            <span style={{lineHeight: 0}} className="lnr lnr-checkmark-circle"/>
+                                            <span className={`lnr lnr-checkmark-circle ${styles.spanLine}`}/>
                                         </div>
                                         Ogłoszenie w prasówce technologicznej
                                     </li>
                                     <li className={styles.point}>
                                         <div className={styles.iconNotActive}>
-                                            <span style={{lineHeight: 0}} className="lnr lnr-circle-minus"/>
+                                            <span className={`lnr lnr-circle-minus ${styles.spanLine}`}/>
                                         </div>
                                         Brak Customer Care
                                     </li>
                                     <li className={styles.point}>
                                         <div className={styles.iconNotActive}>
-                                            <span style={{lineHeight: 0}} className="lnr lnr-circle-minus"/>
+                                            <span className={`lnr lnr-circle-minus ${styles.spanLine}`}/>
                                         </div>
                                         Bez odświeżeń
                                     </li>
                                     <li className={styles.point}>
                                         <div className={styles.iconNotActive}>
-                                            <span style={{lineHeight: 0}} className="lnr lnr-circle-minus"/>
+                                            <span className={`lnr lnr-circle-minus ${styles.spanLine}`}/>
                                         </div>
                                         Brak promocji w Social Media
                                     </li>
                                     <li className={styles.point}>
                                         <div className={styles.iconNotActive}>
-                                            <span style={{lineHeight: 0}} className="lnr lnr-circle-minus"/>
+                                            <span className={`lnr lnr-circle-minus ${styles.spanLine}`}/>
                                         </div>
                                         Brak indywidualnego copy
                                     </li>
                                     <li className={styles.point}>
                                         <div className={styles.iconNotActive}>
-                                            <span style={{lineHeight: 0}} className="lnr lnr-circle-minus"/>
+                                            <span className={`lnr lnr-circle-minus ${styles.spanLine}`}/>
                                         </div>
                                         Brak Social Boost - płatna kampania marketingowa w social media na budżecie
                                         klienta
                                     </li>
 
                                 </ul>
-                                <Link style={{textDecoration: "none"}} to={"/add/basic"}>
+                                <Link className={styles.linkStyle} to={"/add/basic"}>
                                 <div className={styles.btn}>Kup ogłoszenie</div>
                                 </Link>
                             </div>
                         </div>
                     </div>
-                    <div className={styles.card} style={{paddingRight: 12}}>
+                    <div className={styles.paddingRight}>
                         <div className={styles.packageMiddle}>
                             <div className={styles.recom}>Najczęściej wybierany</div>
                             <div className={styles.header}>
@@ -94,50 +94,50 @@ const ChoosePlan = () => {
                                 <ul className={styles.benefits}>
                                     <li className={styles.point}>
                                         <div className={styles.iconActive}>
-                                            <span style={{lineHeight: 0}} className="lnr lnr-checkmark-circle"/>
+                                            <span className={`lnr lnr-checkmark-circle ${styles.spanLine}`}/>
                                         </div>
                                         Ogłoszenie w prasówce technologicznej
                                     </li>
                                     <li className={styles.point}>
                                         <div className={styles.iconActive}>
-                                            <span style={{lineHeight: 0}} className="lnr lnr-checkmark-circle"/>
+                                            <span className={`lnr lnr-checkmark-circle ${styles.spanLine}`}/>
                                         </div>
                                         Dedykowany opiekun Customer Care
                                     </li>
                                     <li className={styles.point}>
                                         <div className={styles.iconActive}>
-                                            <span style={{lineHeight: 0}} className="lnr lnr-checkmark-circle"/>
+                                            <span className={`lnr lnr-checkmark-circle ${styles.spanLine}`}/>
                                         </div>
                                         1 automatyczne odświeżenie
                                     </li>
                                     <li className={styles.point}>
                                         <div className={styles.iconNotActive}>
-                                            <span style={{lineHeight: 0}} className="lnr lnr-circle-minus"/>
+                                            <span className={`lnr lnr-circle-minus ${styles.spanLine}`}/>
                                         </div>
                                         Brak promocji w Social Media
                                     </li>
                                     <li className={styles.point}>
                                         <div className={styles.iconNotActive}>
-                                            <span style={{lineHeight: 0}} className="lnr lnr-circle-minus"/>
+                                            <span className={`lnr lnr-circle-minus ${styles.spanLine}`}/>
                                         </div>
                                         Brak indywidualnego copy
                                     </li>
                                     <li className={styles.point}>
                                         <div className={styles.iconNotActive}>
-                                            <span style={{lineHeight: 0}} className="lnr lnr-circle-minus"/>
+                                            <span className={`lnr lnr-circle-minus ${styles.spanLine}`}/>
                                         </div>
                                         Brak Social Boost - płatna kampania marketingowa w social media na budżecie
                                         klienta
                                     </li>
 
                                 </ul>
-                                <Link style={{textDecoration: "none"}} to={"/add/premium"}>
+                                <Link className={styles.linkStyle} to={"/add/premium"}>
                                 <div className={styles.btn}>Kup ogłoszenie</div>
                                 </Link>
                             </div>
                         </div>
                     </div>
-                    <div className={styles.card} style={{paddingRight: 30}}>
+                    <div className={styles.paddingRight30}>
                         <div className={styles.package}>
                             <div className={styles.header}>
                                 <div className={styles.title}>
@@ -153,43 +153,43 @@ const ChoosePlan = () => {
                                 <ul className={styles.benefits}>
                                     <li className={styles.point}>
                                         <div className={styles.iconActive}>
-                                            <span style={{lineHeight: 0}} className="lnr lnr-checkmark-circle"/>
+                                            <span className={`lnr lnr-checkmark-circle ${styles.spanLine}`}/>
                                         </div>
                                         Ogłoszenie w prasówce technologicznej
                                     </li>
                                     <li className={styles.point}>
                                         <div className={styles.iconActive}>
-                                            <span style={{lineHeight: 0}} className="lnr lnr-checkmark-circle"/>
+                                            <span className={`lnr lnr-checkmark-circle ${styles.spanLine}`}/>
                                         </div>
                                         Dedykowany opiekun Customer Care
                                     </li>
                                     <li className={styles.point}>
                                         <div className={styles.iconActive}>
-                                            <span style={{lineHeight: 0}} className="lnr lnr-checkmark-circle"/>
+                                            <span className={`lnr lnr-checkmark-circle ${styles.spanLine}`}/>
                                         </div>
                                         2 automatyczne odświeżenia
                                     </li>
                                     <li className={styles.point}>
                                         <div className={styles.iconActive}>
-                                            <span style={{lineHeight: 0}} className="lnr lnr-checkmark-circle"/>
+                                            <span className={`lnr lnr-checkmark-circle ${styles.spanLine}`}/>
                                         </div>
                                         Indywidualna promocja w Social Media
                                     </li>
                                     <li className={styles.point}>
                                         <div className={styles.iconActive}>
-                                            <span style={{lineHeight: 0}} className="lnr lnr-checkmark-circle"/>
+                                            <span className={`lnr lnr-checkmark-circle ${styles.spanLine}`}/>
                                         </div>
                                         Indywidualne copy ogłoszenia + audyt
                                     </li>
                                     <li className={styles.point}>
                                         <div className={styles.iconActive}>
-                                            <span style={{lineHeight: 0}} className="lnr lnr-checkmark-circle"/>
+                                            <span className={`lnr lnr-checkmark-circle ${styles.spanLine}`}/>
                                         </div>
                                         Możliwy Social Boost - płatna kampania marketingowa w social media na budżecie klienta
                                     </li>
 
                                 </ul>
-                                <Link style={{textDecoration: "none"}} to={"/add/business"}>
+                                <Link className={styles.linkStyle} to={"/add/business"}>
                                 <div className={styles.btn}>Kup ogłoszenie</div>
                                 </Link>
                             </div>

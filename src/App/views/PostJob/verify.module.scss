@@ -14,8 +14,9 @@
   }
 }
 
-;
-
+.tagsPadding{
+  padding: 0px 50px 10px 15px;
+}
 .color {
   flex-basis: 6px;
   background: rgb(255, 199, 6);
@@ -140,7 +141,7 @@
   border-radius: 100px;
 }
 
-.titlesalary {
+.titleSalary {
   margin: 0px 0px 0px 25px;
 }
 
@@ -171,7 +172,7 @@
   font-size: 1.2rem;
 }
 
-.itskills {
+.itSkills {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -193,8 +194,10 @@
   margin: 0px 5px;
   padding: 20px 5px;
 }
-
-.skillcircle {
+.flexRow{
+  display: flex;
+}
+.skillCircle {
   box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 2px 0px, rgba(0, 0, 0, 0.06) 0px 1px 5px 0px;
   display: flex;
   justify-content: center;
@@ -207,17 +210,26 @@
   padding: 8px;
 }
 
-.companydetails {
+.companyDetails {
   white-space: nowrap;
   color: rgb(153, 161, 171);
   font-size: 11px;
 }
-
+.linkStyle{
+  text-decoration: none
+}
 .techStack {
   box-shadow: rgba(225, 232, 240, 0.7) 0px 2px 18px 10px;
   margin-top: 40px;
   background: rgb(255, 255, 255);
   border-radius: 5px;
+}
+
+.agreementsContainer{
+  margin-top: 0;
+  background: rgb(255, 255, 255);
+  border-radius: 5px;
+  box-shadow: rgba(225, 232, 240, 0.7) 0px 2px 18px 10px;
 }
 
 .titleTech {
@@ -251,7 +263,7 @@
   padding: 30px;
 }
 
-.additionaldesc {
+.additionalDesc {
   color: rgb(55, 71, 79);
   font-size: 14px;
   line-height: 1.5;

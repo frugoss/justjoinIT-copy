@@ -50,6 +50,10 @@ const useStyles = makeStyles(createStyles({
             borderColor: "rgb(186, 104, 200)",
             backgroundColor: "white"
         }
+    },
+    divider: {
+        marginTop: 45,
+        marginBottom: 20
     }
 }));
 const Transition = forwardRef(function Transition(
@@ -69,7 +73,7 @@ type ExpSalaryFilterMobileProps = {
 
 }
 const ExpSalaryFilterMobile: React.FC<ExpSalaryFilterMobileProps> = ({valuetext, updateFilter, filters, handleSliderChange, salaryFilter, handleSliderChangeCommitted}) => {
-    const buttonClass = useStyles()
+    const classes = useStyles()
     const sliderClass = sliderStyles();
     const text = "Filters"
     const [open, setOpen] = useState(false);
@@ -87,7 +91,7 @@ const ExpSalaryFilterMobile: React.FC<ExpSalaryFilterMobileProps> = ({valuetext,
     return (
         <>
             <Button
-                className={(Number(filters.salarymin) !== 0 || Number(filters.salarymax) !== 50 || filters.experience !== "all") ? `${styles.activeButton} ${buttonClass.root}` : buttonClass.root}
+                className={(Number(filters.salarymin) !== 0 || Number(filters.salarymax) !== 50 || filters.experience !== "all") ? `${styles.activeButton} ${classes.root}` : classes.root}
                 variant="outlined" onClick={handleClickOpen}>
                 {text}
             </Button>
@@ -98,10 +102,10 @@ const ExpSalaryFilterMobile: React.FC<ExpSalaryFilterMobileProps> = ({valuetext,
                         <CloseIcon/>
                     </IconButton>
                     <h2 className={styles.textTitleMobile}>{text}</h2>
-                    <Divider style={{marginTop: 45}}/>
+                    <Divider className={classes.divider}/>
                 </div>
 
-                <div style={{marginTop: 20}}>
+                <div>
                     <Typography className={sliderClass.expText} id="range-slider" gutterBottom>
                         Choose experience level
                     </Typography>

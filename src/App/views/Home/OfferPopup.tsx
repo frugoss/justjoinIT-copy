@@ -14,7 +14,7 @@ const OfferPopup: React.FC<OfferPopupProps> = ({offer}) => {
 
     return (
         <Popup>
-            <div style={{display: "flex"}}>
+            <div className={styles.flexRow}>
                 <div className={clsx(styles.flexColumn, styles.popupContainer)}>
                     <img alt="logo" className={styles.iconSize} src={offer.logo}/>
                 </div>
@@ -23,7 +23,7 @@ const OfferPopup: React.FC<OfferPopupProps> = ({offer}) => {
                         {offer.title}
                     </div>
                     <div className={styles.flexRow}>
-                    <span style={{color: "rgb(30, 198, 108)"}}>
+                    <span className={styles.spanStyle}>
                         <NumberFormat value={offer.minSalary} thousandSeparator={" "} displayType={'text'}/> - <NumberFormat value={offer.maxSalary} thousandSeparator={" "} displayType={'text'}/>  {offer.currency}</span>
                     </div>
                     <div className={styles.flexRow}>
