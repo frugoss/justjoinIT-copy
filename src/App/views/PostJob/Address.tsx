@@ -40,7 +40,6 @@ const Address: React.FC<AddressProps> = ({ values, required}) => {
     }
     useEffect(() => {
         if (fullAddress !== " ") {
-            console.log("fetchu idzie")
             opencage.geocode({
                 key: "7e19a11fe0654ef8ba6c34d56cb9b83d",
                 q: fullAddress,
@@ -57,7 +56,6 @@ const Address: React.FC<AddressProps> = ({ values, required}) => {
         }
     }, [fullAddress])
 
-    console.log(fullAddress, values)
 
     return (
         <>

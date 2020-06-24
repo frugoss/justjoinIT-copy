@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../Home/home.module.scss";
 import ButtonBase from "@material-ui/core/ButtonBase";
 
-type IconsProps = {
+export type IconsProps = {
     name: string,
     to: string,
     img: string,

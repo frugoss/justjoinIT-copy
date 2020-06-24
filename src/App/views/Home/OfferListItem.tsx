@@ -28,11 +28,13 @@ const OfferListItem: React.FC<OfferListItemProps> = ({offer, applications}) => {
         setOpen(true);
     };
 
+    const [showCvs, setShowCvs] = useState<applicationInterface[]>()
+
     let cvCount: { [key: string]: number; }  = {};
     const cvCountFunc = (key:string) => {
 
         if (cvCount[key] === undefined){
-            cvCount[key] = 0
+            cvCount[key] = 1
         } else{
             cvCount[key] = cvCount[key] + 1
         }
@@ -46,7 +48,7 @@ const OfferListItem: React.FC<OfferListItemProps> = ({offer, applications}) => {
         }
     })
 }
-    const [showCvs, setShowCvs] = useState<applicationInterface[]>()
+
     const [title, setTitle] = useState('')
     const matchingApplications = (offerID:string) => {
         if (applications !== undefined) {
@@ -101,9 +103,7 @@ const OfferListItem: React.FC<OfferListItemProps> = ({offer, applications}) => {
                 }}>
                     <DescriptionIcon className={styles.iconCvSize}/>
                     <div className={styles.dashboardCVContainer}>
-                        <span>
-                    {cvCount[offer._id] !== undefined ? cvCount[offer._id] : "0"}</span>
-                        <span>CV</span>
+                    {cvCount[offer._id] !== undefined ? cvCount[offer._id] : "0"} CV
                     </div>
                 </div> : ""}
                 <OfferListItemCV setOpen={setOpen} showCvs={showCvs} open={open} title={title}/>

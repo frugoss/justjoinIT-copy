@@ -17,8 +17,11 @@ import { makeStyles, createStyles } from '@material-ui/core/styles';
 import Hidden from "@material-ui/core/Hidden";
 import {userInterface} from "../../utils/const";
 import {TransitionProps} from "@material-ui/core/transitions";
+import {API_HOST} from 'App/utils/api'
 
-interface SignInProps extends RouteComponentProps {
+
+
+export interface SignInProps extends RouteComponentProps {
     user: userInterface,
     setUser: React.Dispatch<React.SetStateAction<userInterface>>
 }
@@ -29,7 +32,7 @@ const useStyles = makeStyles(createStyles({
     }
 }))
 
-const SignIn: React.FC<SignInProps> = ({setUser, user}) => {
+const SignIn: React.FC<SignInProps> = ({setUser, user, history}) => {
     function SlideTransition (props:TransitionProps) {
         return <Slide {...props} direction="down" />;
     }
@@ -44,7 +47,7 @@ const SignIn: React.FC<SignInProps> = ({setUser, user}) => {
         const login = async (event: React.FormEvent<HTMLFormElement>) => {
             event.preventDefault();
         try {
-            const response = await fetch("http://192.168.10.25:7000/devs", {
+            const response = await fetch(`${API_HOST}/devs`, {
                 method: "POST",
                 body: JSON.stringify(values),
                 headers: {"Content-Type": "application/json"},
@@ -53,12 +56,13 @@ const SignIn: React.FC<SignInProps> = ({setUser, user}) => {
             if (response.ok) {
                 response.text().then().then(text => {
                     setUser({...user, name: values.email, auth: true, userID: text, loggedPopup:true})
+                    history.push("/dashboard")
                 })
 
             } else {
-                response.text()
-                    .then(text => {
+                response.text().then().then(text => {
                       setFormError(text)
+
                     });
             }
         } catch (err) {

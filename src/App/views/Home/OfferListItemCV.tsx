@@ -8,6 +8,7 @@ import CheckIcon from "@material-ui/icons/Check";
 import React from "react";
 import {applicationInterface} from "../../utils/const";
 import {makeStyles, createStyles} from '@material-ui/core/styles'
+import {API_HOST} from "../../utils/api";
 
 type OfferListItemCVProps = {
     setOpen:React.Dispatch<React.SetStateAction<boolean>>,
@@ -49,9 +50,9 @@ const classes = useStyles()
                         <div key={index} className={styles.fontInsideDialog}>
                             <div><span className={styles.spanFont}>Name: </span>{application.name} </div>
                             <div><span className={styles.spanFont}>Email: </span> {application.email} </div>
-                            <div><span className={styles.spanFont}>Message:</span> {application.message === undefined ? "No description provided" : application.message}</div>
+                            <div><span className={styles.spanFont}>Message:</span> {application.message === "undefined" ? "No description provided" : application.message}</div>
                             <a className={styles.CVButton}
-                                target="_blank" rel="noopener noreferrer"  href={`http://192.168.10.25:7000/upload/${application.file}`}>Show CV</a>
+                                target="_blank" rel="noopener noreferrer"  href={`${API_HOST}/upload/${application.file}`}>Show CV</a>
                             <div className={styles.processing}><span className={styles.recruitmentMobile}>Processing data in future
                                 recruitment: </span>{application.checkbox ?
                                     <div className={styles.centerIcon}><CheckIcon

@@ -89,7 +89,7 @@ export interface formValuesCV  {
     name:string,
     email:string,
     message: string,
-    checkbox: string,
+    checkbox: boolean,
     file: File,
     offerID: string
 }

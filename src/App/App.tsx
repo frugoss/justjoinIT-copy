@@ -14,6 +14,7 @@ import Alert from "@material-ui/lab/Alert";
 import Slide from '@material-ui/core/Slide';
 import {userInterface} from "./utils/const";
 import {TransitionProps} from "@material-ui/core/transitions";
+import {API_HOST} from "./utils/api";
 
 const SlideTransition = (props:TransitionProps) => {
     return <Slide {...props} direction="down"/>;
@@ -32,7 +33,7 @@ const App: React.FC = () => {
     const [fetching, setFetching] = useState(true)
     const [offers, setOffers] = useState([])
     const fetchOffers = () => {
-        fetch("http://192.168.10.25:7000/").then(function (response) {
+        fetch(API_HOST).then(function (response) {
             response.json().then(json => {
                     setOffers(json)
                     setFetching(false)
@@ -44,8 +45,7 @@ const App: React.FC = () => {
 
 
     useEffect(() => {
-        console.log(user)
-        fetch("http://192.168.10.25:7000/me", {
+        fetch(`${API_HOST}/me`, {
             method: "GET",
             credentials: "include"
         }).then(function (response) {
@@ -106,7 +106,7 @@ const App: React.FC = () => {
                     />
                     <Route
                         path='/devs'
-                        render={(props) => (user && !user.auth ? <SignIn {...props} user={user} setUser={setUser}/>
+                        render={(props) => ( user && !user.auth ? <SignIn {...props} user={user} setUser={setUser}/>
                             : <Redirect to="/dashboard"/>)}
                         exact
                     />

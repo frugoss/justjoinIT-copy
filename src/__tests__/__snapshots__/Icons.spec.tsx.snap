@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Icons /> snapshot 1`] = `
+<div>
+  <div
+    class="iconContainerAdd"
+  >
+    <button
+      class="MuiButtonBase-root"
+      tabindex="0"
+      type="button"
+    >
+      <img
+        alt="Logo"
+        class="langImg"
+        src="img"
+      />
+       
+    </button>
+    <div
+      class="test"
+    >
+      test
+    </div>
+  </div>
+</div>
+`;

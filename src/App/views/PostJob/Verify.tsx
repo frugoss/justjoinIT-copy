@@ -16,6 +16,7 @@ import NumberFormat from "react-number-format";
 import {formInterface, userInterface} from "../../utils/const";
 import {History} from "history";
 import {experience} from "./const";
+import {API_HOST} from "../../utils/api";
 
 
 type VerifyProps = {
@@ -74,7 +75,7 @@ const Verify: React.FC<VerifyProps> = ({setUser, user, history, formValues, setA
 
     const sendOffer = async () => {
             try {
-                const response = await fetch("http://192.168.10.25:7000/add", {
+                const response = await fetch(`${API_HOST}/add`, {
                     method: "POST",
                     body: JSON.stringify(formValues),
                     headers: {"Content-Type": "application/json"},

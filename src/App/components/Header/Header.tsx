@@ -12,6 +12,7 @@ import Menu from "./Menu"
 import {withStyles, createStyles} from "@material-ui/core/styles";
 import ButtonBase from "@material-ui/core/ButtonBase";
 import {userInterface} from "../../utils/const";
+import {API_HOST} from "../../utils/api";
 
 const StyledButton = withStyles(createStyles({
     root: {
@@ -37,7 +38,7 @@ const Header: React.FC<HeaderProps> = ({location, setUser, user}) => {
     const logout: () => void = () => {
         setUser({...user, auth: false, offPopup: true})
         try {
-            fetch("http://192.168.10.25:7000/devs/logout", {
+            fetch(`${API_HOST}/devs/logout`, {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 credentials: "include"

@@ -1,25 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test AddOffer render errors 1`] = `
+exports[`Test AddOffer render errors: After submit with errors 1`] = `
 <div>
   <div
-    style="display: flex; justify-content: center; align-items: center; flex-direction: column; background-color: rgb(243, 246, 248);"
+    class="addOfferContainer"
   >
     <div
       class="card"
     >
       <a
+        class="linkRoute"
         href="/add"
-        styles="[object Object]"
       >
         <div
           class="backButton"
         >
           <svg
             aria-hidden="true"
-            class="MuiSvgIcon-root"
+            class="MuiSvgIcon-root makeStyles-iconAlignment-3"
             focusable="false"
-            style="vertical-align: middle;"
             viewBox="0 0 24 24"
           >
             <path
@@ -35,18 +34,16 @@ exports[`Test AddOffer render errors 1`] = `
       >
         <div
           class="row"
-          style="display: flex; width: 100%;"
         >
           <div
-            class="container"
-            style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 33.33%;"
+            class="dropzoneContainer"
           >
             <div
-              class="dropzone"
-              style="display: flex; flex-direction: column; align-items: center;"
+              class="dropzoneFlex"
               tabindex="0"
             >
               <input
+                accept="image/jpeg, image/png"
                 autocomplete="off"
                 multiple=""
                 style="display: none;"
@@ -57,7 +54,7 @@ exports[`Test AddOffer render errors 1`] = `
                 aria-hidden="true"
                 class="MuiSvgIcon-root"
                 focusable="false"
-                style="font-size: 60px;"
+                style="font-size: 60px; color: rgb(244, 67, 54);"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -66,63 +63,54 @@ exports[`Test AddOffer render errors 1`] = `
               </svg>
               <div>
                 <h3
-                  class=""
+                  class="red"
                 >
                   Upload/Drop Logo * 
-                  <button
-                    aria-label="Question Mark"
-                    class="MuiButtonBase-root MuiIconButton-root makeStyles-button-1"
-                    tabindex="0"
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    style="font-size: 14px; color: rgb(244, 67, 54);"
                     title="Upload company logo .png/.jpg/.jpeg in any resolution."
-                    type="button"
+                    viewBox="0 0 24 24"
                   >
-                    <span
-                      class="MuiIconButton-label"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        class="MuiSvgIcon-root"
-                        focusable="false"
-                        style="font-size: 14px;"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"
-                        />
-                      </svg>
-                    </span>
-                    <span
-                      class="MuiTouchRipple-root"
+                    <path
+                      d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"
                     />
-                  </button>
+                  </svg>
                 </h3>
-                
+                <h3
+                  class="dropzoneError"
+                >
+                  Company logo is required
+                </h3>
               </div>
             </div>
           </div>
           <div
-            style="display: flex; flex-direction: column; width: 33.33%; padding: 0px 0.75rem;"
+            class="topContainer"
           >
             <div
-              class="MuiFormControl-root MuiTextField-root makeStyles-textField-2 MuiFormControl-fullWidth"
+              class="MuiFormControl-root MuiTextField-root makeStyles-textField-1 MuiFormControl-fullWidth"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated Mui-required Mui-required"
+                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated Mui-error Mui-error Mui-required Mui-required"
                 data-shrink="false"
               >
                 Short company name
                 <span
-                  class="MuiFormLabel-asterisk MuiInputLabel-asterisk"
+                  aria-hidden="true"
+                  class="MuiFormLabel-asterisk MuiInputLabel-asterisk Mui-error Mui-error"
                 >
                    
                   *
                 </span>
               </label>
               <div
-                class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+                class="MuiInputBase-root MuiInput-root MuiInput-underline Mui-error Mui-error MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
               >
                 <input
-                  aria-invalid="false"
+                  aria-invalid="true"
                   class="MuiInputBase-input MuiInput-input"
                   name="company"
                   required=""
@@ -130,27 +118,33 @@ exports[`Test AddOffer render errors 1`] = `
                   value=""
                 />
               </div>
+              <p
+                class="MuiFormHelperText-root Mui-error Mui-required"
+              >
+                Field is required
+              </p>
             </div>
             <div
-              class="MuiFormControl-root MuiTextField-root makeStyles-textField-2 MuiFormControl-fullWidth"
+              class="MuiFormControl-root MuiTextField-root makeStyles-textField-1 MuiFormControl-fullWidth"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated Mui-required Mui-required"
+                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated Mui-error Mui-error Mui-required Mui-required"
                 data-shrink="false"
               >
                 Company website
                 <span
-                  class="MuiFormLabel-asterisk MuiInputLabel-asterisk"
+                  aria-hidden="true"
+                  class="MuiFormLabel-asterisk MuiInputLabel-asterisk Mui-error Mui-error"
                 >
                    
                   *
                 </span>
               </label>
               <div
-                class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+                class="MuiInputBase-root MuiInput-root MuiInput-underline Mui-error Mui-error MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
               >
                 <input
-                  aria-invalid="false"
+                  aria-invalid="true"
                   class="MuiInputBase-input MuiInput-input"
                   name="website"
                   required=""
@@ -158,71 +152,70 @@ exports[`Test AddOffer render errors 1`] = `
                   value=""
                 />
               </div>
+              <p
+                class="MuiFormHelperText-root Mui-error Mui-required"
+              >
+                Invalid format ex. www.web.com
+              </p>
             </div>
             <div
-              class="MuiFormControl-root MuiTextField-root makeStyles-textField-2 MuiFormControl-fullWidth"
+              class="MuiFormControl-root MuiTextField-root makeStyles-textField-1 MuiFormControl-fullWidth"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink Mui-required Mui-required"
+                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink Mui-error Mui-error Mui-required Mui-required"
                 data-shrink="true"
               >
                 Company size
                 <span
-                  class="MuiFormLabel-asterisk MuiInputLabel-asterisk"
+                  aria-hidden="true"
+                  class="MuiFormLabel-asterisk MuiInputLabel-asterisk Mui-error Mui-error"
                 >
                    
                   *
                 </span>
               </label>
               <div
-                class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+                class="MuiInputBase-root MuiInput-root MuiInput-underline Mui-error Mui-error MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-adornedEnd"
               >
                 <input
-                  aria-invalid="false"
-                  class="MuiInputBase-input MuiInput-input"
+                  aria-invalid="true"
+                  class="MuiInputBase-input MuiInput-input MuiInputBase-inputAdornedEnd"
                   name="companySize"
                   placeholder="10 - 23"
                   required=""
                   type="text"
                   value=""
                 />
-              </div>
-            </div>
-            <button
-              aria-label="Question Mark"
-              class="MuiButtonBase-root MuiIconButton-root makeStyles-button-1"
-              style="font-size: 14px; width: 20px; right: -240px; top: -40px;"
-              tabindex="0"
-              type="button"
-            >
-              <span
-                class="MuiIconButton-label"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root"
-                  focusable="false"
-                  style="font-size: 14px;"
-                  viewBox="0 0 24 24"
+                <div
+                  class="MuiInputAdornment-root MuiInputAdornment-positionEnd"
                 >
-                  <path
-                    d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"
-                  />
-                </svg>
-              </span>
-              <span
-                class="MuiTouchRipple-root"
-              />
-            </button>
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root makeStyles-outlineIcon-4"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <p
+                class="MuiFormHelperText-root Mui-error Mui-required"
+              >
+                Field is required
+              </p>
+            </div>
           </div>
           <div
-            style="display: flex; flex-direction: column; width: 33.33%; margin-top: 68px; padding: 0px 0.75rem;"
+            class="topContainerCompany"
           >
             <div
               class="MuiFormControl-root MuiFormControl-fullWidth"
             >
               <div
-                class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-selectField-3 MuiInputBase-formControl MuiInput-formControl"
+                class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-selectField-2 Mui-error Mui-error MuiInputBase-formControl MuiInput-formControl"
               >
                 <div
                   aria-haspopup="listbox"
@@ -235,8 +228,11 @@ exports[`Test AddOffer render errors 1`] = `
                   Choose company type
                 </div>
                 <input
+                  aria-hidden="true"
+                  class="MuiSelect-nativeInput"
                   name="companyType"
-                  type="hidden"
+                  required=""
+                  tabindex="-1"
                   value=""
                 />
                 <svg
@@ -250,13 +246,17 @@ exports[`Test AddOffer render errors 1`] = `
                   />
                 </svg>
               </div>
+              <p
+                class="MuiFormHelperText-root Mui-error Mui-required"
+              >
+                Field is required
+              </p>
             </div>
             <div
               class="MuiFormControl-root MuiFormControl-fullWidth"
             >
               <div
-                class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-selectField-3 MuiInputBase-formControl MuiInput-formControl"
-                style="margin-top: 20px;"
+                class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-selectMargin-5 Mui-error Mui-error MuiInputBase-formControl MuiInput-formControl"
               >
                 <div
                   aria-haspopup="listbox"
@@ -269,8 +269,11 @@ exports[`Test AddOffer render errors 1`] = `
                   Choose company industry
                 </div>
                 <input
+                  aria-hidden="true"
+                  class="MuiSelect-nativeInput"
                   name="companyIndustry"
-                  type="hidden"
+                  required=""
+                  tabindex="-1"
                   value=""
                 />
                 <svg
@@ -284,35 +287,41 @@ exports[`Test AddOffer render errors 1`] = `
                   />
                 </svg>
               </div>
+              <p
+                class="MuiFormHelperText-root Mui-error Mui-required"
+              >
+                Field is required
+              </p>
             </div>
           </div>
         </div>
         <div
-          style="display: flex; width: 100%; padding: 0px 0.75rem;"
+          class="middleContainer"
         >
           <div
-            style="width: 33.33%; padding: 0px 0.75rem;"
+            class="widthPadding"
           >
             <div
-              class="MuiFormControl-root MuiTextField-root makeStyles-textField-2 MuiFormControl-fullWidth"
+              class="MuiFormControl-root MuiTextField-root makeStyles-textField-1 MuiFormControl-fullWidth"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated Mui-required Mui-required"
+                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated Mui-error Mui-error Mui-required Mui-required"
                 data-shrink="false"
               >
                 Title
                 <span
-                  class="MuiFormLabel-asterisk MuiInputLabel-asterisk"
+                  aria-hidden="true"
+                  class="MuiFormLabel-asterisk MuiInputLabel-asterisk Mui-error Mui-error"
                 >
                    
                   *
                 </span>
               </label>
               <div
-                class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+                class="MuiInputBase-root MuiInput-root MuiInput-underline Mui-error Mui-error MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
               >
                 <input
-                  aria-invalid="false"
+                  aria-invalid="true"
                   class="MuiInputBase-input MuiInput-input"
                   name="title"
                   required=""
@@ -320,16 +329,21 @@ exports[`Test AddOffer render errors 1`] = `
                   value=""
                 />
               </div>
+              <p
+                class="MuiFormHelperText-root Mui-error Mui-required"
+              >
+                Field is required
+              </p>
             </div>
           </div>
           <div
-            style="width: 33.33%; padding: 0px 0.75rem;"
+            class="widthPadding"
           >
             <div
               class="MuiFormControl-root MuiFormControl-fullWidth"
             >
               <div
-                class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-selectField-3 MuiInputBase-formControl MuiInput-formControl"
+                class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-selectField-2 Mui-error Mui-error MuiInputBase-formControl MuiInput-formControl"
               >
                 <div
                   aria-haspopup="listbox"
@@ -342,8 +356,11 @@ exports[`Test AddOffer render errors 1`] = `
                   Choose an experience level
                 </div>
                 <input
+                  aria-hidden="true"
+                  class="MuiSelect-nativeInput"
                   name="experience"
-                  type="hidden"
+                  required=""
+                  tabindex="-1"
                   value=""
                 />
                 <svg
@@ -357,16 +374,21 @@ exports[`Test AddOffer render errors 1`] = `
                   />
                 </svg>
               </div>
+              <p
+                class="MuiFormHelperText-root Mui-error Mui-required"
+              >
+                Field is required
+              </p>
             </div>
           </div>
           <div
-            style="width: 33.33%; padding: 0px 0.75rem;"
+            class="widthPadding"
           >
             <div
               class="MuiFormControl-root MuiFormControl-fullWidth"
             >
               <div
-                class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-selectField-3 MuiInputBase-formControl MuiInput-formControl"
+                class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-selectField-2 Mui-error Mui-error MuiInputBase-formControl MuiInput-formControl"
               >
                 <div
                   aria-haspopup="listbox"
@@ -379,8 +401,11 @@ exports[`Test AddOffer render errors 1`] = `
                   Choose an employment type
                 </div>
                 <input
+                  aria-hidden="true"
+                  class="MuiSelect-nativeInput"
                   name="employment"
-                  type="hidden"
+                  required=""
+                  tabindex="-1"
                   value=""
                 />
                 <svg
@@ -394,17 +419,22 @@ exports[`Test AddOffer render errors 1`] = `
                   />
                 </svg>
               </div>
+              <p
+                class="MuiFormHelperText-root Mui-error Mui-required"
+              >
+                Field is required
+              </p>
             </div>
           </div>
         </div>
         <div
-          style="display: flex; width: 100%; padding: 0px 0.75rem;"
+          class="middleContainer"
         >
           <div
-            style="width: 33.33%; padding: 0px 0.75rem;"
+            class="widthPadding"
           >
             <div
-              class="MuiFormControl-root MuiTextField-root makeStyles-textField-2 MuiFormControl-fullWidth"
+              class="MuiFormControl-root MuiTextField-root makeStyles-textField-1 MuiFormControl-fullWidth"
             >
               <label
                 class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
@@ -413,23 +443,37 @@ exports[`Test AddOffer render errors 1`] = `
                 Monthly salary from (invoice net)
               </label>
               <div
-                class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+                class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-adornedEnd"
               >
                 <input
                   aria-invalid="false"
-                  class="MuiInputBase-input MuiInput-input"
+                  class="MuiInputBase-input MuiInput-input MuiInputBase-inputAdornedEnd"
                   name="minSalary"
                   type="number"
                   value=""
                 />
+                <div
+                  class="MuiInputAdornment-root MuiInputAdornment-positionEnd"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root makeStyles-outlineFont-6"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"
+                    />
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
           <div
-            style="width: 33.33%; padding: 0px 0.75rem;"
+            class="widthPadding"
           >
             <div
-              class="MuiFormControl-root MuiTextField-root makeStyles-textField-2 MuiFormControl-fullWidth"
+              class="MuiFormControl-root MuiTextField-root makeStyles-textField-1 MuiFormControl-fullWidth"
             >
               <label
                 class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
@@ -451,13 +495,13 @@ exports[`Test AddOffer render errors 1`] = `
             </div>
           </div>
           <div
-            style="width: 33.33%; padding: 0px 0.75rem;"
+            class="widthPadding"
           >
             <div
               class="MuiFormControl-root MuiFormControl-fullWidth"
             >
               <div
-                class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-selectField-3 MuiInputBase-formControl MuiInput-formControl"
+                class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-selectField-2 MuiInputBase-formControl MuiInput-formControl"
               >
                 <div
                   aria-haspopup="listbox"
@@ -470,8 +514,10 @@ exports[`Test AddOffer render errors 1`] = `
                   Choose currency
                 </div>
                 <input
+                  aria-hidden="true"
+                  class="MuiSelect-nativeInput"
                   name="currency"
-                  type="hidden"
+                  tabindex="-1"
                   value=""
                 />
                 <svg
@@ -489,57 +535,41 @@ exports[`Test AddOffer render errors 1`] = `
           </div>
         </div>
         <div
-          style="width: 100%; height: 100%;"
+          class="width100"
         >
           <h3
-            style="margin: 0px 0px 0px 10px;"
+            class="titleMargin"
           >
             Tech Stack 
-            <button
-              aria-label="Question Mark"
-              class="MuiButtonBase-root MuiIconButton-root makeStyles-button-1"
-              tabindex="0"
-              type="button"
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root makeStyles-outlineFont-6"
+              focusable="false"
+              viewBox="0 0 24 24"
             >
-              <span
-                class="MuiIconButton-label"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root"
-                  focusable="false"
-                  style="font-size: 14px;"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"
-                  />
-                </svg>
-              </span>
-              <span
-                class="MuiTouchRipple-root"
+              <path
+                d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"
               />
-            </button>
+            </svg>
           </h3>
           <div
-            style="padding: 0px 0.75rem; margin-left: 10px;"
+            class="techStackContainer"
           >
             <div
               aria-expanded="false"
-              class="MuiAutocomplete-root"
+              class="MuiAutocomplete-root makeStyles-autocomplete-11"
               role="combobox"
-              style="width: 264px;"
             >
               <div
                 class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
               >
                 
                 <div
-                  class="MuiInputBase-root MuiInput-root MuiInput-underline MuiAutocomplete-inputRoot MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-adornedEnd"
+                  class="MuiInputBase-root MuiInput-root MuiInput-underline MuiAutocomplete-inputRoot Mui-error Mui-error MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-adornedEnd"
                 >
                   <input
                     aria-autocomplete="list"
-                    aria-invalid="false"
+                    aria-invalid="true"
                     autocapitalize="none"
                     autocomplete="off"
                     class="MuiInputBase-input MuiInput-input MuiAutocomplete-input MuiAutocomplete-inputFocused MuiInputBase-inputAdornedEnd"
@@ -557,83 +587,68 @@ exports[`Test AddOffer render errors 1`] = `
             </div>
             <div />
             <div
-              style="display: flex; flex-wrap: wrap;"
+              class="techStackList"
             />
           </div>
         </div>
         <div
-          style="width: 100%; height: 100%;"
+          class="width100"
         >
           <h3
-            style="margin: 15px 0px 15px 10px;"
+            class="titleMargin"
           >
             Job description 
-            <button
-              aria-label="Question Mark"
-              class="MuiButtonBase-root MuiIconButton-root makeStyles-button-1"
-              tabindex="0"
-              title="This section should contain: \\"about us\\", \\"your responsibilities\\", \\"our requirements\\", \\"nice to have\\", \\"we offer\\". "
-              type="button"
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root makeStyles-outlineFont-6"
+              focusable="false"
+              viewBox="0 0 24 24"
             >
-              <span
-                class="MuiIconButton-label"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root"
-                  focusable="false"
-                  style="font-size: 14px;"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"
-                  />
-                </svg>
-              </span>
-              <span
-                class="MuiTouchRipple-root"
+              <path
+                d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"
               />
-            </button>
+            </svg>
           </h3>
           <div>
             Fajny trix
           </div>
         </div>
         <div
-          style="display: flex; width: 100%;"
+          class="flexWidth"
         >
           <h3
-            style="margin: 20px 0px 10px 10px;"
+            class="titleMargin"
           >
             Choose your location
           </h3>
         </div>
         <div
-          style="display: flex; width: 100%;"
+          class="flexWidth"
         >
           <div
-            style="width: 33.33%; padding: 0px 0.75rem;"
+            class="addressContainer"
           >
             <div
-              class="MuiFormControl-root MuiTextField-root makeStyles-textField-224 MuiFormControl-fullWidth"
+              class="MuiFormControl-root MuiTextField-root makeStyles-textField-18 MuiFormControl-fullWidth"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink Mui-required Mui-required"
+                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink Mui-error Mui-error Mui-required Mui-required"
                 data-shrink="true"
               >
                 Office City
                 <span
-                  class="MuiFormLabel-asterisk MuiInputLabel-asterisk"
+                  aria-hidden="true"
+                  class="MuiFormLabel-asterisk MuiInputLabel-asterisk Mui-error Mui-error"
                 >
                    
                   *
                 </span>
               </label>
               <div
-                class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+                class="MuiInputBase-root MuiInput-root MuiInput-underline Mui-error Mui-error MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
               >
                 <input
-                  aria-invalid="false"
+                  aria-invalid="true"
                   class="MuiInputBase-input MuiInput-input"
                   name="city"
                   placeholder="Warszawa"
@@ -642,31 +657,37 @@ exports[`Test AddOffer render errors 1`] = `
                   value=""
                 />
               </div>
+              <p
+                class="MuiFormHelperText-root Mui-error Mui-required"
+              >
+                Field is required
+              </p>
             </div>
           </div>
           <div
-            style="width: 33.33%; padding: 0px 0.75rem;"
+            class="addressContainer"
           >
             <div
-              class="MuiFormControl-root MuiTextField-root makeStyles-textField-224 MuiFormControl-fullWidth"
+              class="MuiFormControl-root MuiTextField-root makeStyles-textField-18 MuiFormControl-fullWidth"
             >
               <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink Mui-required Mui-required"
+                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink Mui-error Mui-error Mui-required Mui-required"
                 data-shrink="true"
               >
                 Office street/Business Center
                 <span
-                  class="MuiFormLabel-asterisk MuiInputLabel-asterisk"
+                  aria-hidden="true"
+                  class="MuiFormLabel-asterisk MuiInputLabel-asterisk Mui-error Mui-error"
                 >
                    
                   *
                 </span>
               </label>
               <div
-                class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+                class="MuiInputBase-root MuiInput-root MuiInput-underline Mui-error Mui-error MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
               >
                 <input
-                  aria-invalid="false"
+                  aria-invalid="true"
                   class="MuiInputBase-input MuiInput-input"
                   name="street"
                   placeholder="Grunwaldzka 34"
@@ -675,14 +696,18 @@ exports[`Test AddOffer render errors 1`] = `
                   value=""
                 />
               </div>
+              <p
+                class="MuiFormHelperText-root Mui-error Mui-required"
+              >
+                Field is required
+              </p>
             </div>
           </div>
           <div
-            style="width: 33.33%;"
+            class="checkboxContainer"
           >
             <div
-              class="MuiFormGroup-root MuiFormGroup-row"
-              style="position: realtive; padding: 20px 0.5rem;"
+              class="MuiFormGroup-root"
             >
               <div
                 class="MuiFormControl-root"
@@ -695,13 +720,13 @@ exports[`Test AddOffer render errors 1`] = `
                   >
                     <span
                       aria-disabled="false"
-                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-151 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-13 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
                     >
                       <span
                         class="MuiIconButton-label"
                       >
                         <input
-                          class="PrivateSwitchBase-input-154"
+                          class="PrivateSwitchBase-input-16"
                           data-indeterminate="false"
                           name="remote"
                           type="checkbox"
@@ -734,7 +759,1360 @@ exports[`Test AddOffer render errors 1`] = `
           </div>
         </div>
         <div
-          style="height: 300px; width: 100%;"
+          class="mapContainer"
+        >
+          <div
+            class="leaflet-container leaflet-grab leaflet-touch-drag"
+            style="position: relative;"
+            tabindex="0"
+          >
+            <div
+              class="leaflet-pane leaflet-map-pane"
+              style="left: 0px; top: 0px;"
+            >
+              <div
+                class="leaflet-pane leaflet-tile-pane"
+              >
+                <div
+                  class="leaflet-layer "
+                  style="z-index: 1;"
+                >
+                  <div
+                    class="leaflet-tile-container leaflet-zoom-animated"
+                    style="z-index: 18; left: 0px; top: 0px;"
+                  >
+                    <img
+                      alt=""
+                      class="leaflet-tile"
+                      role="presentation"
+                      src="https://c.tile.openstreetmap.org/12/2287/1348.png"
+                      style="width: 256px; height: 256px; left: -44px; top: -251px;"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="leaflet-pane leaflet-shadow-pane"
+              />
+              <div
+                class="leaflet-pane leaflet-overlay-pane"
+              />
+              <div
+                class="leaflet-pane leaflet-marker-pane"
+              >
+                <img
+                  alt=""
+                  class="leaflet-marker-icon leaflet-zoom-hide leaflet-interactive"
+                  src="QuestionMark.png"
+                  style="margin-left: -5px; margin-top: -55px; width: 40px; height: 40px; left: 0px; top: 0px; z-index: 0; z-index: 0; z-index: 0;"
+                  tabindex="0"
+                />
+              </div>
+              <div
+                class="leaflet-pane leaflet-tooltip-pane"
+              />
+              <div
+                class="leaflet-pane leaflet-popup-pane"
+              />
+            </div>
+            <div
+              class="leaflet-control-container"
+            >
+              <div
+                class="leaflet-top leaflet-left"
+              >
+                <div
+                  class="leaflet-control-zoom leaflet-bar leaflet-control"
+                >
+                  <a
+                    aria-label="Zoom in"
+                    class="leaflet-control-zoom-in"
+                    href="#"
+                    role="button"
+                    title="Zoom in"
+                  >
+                    +
+                  </a>
+                  <a
+                    aria-label="Zoom out"
+                    class="leaflet-control-zoom-out"
+                    href="#"
+                    role="button"
+                    title="Zoom out"
+                  >
+                    −
+                  </a>
+                </div>
+              </div>
+              <div
+                class="leaflet-top leaflet-right"
+              />
+              <div
+                class="leaflet-bottom leaflet-left"
+              />
+              <div
+                class="leaflet-bottom leaflet-right"
+              >
+                <div
+                  class="leaflet-control-attribution leaflet-control"
+                >
+                  <a
+                    href="https://leafletjs.com"
+                    title="A JS library for interactive maps"
+                  >
+                    Leaflet
+                  </a>
+                   | © 
+                  <a
+                    href="http://osm.org/copyright"
+                  >
+                    OpenStreetMap
+                  </a>
+                   contributors
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="technologyMarginError"
+        >
+          <div
+            class="technologyTitle"
+          >
+            Choose main technology
+          </div>
+          <div
+            class="technologies"
+          >
+            <div
+              class="iconContainerAdd"
+            >
+              <button
+                class="MuiButtonBase-root"
+                tabindex="0"
+                type="button"
+              >
+                <img
+                  alt="Logo"
+                  class="langImg"
+                  src="JS.png"
+                />
+                 
+              </button>
+              <div
+                class="test"
+              >
+                JS
+              </div>
+            </div>
+            <div
+              class="iconContainerAdd"
+            >
+              <button
+                class="MuiButtonBase-root"
+                tabindex="0"
+                type="button"
+              >
+                <img
+                  alt="Logo"
+                  class="langImg"
+                  src="HTML.png"
+                />
+                 
+              </button>
+              <div
+                class="test"
+              >
+                HTML
+              </div>
+            </div>
+            <div
+              class="iconContainerAdd"
+            >
+              <button
+                class="MuiButtonBase-root"
+                tabindex="0"
+                type="button"
+              >
+                <img
+                  alt="Logo"
+                  class="langImg"
+                  src="Php.png"
+                />
+                 
+              </button>
+              <div
+                class="test"
+              >
+                PHP
+              </div>
+            </div>
+            <div
+              class="iconContainerAdd"
+            >
+              <button
+                class="MuiButtonBase-root"
+                tabindex="0"
+                type="button"
+              >
+                <img
+                  alt="Logo"
+                  class="langImg"
+                  src="Ruby.png"
+                />
+                 
+              </button>
+              <div
+                class="test"
+              >
+                Ruby
+              </div>
+            </div>
+            <div
+              class="iconContainerAdd"
+            >
+              <button
+                class="MuiButtonBase-root"
+                tabindex="0"
+                type="button"
+              >
+                <img
+                  alt="Logo"
+                  class="langImg"
+                  src="Python.png"
+                />
+                 
+              </button>
+              <div
+                class="test"
+              >
+                Python
+              </div>
+            </div>
+            <div
+              class="iconContainerAdd"
+            >
+              <button
+                class="MuiButtonBase-root"
+                tabindex="0"
+                type="button"
+              >
+                <img
+                  alt="Logo"
+                  class="langImg"
+                  src="Java.png"
+                />
+                 
+              </button>
+              <div
+                class="test"
+              >
+                Java
+              </div>
+            </div>
+            <div
+              class="iconContainerAdd"
+            >
+              <button
+                class="MuiButtonBase-root"
+                tabindex="0"
+                type="button"
+              >
+                <img
+                  alt="Logo"
+                  class="langImg"
+                  src="Net.png"
+                />
+                 
+              </button>
+              <div
+                class="test"
+              >
+                .Net
+              </div>
+            </div>
+            <div
+              class="iconContainerAdd"
+            >
+              <button
+                class="MuiButtonBase-root"
+                tabindex="0"
+                type="button"
+              >
+                <img
+                  alt="Logo"
+                  class="langImg"
+                  src="Scala.png"
+                />
+                 
+              </button>
+              <div
+                class="test"
+              >
+                Scala
+              </div>
+            </div>
+            <div
+              class="iconContainerAdd"
+            >
+              <button
+                class="MuiButtonBase-root"
+                tabindex="0"
+                type="button"
+              >
+                <img
+                  alt="Logo"
+                  class="langImg"
+                  src="C++.png"
+                />
+                 
+              </button>
+              <div
+                class="test"
+              >
+                C
+              </div>
+            </div>
+            <div
+              class="iconContainerAdd"
+            >
+              <button
+                class="MuiButtonBase-root"
+                tabindex="0"
+                type="button"
+              >
+                <img
+                  alt="Logo"
+                  class="langImg"
+                  src="Mobile.png"
+                />
+                 
+              </button>
+              <div
+                class="test"
+              >
+                Mobile
+              </div>
+            </div>
+            <div
+              class="iconContainerAdd"
+            >
+              <button
+                class="MuiButtonBase-root"
+                tabindex="0"
+                type="button"
+              >
+                <img
+                  alt="Logo"
+                  class="langImg"
+                  src="Testing.png"
+                />
+                 
+              </button>
+              <div
+                class="test"
+              >
+                Testing
+              </div>
+            </div>
+            <div
+              class="iconContainerAdd"
+            >
+              <button
+                class="MuiButtonBase-root"
+                tabindex="0"
+                type="button"
+              >
+                <img
+                  alt="Logo"
+                  class="langImg"
+                  src="DevOps.png"
+                />
+                 
+              </button>
+              <div
+                class="test"
+              >
+                DevOps
+              </div>
+            </div>
+            <div
+              class="iconContainerAdd"
+            >
+              <button
+                class="MuiButtonBase-root"
+                tabindex="0"
+                type="button"
+              >
+                <img
+                  alt="Logo"
+                  class="langImg"
+                  src="UX:UI.png"
+                />
+                 
+              </button>
+              <div
+                class="test"
+              >
+                UX/UI
+              </div>
+            </div>
+            <div
+              class="iconContainerAdd"
+            >
+              <button
+                class="MuiButtonBase-root"
+                tabindex="0"
+                type="button"
+              >
+                <img
+                  alt="Logo"
+                  class="langImg"
+                  src="PM.png"
+                />
+                 
+              </button>
+              <div
+                class="test"
+              >
+                PM
+              </div>
+            </div>
+            <div
+              class="iconContainerAdd"
+            >
+              <button
+                class="MuiButtonBase-root"
+                tabindex="0"
+                type="button"
+              >
+                <img
+                  alt="Logo"
+                  class="langImg"
+                  src="Game.png"
+                />
+                 
+              </button>
+              <div
+                class="test"
+              >
+                Game
+              </div>
+            </div>
+            <div
+              class="iconContainerAdd"
+            >
+              <button
+                class="MuiButtonBase-root"
+                tabindex="0"
+                type="button"
+              >
+                <img
+                  alt="Logo"
+                  class="langImg"
+                  src="Security.png"
+                />
+                 
+              </button>
+              <div
+                class="test"
+              >
+                Security
+              </div>
+            </div>
+            <div
+              class="iconContainerAdd"
+            >
+              <button
+                class="MuiButtonBase-root"
+                tabindex="0"
+                type="button"
+              >
+                <img
+                  alt="Logo"
+                  class="langImg"
+                  src="Data.png"
+                />
+                 
+              </button>
+              <div
+                class="test"
+              >
+                Data
+              </div>
+            </div>
+            <div
+              class="iconContainerAdd"
+            >
+              <button
+                class="MuiButtonBase-root"
+                tabindex="0"
+                type="button"
+              >
+                <img
+                  alt="Logo"
+                  class="langImg"
+                  src="Goo.png"
+                />
+                 
+              </button>
+              <div
+                class="test"
+              >
+                Go
+              </div>
+            </div>
+            <div
+              class="iconContainerAdd"
+            >
+              <button
+                class="MuiButtonBase-root"
+                tabindex="0"
+                type="button"
+              >
+                <img
+                  alt="Logo"
+                  class="langImg"
+                  src="SAP.png"
+                />
+                 
+              </button>
+              <div
+                class="test"
+              >
+                SAP
+              </div>
+            </div>
+            <div
+              class="iconContainerAdd"
+            >
+              <button
+                class="MuiButtonBase-root"
+                tabindex="0"
+                type="button"
+              >
+                <img
+                  alt="Logo"
+                  class="langImg"
+                  src="Other.png"
+                />
+                 
+              </button>
+              <div
+                class="test"
+              >
+                Other
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="bottomSection"
+        >
+          <h3
+            class="titleMargin"
+          >
+            How to apply
+          </h3>
+          <div
+            class="widthPadding"
+          >
+            <div
+              class="MuiFormControl-root MuiTextField-root makeStyles-textField-1 MuiFormControl-fullWidth"
+            >
+              <label
+                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated Mui-error Mui-error Mui-required Mui-required"
+                data-shrink="false"
+              >
+                Enter apply email or paste link
+                <span
+                  aria-hidden="true"
+                  class="MuiFormLabel-asterisk MuiInputLabel-asterisk Mui-error Mui-error"
+                >
+                   
+                  *
+                </span>
+              </label>
+              <div
+                class="MuiInputBase-root MuiInput-root MuiInput-underline Mui-error Mui-error MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+              >
+                <input
+                  aria-invalid="true"
+                  class="MuiInputBase-input MuiInput-input"
+                  name="email"
+                  required=""
+                  type="text"
+                  value=""
+                />
+              </div>
+              <p
+                class="MuiFormHelperText-root Mui-error Mui-required"
+              >
+                Email or link is invalid
+              </p>
+            </div>
+          </div>
+          <h3
+            class="titleMargin"
+          >
+            Agreements
+          </h3>
+          <h4
+            class="headerInformation"
+          >
+            Information clause
+          </h4>
+          <div
+            class="agreements"
+          >
+            <textarea
+              class="makeStyles-error-9"
+              rows="1"
+              style="height: -20px; overflow: hidden;"
+            >
+              Informujemy, że administratorem danych jest ______________ z siedzibą w ___________, ul. _______________ (dalej jako "administrator"). Masz prawo do żądania dostępu do swoich danych osobowych, ich sprostowania, usunięcia lub ograniczenia przetwarzania, prawo do wniesienia sprzeciwu wobec przetwarzania, a także prawo do przenoszenia danych oraz wniesienia skargi do organu nadzorczego. Dane osobowe przetwarzane będą w celu realizacji procesu rekrutacji. Podanie danych w zakresie wynikającym z ustawy z dnia 26 czerwca 1974 r. Kodeks pracy jest obowiązkowe. W pozostałym zakresie podanie danych jest dobrowolne. Odmowa podania danych obowiązkowych może skutkować brakiem możliwości przeprowadzenia procesu rekrutacji. Administrator przetwarza dane obowiązkowe na podstawie ciążącego na nim obowiązku prawnego, zaś w zakresie danych dodatkowych podstawą przetwarzania jest zgoda. Dane osobowe będą przetwarzane do czasu zakończenia postępowania rekrutacyjnego i przez okres możliwości dochodzenia ewentualnych roszczeń, a w przypadku wyrażenia zgody na udział w przyszłych postępowaniach rekrutacyjnych - do czasu wycofania tej zgody. Zgoda na przetwarzanie danych osobowych może zostać wycofana w dowolnym momencie. Odbiorcą danych jest serwis Just Join IT oraz inne podmioty, którym powierzyliśmy przetwarzanie danych w związku z rekrutacją.
+            </textarea>
+            <textarea
+              aria-hidden="true"
+              class="makeStyles-error-9"
+              readonly=""
+              style="visibility: hidden; position: absolute; overflow: hidden; height: 0px; top: 0px; left: 0px; transform: translateZ(0); width: 98%;"
+              tabindex="-1"
+            />
+            <span
+              class="agreemErr"
+            >
+              Please fill company name and address
+            </span>
+          </div>
+          <button
+            class="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-button-7 MuiButton-containedPrimary"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiButton-label"
+            >
+              Next Step
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test AddOffer render errors: Render 1`] = `
+<div>
+  <div
+    class="addOfferContainer"
+  >
+    <div
+      class="card"
+    >
+      <a
+        class="linkRoute"
+        href="/add"
+      >
+        <div
+          class="backButton"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root makeStyles-iconAlignment-3"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+            />
+          </svg>
+           Back
+        </div>
+      </a>
+      <form
+        class="form"
+        novalidate=""
+      >
+        <div
+          class="row"
+        >
+          <div
+            class="dropzoneContainer"
+          >
+            <div
+              class="dropzoneFlex"
+              tabindex="0"
+            >
+              <input
+                accept="image/jpeg, image/png"
+                autocomplete="off"
+                multiple=""
+                style="display: none;"
+                tabindex="-1"
+                type="file"
+              />
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                style="font-size: 60px;"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M21 6h-3.17L16 4h-6v2h5.12l1.83 2H21v12H5v-9H3v9c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM8 14c0 2.76 2.24 5 5 5s5-2.24 5-5-2.24-5-5-5-5 2.24-5 5zm5-3c1.65 0 3 1.35 3 3s-1.35 3-3 3-3-1.35-3-3 1.35-3 3-3zM5 6h3V4H5V1H3v3H0v2h3v3h2z"
+                />
+              </svg>
+              <div>
+                <h3
+                  class=""
+                >
+                  Upload/Drop Logo * 
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root"
+                    focusable="false"
+                    style="font-size: 14px;"
+                    title="Upload company logo .png/.jpg/.jpeg in any resolution."
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"
+                    />
+                  </svg>
+                </h3>
+                
+              </div>
+            </div>
+          </div>
+          <div
+            class="topContainer"
+          >
+            <div
+              class="MuiFormControl-root MuiTextField-root makeStyles-textField-1 MuiFormControl-fullWidth"
+            >
+              <label
+                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated Mui-required Mui-required"
+                data-shrink="false"
+              >
+                Short company name
+                <span
+                  aria-hidden="true"
+                  class="MuiFormLabel-asterisk MuiInputLabel-asterisk"
+                >
+                   
+                  *
+                </span>
+              </label>
+              <div
+                class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+              >
+                <input
+                  aria-invalid="false"
+                  class="MuiInputBase-input MuiInput-input"
+                  name="company"
+                  required=""
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              class="MuiFormControl-root MuiTextField-root makeStyles-textField-1 MuiFormControl-fullWidth"
+            >
+              <label
+                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated Mui-required Mui-required"
+                data-shrink="false"
+              >
+                Company website
+                <span
+                  aria-hidden="true"
+                  class="MuiFormLabel-asterisk MuiInputLabel-asterisk"
+                >
+                   
+                  *
+                </span>
+              </label>
+              <div
+                class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+              >
+                <input
+                  aria-invalid="false"
+                  class="MuiInputBase-input MuiInput-input"
+                  name="website"
+                  required=""
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              class="MuiFormControl-root MuiTextField-root makeStyles-textField-1 MuiFormControl-fullWidth"
+            >
+              <label
+                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink Mui-required Mui-required"
+                data-shrink="true"
+              >
+                Company size
+                <span
+                  aria-hidden="true"
+                  class="MuiFormLabel-asterisk MuiInputLabel-asterisk"
+                >
+                   
+                  *
+                </span>
+              </label>
+              <div
+                class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-adornedEnd"
+              >
+                <input
+                  aria-invalid="false"
+                  class="MuiInputBase-input MuiInput-input MuiInputBase-inputAdornedEnd"
+                  name="companySize"
+                  placeholder="10 - 23"
+                  required=""
+                  type="text"
+                  value=""
+                />
+                <div
+                  class="MuiInputAdornment-root MuiInputAdornment-positionEnd"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root makeStyles-outlineIcon-4"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="topContainerCompany"
+          >
+            <div
+              class="MuiFormControl-root MuiFormControl-fullWidth"
+            >
+              <div
+                class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-selectField-2 MuiInputBase-formControl MuiInput-formControl"
+              >
+                <div
+                  aria-haspopup="listbox"
+                  aria-labelledby="mui-component-select-companyType"
+                  class="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input"
+                  id="mui-component-select-companyType"
+                  role="button"
+                  tabindex="0"
+                >
+                  Choose company type
+                </div>
+                <input
+                  aria-hidden="true"
+                  class="MuiSelect-nativeInput"
+                  name="companyType"
+                  required=""
+                  tabindex="-1"
+                  value=""
+                />
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSelect-icon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M7 10l5 5 5-5z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div
+              class="MuiFormControl-root MuiFormControl-fullWidth"
+            >
+              <div
+                class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-selectMargin-5 MuiInputBase-formControl MuiInput-formControl"
+              >
+                <div
+                  aria-haspopup="listbox"
+                  aria-labelledby="mui-component-select-companyIndustry"
+                  class="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input"
+                  id="mui-component-select-companyIndustry"
+                  role="button"
+                  tabindex="0"
+                >
+                  Choose company industry
+                </div>
+                <input
+                  aria-hidden="true"
+                  class="MuiSelect-nativeInput"
+                  name="companyIndustry"
+                  required=""
+                  tabindex="-1"
+                  value=""
+                />
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSelect-icon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M7 10l5 5 5-5z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="middleContainer"
+        >
+          <div
+            class="widthPadding"
+          >
+            <div
+              class="MuiFormControl-root MuiTextField-root makeStyles-textField-1 MuiFormControl-fullWidth"
+            >
+              <label
+                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated Mui-required Mui-required"
+                data-shrink="false"
+              >
+                Title
+                <span
+                  aria-hidden="true"
+                  class="MuiFormLabel-asterisk MuiInputLabel-asterisk"
+                >
+                   
+                  *
+                </span>
+              </label>
+              <div
+                class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+              >
+                <input
+                  aria-invalid="false"
+                  class="MuiInputBase-input MuiInput-input"
+                  name="title"
+                  required=""
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="widthPadding"
+          >
+            <div
+              class="MuiFormControl-root MuiFormControl-fullWidth"
+            >
+              <div
+                class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-selectField-2 MuiInputBase-formControl MuiInput-formControl"
+              >
+                <div
+                  aria-haspopup="listbox"
+                  aria-labelledby="mui-component-select-experience"
+                  class="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input"
+                  id="mui-component-select-experience"
+                  role="button"
+                  tabindex="0"
+                >
+                  Choose an experience level
+                </div>
+                <input
+                  aria-hidden="true"
+                  class="MuiSelect-nativeInput"
+                  name="experience"
+                  required=""
+                  tabindex="-1"
+                  value=""
+                />
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSelect-icon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M7 10l5 5 5-5z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
+            class="widthPadding"
+          >
+            <div
+              class="MuiFormControl-root MuiFormControl-fullWidth"
+            >
+              <div
+                class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-selectField-2 MuiInputBase-formControl MuiInput-formControl"
+              >
+                <div
+                  aria-haspopup="listbox"
+                  aria-labelledby="mui-component-select-employment"
+                  class="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input"
+                  id="mui-component-select-employment"
+                  role="button"
+                  tabindex="0"
+                >
+                  Choose an employment type
+                </div>
+                <input
+                  aria-hidden="true"
+                  class="MuiSelect-nativeInput"
+                  name="employment"
+                  required=""
+                  tabindex="-1"
+                  value=""
+                />
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSelect-icon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M7 10l5 5 5-5z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="middleContainer"
+        >
+          <div
+            class="widthPadding"
+          >
+            <div
+              class="MuiFormControl-root MuiTextField-root makeStyles-textField-1 MuiFormControl-fullWidth"
+            >
+              <label
+                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
+                data-shrink="false"
+              >
+                Monthly salary from (invoice net)
+              </label>
+              <div
+                class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-adornedEnd"
+              >
+                <input
+                  aria-invalid="false"
+                  class="MuiInputBase-input MuiInput-input MuiInputBase-inputAdornedEnd"
+                  name="minSalary"
+                  type="number"
+                  value=""
+                />
+                <div
+                  class="MuiInputAdornment-root MuiInputAdornment-positionEnd"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="MuiSvgIcon-root makeStyles-outlineFont-6"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="widthPadding"
+          >
+            <div
+              class="MuiFormControl-root MuiTextField-root makeStyles-textField-1 MuiFormControl-fullWidth"
+            >
+              <label
+                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
+                data-shrink="false"
+              >
+                Monthly salary to (invoice net)
+              </label>
+              <div
+                class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+              >
+                <input
+                  aria-invalid="false"
+                  class="MuiInputBase-input MuiInput-input"
+                  name="maxSalary"
+                  type="number"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="widthPadding"
+          >
+            <div
+              class="MuiFormControl-root MuiFormControl-fullWidth"
+            >
+              <div
+                class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-selectField-2 MuiInputBase-formControl MuiInput-formControl"
+              >
+                <div
+                  aria-haspopup="listbox"
+                  aria-labelledby="mui-component-select-currency"
+                  class="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input"
+                  id="mui-component-select-currency"
+                  role="button"
+                  tabindex="0"
+                >
+                  Choose currency
+                </div>
+                <input
+                  aria-hidden="true"
+                  class="MuiSelect-nativeInput"
+                  name="currency"
+                  tabindex="-1"
+                  value=""
+                />
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSelect-icon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M7 10l5 5 5-5z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="width100"
+        >
+          <h3
+            class="titleMargin"
+          >
+            Tech Stack 
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root makeStyles-outlineFont-6"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"
+              />
+            </svg>
+          </h3>
+          <div
+            class="techStackContainer"
+          >
+            <div
+              aria-expanded="false"
+              class="MuiAutocomplete-root makeStyles-autocomplete-11"
+              role="combobox"
+            >
+              <div
+                class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+              >
+                
+                <div
+                  class="MuiInputBase-root MuiInput-root MuiInput-underline MuiAutocomplete-inputRoot MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-adornedEnd"
+                >
+                  <input
+                    aria-autocomplete="list"
+                    aria-invalid="false"
+                    autocapitalize="none"
+                    autocomplete="off"
+                    class="MuiInputBase-input MuiInput-input MuiAutocomplete-input MuiAutocomplete-inputFocused MuiInputBase-inputAdornedEnd"
+                    id="tech-stack"
+                    placeholder="Select technology or write a new one"
+                    spellcheck="false"
+                    type="text"
+                    value=""
+                  />
+                  <div
+                    class="MuiAutocomplete-endAdornment"
+                  />
+                </div>
+              </div>
+            </div>
+            <div />
+            <div
+              class="techStackList"
+            />
+          </div>
+        </div>
+        <div
+          class="width100"
+        >
+          <h3
+            class="titleMargin"
+          >
+            Job description 
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root makeStyles-outlineFont-6"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"
+              />
+            </svg>
+          </h3>
+          <div>
+            Fajny trix
+          </div>
+        </div>
+        <div
+          class="flexWidth"
+        >
+          <h3
+            class="titleMargin"
+          >
+            Choose your location
+          </h3>
+        </div>
+        <div
+          class="flexWidth"
+        >
+          <div
+            class="addressContainer"
+          >
+            <div
+              class="MuiFormControl-root MuiTextField-root makeStyles-textField-17 MuiFormControl-fullWidth"
+            >
+              <label
+                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink Mui-required Mui-required"
+                data-shrink="true"
+              >
+                Office City
+                <span
+                  aria-hidden="true"
+                  class="MuiFormLabel-asterisk MuiInputLabel-asterisk"
+                >
+                   
+                  *
+                </span>
+              </label>
+              <div
+                class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+              >
+                <input
+                  aria-invalid="false"
+                  class="MuiInputBase-input MuiInput-input"
+                  name="city"
+                  placeholder="Warszawa"
+                  required=""
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="addressContainer"
+          >
+            <div
+              class="MuiFormControl-root MuiTextField-root makeStyles-textField-17 MuiFormControl-fullWidth"
+            >
+              <label
+                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink Mui-required Mui-required"
+                data-shrink="true"
+              >
+                Office street/Business Center
+                <span
+                  aria-hidden="true"
+                  class="MuiFormLabel-asterisk MuiInputLabel-asterisk"
+                >
+                   
+                  *
+                </span>
+              </label>
+              <div
+                class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+              >
+                <input
+                  aria-invalid="false"
+                  class="MuiInputBase-input MuiInput-input"
+                  name="street"
+                  placeholder="Grunwaldzka 34"
+                  required=""
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="checkboxContainer"
+          >
+            <div
+              class="MuiFormGroup-root"
+            >
+              <div
+                class="MuiFormControl-root"
+              >
+                <div
+                  class="MuiFormGroup-root"
+                >
+                  <label
+                    class="MuiFormControlLabel-root"
+                  >
+                    <span
+                      aria-disabled="false"
+                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-13 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+                    >
+                      <span
+                        class="MuiIconButton-label"
+                      >
+                        <input
+                          class="PrivateSwitchBase-input-16"
+                          data-indeterminate="false"
+                          name="remote"
+                          type="checkbox"
+                          value=""
+                        />
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                          />
+                        </svg>
+                      </span>
+                      <span
+                        class="MuiTouchRipple-root"
+                      />
+                    </span>
+                    <span
+                      class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+                    >
+                      Fully Remote
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mapContainer"
         >
           <div
             class="leaflet-container leaflet-grab leaflet-touch-drag"
@@ -853,7 +2231,7 @@ exports[`Test AddOffer render errors 1`] = `
           class="technologyMargin"
         >
           <div
-            style="width: 100%; display: flex; justify-content: center;"
+            class="technologyTitle"
           >
             Choose main technology
           </div>
@@ -861,7 +2239,7 @@ exports[`Test AddOffer render errors 1`] = `
             class="technologies"
           >
             <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
+              class="iconContainerAdd"
             >
               <button
                 class="MuiButtonBase-root"
@@ -870,8 +2248,8 @@ exports[`Test AddOffer render errors 1`] = `
               >
                 <img
                   alt="Logo"
+                  class="langImg"
                   src="JS.png"
-                  style="height: 40px; width: 40px;"
                 />
                  
               </button>
@@ -882,7 +2260,7 @@ exports[`Test AddOffer render errors 1`] = `
               </div>
             </div>
             <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
+              class="iconContainerAdd"
             >
               <button
                 class="MuiButtonBase-root"
@@ -891,8 +2269,8 @@ exports[`Test AddOffer render errors 1`] = `
               >
                 <img
                   alt="Logo"
+                  class="langImg"
                   src="HTML.png"
-                  style="height: 40px; width: 40px;"
                 />
                  
               </button>
@@ -903,7 +2281,7 @@ exports[`Test AddOffer render errors 1`] = `
               </div>
             </div>
             <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
+              class="iconContainerAdd"
             >
               <button
                 class="MuiButtonBase-root"
@@ -912,8 +2290,8 @@ exports[`Test AddOffer render errors 1`] = `
               >
                 <img
                   alt="Logo"
+                  class="langImg"
                   src="Php.png"
-                  style="height: 40px; width: 40px;"
                 />
                  
               </button>
@@ -924,7 +2302,7 @@ exports[`Test AddOffer render errors 1`] = `
               </div>
             </div>
             <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
+              class="iconContainerAdd"
             >
               <button
                 class="MuiButtonBase-root"
@@ -933,8 +2311,8 @@ exports[`Test AddOffer render errors 1`] = `
               >
                 <img
                   alt="Logo"
+                  class="langImg"
                   src="Ruby.png"
-                  style="height: 40px; width: 40px;"
                 />
                  
               </button>
@@ -945,7 +2323,7 @@ exports[`Test AddOffer render errors 1`] = `
               </div>
             </div>
             <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
+              class="iconContainerAdd"
             >
               <button
                 class="MuiButtonBase-root"
@@ -954,8 +2332,8 @@ exports[`Test AddOffer render errors 1`] = `
               >
                 <img
                   alt="Logo"
+                  class="langImg"
                   src="Python.png"
-                  style="height: 40px; width: 40px;"
                 />
                  
               </button>
@@ -966,7 +2344,7 @@ exports[`Test AddOffer render errors 1`] = `
               </div>
             </div>
             <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
+              class="iconContainerAdd"
             >
               <button
                 class="MuiButtonBase-root"
@@ -975,8 +2353,8 @@ exports[`Test AddOffer render errors 1`] = `
               >
                 <img
                   alt="Logo"
+                  class="langImg"
                   src="Java.png"
-                  style="height: 40px; width: 40px;"
                 />
                  
               </button>
@@ -987,7 +2365,7 @@ exports[`Test AddOffer render errors 1`] = `
               </div>
             </div>
             <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
+              class="iconContainerAdd"
             >
               <button
                 class="MuiButtonBase-root"
@@ -996,8 +2374,8 @@ exports[`Test AddOffer render errors 1`] = `
               >
                 <img
                   alt="Logo"
+                  class="langImg"
                   src="Net.png"
-                  style="height: 40px; width: 40px;"
                 />
                  
               </button>
@@ -1008,7 +2386,7 @@ exports[`Test AddOffer render errors 1`] = `
               </div>
             </div>
             <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
+              class="iconContainerAdd"
             >
               <button
                 class="MuiButtonBase-root"
@@ -1017,8 +2395,8 @@ exports[`Test AddOffer render errors 1`] = `
               >
                 <img
                   alt="Logo"
+                  class="langImg"
                   src="Scala.png"
-                  style="height: 40px; width: 40px;"
                 />
                  
               </button>
@@ -1029,7 +2407,7 @@ exports[`Test AddOffer render errors 1`] = `
               </div>
             </div>
             <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
+              class="iconContainerAdd"
             >
               <button
                 class="MuiButtonBase-root"
@@ -1038,8 +2416,8 @@ exports[`Test AddOffer render errors 1`] = `
               >
                 <img
                   alt="Logo"
+                  class="langImg"
                   src="C++.png"
-                  style="height: 40px; width: 40px;"
                 />
                  
               </button>
@@ -1050,7 +2428,7 @@ exports[`Test AddOffer render errors 1`] = `
               </div>
             </div>
             <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
+              class="iconContainerAdd"
             >
               <button
                 class="MuiButtonBase-root"
@@ -1059,8 +2437,8 @@ exports[`Test AddOffer render errors 1`] = `
               >
                 <img
                   alt="Logo"
+                  class="langImg"
                   src="Mobile.png"
-                  style="height: 40px; width: 40px;"
                 />
                  
               </button>
@@ -1071,7 +2449,7 @@ exports[`Test AddOffer render errors 1`] = `
               </div>
             </div>
             <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
+              class="iconContainerAdd"
             >
               <button
                 class="MuiButtonBase-root"
@@ -1080,8 +2458,8 @@ exports[`Test AddOffer render errors 1`] = `
               >
                 <img
                   alt="Logo"
+                  class="langImg"
                   src="Testing.png"
-                  style="height: 40px; width: 40px;"
                 />
                  
               </button>
@@ -1092,7 +2470,7 @@ exports[`Test AddOffer render errors 1`] = `
               </div>
             </div>
             <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
+              class="iconContainerAdd"
             >
               <button
                 class="MuiButtonBase-root"
@@ -1101,8 +2479,8 @@ exports[`Test AddOffer render errors 1`] = `
               >
                 <img
                   alt="Logo"
+                  class="langImg"
                   src="DevOps.png"
-                  style="height: 40px; width: 40px;"
                 />
                  
               </button>
@@ -1113,7 +2491,7 @@ exports[`Test AddOffer render errors 1`] = `
               </div>
             </div>
             <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
+              class="iconContainerAdd"
             >
               <button
                 class="MuiButtonBase-root"
@@ -1122,8 +2500,8 @@ exports[`Test AddOffer render errors 1`] = `
               >
                 <img
                   alt="Logo"
+                  class="langImg"
                   src="UX:UI.png"
-                  style="height: 40px; width: 40px;"
                 />
                  
               </button>
@@ -1134,7 +2512,7 @@ exports[`Test AddOffer render errors 1`] = `
               </div>
             </div>
             <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
+              class="iconContainerAdd"
             >
               <button
                 class="MuiButtonBase-root"
@@ -1143,8 +2521,8 @@ exports[`Test AddOffer render errors 1`] = `
               >
                 <img
                   alt="Logo"
+                  class="langImg"
                   src="PM.png"
-                  style="height: 40px; width: 40px;"
                 />
                  
               </button>
@@ -1155,7 +2533,7 @@ exports[`Test AddOffer render errors 1`] = `
               </div>
             </div>
             <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
+              class="iconContainerAdd"
             >
               <button
                 class="MuiButtonBase-root"
@@ -1164,8 +2542,8 @@ exports[`Test AddOffer render errors 1`] = `
               >
                 <img
                   alt="Logo"
+                  class="langImg"
                   src="Game.png"
-                  style="height: 40px; width: 40px;"
                 />
                  
               </button>
@@ -1176,7 +2554,7 @@ exports[`Test AddOffer render errors 1`] = `
               </div>
             </div>
             <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
+              class="iconContainerAdd"
             >
               <button
                 class="MuiButtonBase-root"
@@ -1185,8 +2563,8 @@ exports[`Test AddOffer render errors 1`] = `
               >
                 <img
                   alt="Logo"
+                  class="langImg"
                   src="Security.png"
-                  style="height: 40px; width: 40px;"
                 />
                  
               </button>
@@ -1197,7 +2575,7 @@ exports[`Test AddOffer render errors 1`] = `
               </div>
             </div>
             <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
+              class="iconContainerAdd"
             >
               <button
                 class="MuiButtonBase-root"
@@ -1206,8 +2584,8 @@ exports[`Test AddOffer render errors 1`] = `
               >
                 <img
                   alt="Logo"
+                  class="langImg"
                   src="Data.png"
-                  style="height: 40px; width: 40px;"
                 />
                  
               </button>
@@ -1218,7 +2596,7 @@ exports[`Test AddOffer render errors 1`] = `
               </div>
             </div>
             <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
+              class="iconContainerAdd"
             >
               <button
                 class="MuiButtonBase-root"
@@ -1227,8 +2605,8 @@ exports[`Test AddOffer render errors 1`] = `
               >
                 <img
                   alt="Logo"
+                  class="langImg"
                   src="Goo.png"
-                  style="height: 40px; width: 40px;"
                 />
                  
               </button>
@@ -1239,7 +2617,7 @@ exports[`Test AddOffer render errors 1`] = `
               </div>
             </div>
             <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
+              class="iconContainerAdd"
             >
               <button
                 class="MuiButtonBase-root"
@@ -1248,8 +2626,8 @@ exports[`Test AddOffer render errors 1`] = `
               >
                 <img
                   alt="Logo"
+                  class="langImg"
                   src="SAP.png"
-                  style="height: 40px; width: 40px;"
                 />
                  
               </button>
@@ -1260,7 +2638,7 @@ exports[`Test AddOffer render errors 1`] = `
               </div>
             </div>
             <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
+              class="iconContainerAdd"
             >
               <button
                 class="MuiButtonBase-root"
@@ -1269,8 +2647,8 @@ exports[`Test AddOffer render errors 1`] = `
               >
                 <img
                   alt="Logo"
+                  class="langImg"
                   src="Other.png"
-                  style="height: 40px; width: 40px;"
                 />
                  
               </button>
@@ -1283,18 +2661,18 @@ exports[`Test AddOffer render errors 1`] = `
           </div>
         </div>
         <div
-          style="display: flex; flex-direction: column; width: 100%;"
+          class="bottomSection"
         >
           <h3
-            style="margin: 20px 0px 10px 10px;"
+            class="titleMargin"
           >
             How to apply
           </h3>
           <div
-            style="width: 33%; padding: 0px 0.75rem;"
+            class="widthPadding"
           >
             <div
-              class="MuiFormControl-root MuiTextField-root makeStyles-textField-2 MuiFormControl-fullWidth"
+              class="MuiFormControl-root MuiTextField-root makeStyles-textField-1 MuiFormControl-fullWidth"
             >
               <label
                 class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated Mui-required Mui-required"
@@ -1302,6 +2680,7 @@ exports[`Test AddOffer render errors 1`] = `
               >
                 Enter apply email or paste link
                 <span
+                  aria-hidden="true"
                   class="MuiFormLabel-asterisk MuiInputLabel-asterisk"
                 >
                    
@@ -1323,1461 +2702,35 @@ exports[`Test AddOffer render errors 1`] = `
             </div>
           </div>
           <h3
-            style="margin: 20px 0px 10px 10px;"
+            class="titleMargin"
           >
             Agreements
           </h3>
           <h4
-            style="margin: 5px 0px 10px 20px; color: lightGrey;"
+            class="headerInformation"
           >
             Information clause
           </h4>
           <div
-            style="width: 100%; padding: 0px 0.75rem;"
+            class="agreements"
           >
             <textarea
-              class="makeStyles-textField-6"
+              class="makeStyles-textField-8"
               rows="1"
               style="height: -20px; overflow: hidden;"
-            />
+            >
+              Informujemy, że administratorem danych jest ______________ z siedzibą w ___________, ul. _______________ (dalej jako "administrator"). Masz prawo do żądania dostępu do swoich danych osobowych, ich sprostowania, usunięcia lub ograniczenia przetwarzania, prawo do wniesienia sprzeciwu wobec przetwarzania, a także prawo do przenoszenia danych oraz wniesienia skargi do organu nadzorczego. Dane osobowe przetwarzane będą w celu realizacji procesu rekrutacji. Podanie danych w zakresie wynikającym z ustawy z dnia 26 czerwca 1974 r. Kodeks pracy jest obowiązkowe. W pozostałym zakresie podanie danych jest dobrowolne. Odmowa podania danych obowiązkowych może skutkować brakiem możliwości przeprowadzenia procesu rekrutacji. Administrator przetwarza dane obowiązkowe na podstawie ciążącego na nim obowiązku prawnego, zaś w zakresie danych dodatkowych podstawą przetwarzania jest zgoda. Dane osobowe będą przetwarzane do czasu zakończenia postępowania rekrutacyjnego i przez okres możliwości dochodzenia ewentualnych roszczeń, a w przypadku wyrażenia zgody na udział w przyszłych postępowaniach rekrutacyjnych - do czasu wycofania tej zgody. Zgoda na przetwarzanie danych osobowych może zostać wycofana w dowolnym momencie. Odbiorcą danych jest serwis Just Join IT oraz inne podmioty, którym powierzyliśmy przetwarzanie danych w związku z rekrutacją.
+            </textarea>
             <textarea
               aria-hidden="true"
-              class="makeStyles-textField-6"
+              class="makeStyles-textField-8"
               readonly=""
               style="visibility: hidden; position: absolute; overflow: hidden; height: 0px; top: 0px; left: 0px; transform: translateZ(0); width: 98%;"
               tabindex="-1"
             />
           </div>
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-button-5 MuiButton-containedPrimary"
-            tabindex="0"
-            type="button"
-          >
-            <span
-              class="MuiButton-label"
-            >
-              Next Step
-            </span>
-            <span
-              class="MuiTouchRipple-root"
-            />
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Test AddOffer render errors 2`] = `
-<div>
-  <div
-    style="display: flex; justify-content: center; align-items: center; flex-direction: column; background-color: rgb(243, 246, 248);"
-  >
-    <div
-      class="card"
-    >
-      <a
-        href="/add"
-        styles="[object Object]"
-      >
-        <div
-          class="backButton"
-        >
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root"
-            focusable="false"
-            style="vertical-align: middle;"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
-            />
-          </svg>
-           Back
-        </div>
-      </a>
-      <form
-        class="form"
-        novalidate=""
-      >
-        <div
-          class="row"
-          style="display: flex; width: 100%;"
-        >
-          <div
-            class="container"
-            style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 33.33%;"
-          >
-            <div
-              class="dropzone"
-              style="display: flex; flex-direction: column; align-items: center;"
-              tabindex="0"
-            >
-              <input
-                autocomplete="off"
-                multiple=""
-                style="display: none;"
-                tabindex="-1"
-                type="file"
-              />
-              <svg
-                aria-hidden="true"
-                class="MuiSvgIcon-root"
-                focusable="false"
-                style="font-size: 60px; color: rgb(244, 67, 54);"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M21 6h-3.17L16 4h-6v2h5.12l1.83 2H21v12H5v-9H3v9c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM8 14c0 2.76 2.24 5 5 5s5-2.24 5-5-2.24-5-5-5-5 2.24-5 5zm5-3c1.65 0 3 1.35 3 3s-1.35 3-3 3-3-1.35-3-3 1.35-3 3-3zM5 6h3V4H5V1H3v3H0v2h3v3h2z"
-                />
-              </svg>
-              <div>
-                <h3
-                  class="red"
-                >
-                  Upload/Drop Logo * 
-                  <button
-                    aria-label="Question Mark"
-                    class="MuiButtonBase-root MuiIconButton-root makeStyles-button-1"
-                    tabindex="0"
-                    title="Upload company logo .png/.jpg/.jpeg in any resolution."
-                    type="button"
-                  >
-                    <span
-                      class="MuiIconButton-label"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        class="MuiSvgIcon-root"
-                        focusable="false"
-                        style="font-size: 14px; color: rgb(244, 67, 54);"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"
-                        />
-                      </svg>
-                    </span>
-                    <span
-                      class="MuiTouchRipple-root"
-                    />
-                  </button>
-                </h3>
-                <h3
-                  style="color: rgb(244, 67, 54); font-size: 10px; display: flex; justify-content: center;"
-                >
-                  Company logo is required
-                </h3>
-              </div>
-            </div>
-          </div>
-          <div
-            style="display: flex; flex-direction: column; width: 33.33%; padding: 0px 0.75rem;"
-          >
-            <div
-              class="MuiFormControl-root MuiTextField-root makeStyles-textField-2 MuiFormControl-fullWidth"
-            >
-              <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated Mui-error Mui-error Mui-required Mui-required"
-                data-shrink="false"
-              >
-                Short company name
-                <span
-                  class="MuiFormLabel-asterisk MuiInputLabel-asterisk Mui-error Mui-error"
-                >
-                   
-                  *
-                </span>
-              </label>
-              <div
-                class="MuiInputBase-root MuiInput-root MuiInput-underline Mui-error Mui-error MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
-              >
-                <input
-                  aria-invalid="true"
-                  class="MuiInputBase-input MuiInput-input"
-                  name="company"
-                  required=""
-                  type="text"
-                  value=""
-                />
-              </div>
-              <p
-                class="MuiFormHelperText-root Mui-error Mui-required"
-              >
-                Field is required
-              </p>
-            </div>
-            <div
-              class="MuiFormControl-root MuiTextField-root makeStyles-textField-2 MuiFormControl-fullWidth"
-            >
-              <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated Mui-error Mui-error Mui-required Mui-required"
-                data-shrink="false"
-              >
-                Company website
-                <span
-                  class="MuiFormLabel-asterisk MuiInputLabel-asterisk Mui-error Mui-error"
-                >
-                   
-                  *
-                </span>
-              </label>
-              <div
-                class="MuiInputBase-root MuiInput-root MuiInput-underline Mui-error Mui-error MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
-              >
-                <input
-                  aria-invalid="true"
-                  class="MuiInputBase-input MuiInput-input"
-                  name="website"
-                  required=""
-                  type="text"
-                  value=""
-                />
-              </div>
-              <p
-                class="MuiFormHelperText-root Mui-error Mui-required"
-              >
-                Invalid format ex. www.web.com
-              </p>
-            </div>
-            <div
-              class="MuiFormControl-root MuiTextField-root makeStyles-textField-2 MuiFormControl-fullWidth"
-            >
-              <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink Mui-error Mui-error Mui-required Mui-required"
-                data-shrink="true"
-              >
-                Company size
-                <span
-                  class="MuiFormLabel-asterisk MuiInputLabel-asterisk Mui-error Mui-error"
-                >
-                   
-                  *
-                </span>
-              </label>
-              <div
-                class="MuiInputBase-root MuiInput-root MuiInput-underline Mui-error Mui-error MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
-              >
-                <input
-                  aria-invalid="true"
-                  class="MuiInputBase-input MuiInput-input"
-                  name="companySize"
-                  placeholder="10 - 23"
-                  required=""
-                  type="text"
-                  value=""
-                />
-              </div>
-              <p
-                class="MuiFormHelperText-root Mui-error Mui-required"
-              >
-                Field is required
-              </p>
-            </div>
-            <button
-              aria-label="Question Mark"
-              class="MuiButtonBase-root MuiIconButton-root makeStyles-button-1"
-              style="font-size: 14px; width: 20px; right: -240px; top: -40px;"
-              tabindex="0"
-              type="button"
-            >
-              <span
-                class="MuiIconButton-label"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root"
-                  focusable="false"
-                  style="font-size: 14px;"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"
-                  />
-                </svg>
-              </span>
-              <span
-                class="MuiTouchRipple-root"
-              />
-            </button>
-          </div>
-          <div
-            style="display: flex; flex-direction: column; width: 33.33%; margin-top: 68px; padding: 0px 0.75rem;"
-          >
-            <div
-              class="MuiFormControl-root MuiFormControl-fullWidth"
-            >
-              <div
-                class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-selectField-3 Mui-error Mui-error MuiInputBase-formControl MuiInput-formControl"
-              >
-                <div
-                  aria-haspopup="listbox"
-                  aria-labelledby="mui-component-select-companyType"
-                  class="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input"
-                  id="mui-component-select-companyType"
-                  role="button"
-                  tabindex="0"
-                >
-                  Choose company type
-                </div>
-                <input
-                  name="companyType"
-                  type="hidden"
-                  value=""
-                />
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSelect-icon"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M7 10l5 5 5-5z"
-                  />
-                </svg>
-              </div>
-              <p
-                class="MuiFormHelperText-root Mui-error Mui-required"
-              >
-                Field is required
-              </p>
-            </div>
-            <div
-              class="MuiFormControl-root MuiFormControl-fullWidth"
-            >
-              <div
-                class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-selectField-3 Mui-error Mui-error MuiInputBase-formControl MuiInput-formControl"
-                style="margin-top: 20px;"
-              >
-                <div
-                  aria-haspopup="listbox"
-                  aria-labelledby="mui-component-select-companyIndustry"
-                  class="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input"
-                  id="mui-component-select-companyIndustry"
-                  role="button"
-                  tabindex="0"
-                >
-                  Choose company industry
-                </div>
-                <input
-                  name="companyIndustry"
-                  type="hidden"
-                  value=""
-                />
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSelect-icon"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M7 10l5 5 5-5z"
-                  />
-                </svg>
-              </div>
-              <p
-                class="MuiFormHelperText-root Mui-error Mui-required"
-              >
-                Field is required
-              </p>
-            </div>
-          </div>
-        </div>
-        <div
-          style="display: flex; width: 100%; padding: 0px 0.75rem;"
-        >
-          <div
-            style="width: 33.33%; padding: 0px 0.75rem;"
-          >
-            <div
-              class="MuiFormControl-root MuiTextField-root makeStyles-textField-2 MuiFormControl-fullWidth"
-            >
-              <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated Mui-error Mui-error Mui-required Mui-required"
-                data-shrink="false"
-              >
-                Title
-                <span
-                  class="MuiFormLabel-asterisk MuiInputLabel-asterisk Mui-error Mui-error"
-                >
-                   
-                  *
-                </span>
-              </label>
-              <div
-                class="MuiInputBase-root MuiInput-root MuiInput-underline Mui-error Mui-error MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
-              >
-                <input
-                  aria-invalid="true"
-                  class="MuiInputBase-input MuiInput-input"
-                  name="title"
-                  required=""
-                  type="text"
-                  value=""
-                />
-              </div>
-              <p
-                class="MuiFormHelperText-root Mui-error Mui-required"
-              >
-                Field is required
-              </p>
-            </div>
-          </div>
-          <div
-            style="width: 33.33%; padding: 0px 0.75rem;"
-          >
-            <div
-              class="MuiFormControl-root MuiFormControl-fullWidth"
-            >
-              <div
-                class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-selectField-3 Mui-error Mui-error MuiInputBase-formControl MuiInput-formControl"
-              >
-                <div
-                  aria-haspopup="listbox"
-                  aria-labelledby="mui-component-select-experience"
-                  class="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input"
-                  id="mui-component-select-experience"
-                  role="button"
-                  tabindex="0"
-                >
-                  Choose an experience level
-                </div>
-                <input
-                  name="experience"
-                  type="hidden"
-                  value=""
-                />
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSelect-icon"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M7 10l5 5 5-5z"
-                  />
-                </svg>
-              </div>
-              <p
-                class="MuiFormHelperText-root Mui-error Mui-required"
-              >
-                Field is required
-              </p>
-            </div>
-          </div>
-          <div
-            style="width: 33.33%; padding: 0px 0.75rem;"
-          >
-            <div
-              class="MuiFormControl-root MuiFormControl-fullWidth"
-            >
-              <div
-                class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-selectField-3 Mui-error Mui-error MuiInputBase-formControl MuiInput-formControl"
-              >
-                <div
-                  aria-haspopup="listbox"
-                  aria-labelledby="mui-component-select-employment"
-                  class="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input"
-                  id="mui-component-select-employment"
-                  role="button"
-                  tabindex="0"
-                >
-                  Choose an employment type
-                </div>
-                <input
-                  name="employment"
-                  type="hidden"
-                  value=""
-                />
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSelect-icon"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M7 10l5 5 5-5z"
-                  />
-                </svg>
-              </div>
-              <p
-                class="MuiFormHelperText-root Mui-error Mui-required"
-              >
-                Field is required
-              </p>
-            </div>
-          </div>
-        </div>
-        <div
-          style="display: flex; width: 100%; padding: 0px 0.75rem;"
-        >
-          <div
-            style="width: 33.33%; padding: 0px 0.75rem;"
-          >
-            <div
-              class="MuiFormControl-root MuiTextField-root makeStyles-textField-2 MuiFormControl-fullWidth"
-            >
-              <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
-                data-shrink="false"
-              >
-                Monthly salary from (invoice net)
-              </label>
-              <div
-                class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
-              >
-                <input
-                  aria-invalid="false"
-                  class="MuiInputBase-input MuiInput-input"
-                  name="minSalary"
-                  type="number"
-                  value=""
-                />
-              </div>
-            </div>
-          </div>
-          <div
-            style="width: 33.33%; padding: 0px 0.75rem;"
-          >
-            <div
-              class="MuiFormControl-root MuiTextField-root makeStyles-textField-2 MuiFormControl-fullWidth"
-            >
-              <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
-                data-shrink="false"
-              >
-                Monthly salary to (invoice net)
-              </label>
-              <div
-                class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
-              >
-                <input
-                  aria-invalid="false"
-                  class="MuiInputBase-input MuiInput-input"
-                  name="maxSalary"
-                  type="number"
-                  value=""
-                />
-              </div>
-            </div>
-          </div>
-          <div
-            style="width: 33.33%; padding: 0px 0.75rem;"
-          >
-            <div
-              class="MuiFormControl-root MuiFormControl-fullWidth"
-            >
-              <div
-                class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-selectField-3 MuiInputBase-formControl MuiInput-formControl"
-              >
-                <div
-                  aria-haspopup="listbox"
-                  aria-labelledby="mui-component-select-currency"
-                  class="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input"
-                  id="mui-component-select-currency"
-                  role="button"
-                  tabindex="0"
-                >
-                  Choose currency
-                </div>
-                <input
-                  name="currency"
-                  type="hidden"
-                  value=""
-                />
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSelect-icon"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M7 10l5 5 5-5z"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          style="width: 100%; height: 100%;"
-        >
-          <h3
-            style="margin: 0px 0px 0px 10px;"
-          >
-            Tech Stack 
-            <button
-              aria-label="Question Mark"
-              class="MuiButtonBase-root MuiIconButton-root makeStyles-button-1"
-              tabindex="0"
-              type="button"
-            >
-              <span
-                class="MuiIconButton-label"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root"
-                  focusable="false"
-                  style="font-size: 14px;"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"
-                  />
-                </svg>
-              </span>
-              <span
-                class="MuiTouchRipple-root"
-              />
-            </button>
-          </h3>
-          <div
-            style="padding: 0px 0.75rem; margin-left: 10px;"
-          >
-            <div
-              aria-expanded="false"
-              class="MuiAutocomplete-root"
-              role="combobox"
-              style="width: 264px;"
-            >
-              <div
-                class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
-              >
-                
-                <div
-                  class="MuiInputBase-root MuiInput-root MuiInput-underline MuiAutocomplete-inputRoot Mui-error Mui-error MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl MuiInputBase-adornedEnd"
-                >
-                  <input
-                    aria-autocomplete="list"
-                    aria-invalid="true"
-                    autocapitalize="none"
-                    autocomplete="off"
-                    class="MuiInputBase-input MuiInput-input MuiAutocomplete-input MuiAutocomplete-inputFocused MuiInputBase-inputAdornedEnd"
-                    id="tech-stack"
-                    placeholder="Select technology or write a new one"
-                    spellcheck="false"
-                    type="text"
-                    value=""
-                  />
-                  <div
-                    class="MuiAutocomplete-endAdornment"
-                  />
-                </div>
-              </div>
-            </div>
-            <div />
-            <div
-              style="display: flex; flex-wrap: wrap;"
-            />
-          </div>
-        </div>
-        <div
-          style="width: 100%; height: 100%;"
-        >
-          <h3
-            style="margin: 15px 0px 15px 10px;"
-          >
-            Job description 
-            <button
-              aria-label="Question Mark"
-              class="MuiButtonBase-root MuiIconButton-root makeStyles-button-1"
-              tabindex="0"
-              title="This section should contain: \\"about us\\", \\"your responsibilities\\", \\"our requirements\\", \\"nice to have\\", \\"we offer\\". "
-              type="button"
-            >
-              <span
-                class="MuiIconButton-label"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root"
-                  focusable="false"
-                  style="font-size: 14px;"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"
-                  />
-                </svg>
-              </span>
-              <span
-                class="MuiTouchRipple-root"
-              />
-            </button>
-          </h3>
-          <div>
-            Fajny trix
-          </div>
-        </div>
-        <div
-          style="display: flex; width: 100%;"
-        >
-          <h3
-            style="margin: 20px 0px 10px 10px;"
-          >
-            Choose your location
-          </h3>
-        </div>
-        <div
-          style="display: flex; width: 100%;"
-        >
-          <div
-            style="width: 33.33%; padding: 0px 0.75rem;"
-          >
-            <div
-              class="MuiFormControl-root MuiTextField-root makeStyles-textField-233 MuiFormControl-fullWidth"
-            >
-              <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink Mui-error Mui-error Mui-required Mui-required"
-                data-shrink="true"
-              >
-                Office City
-                <span
-                  class="MuiFormLabel-asterisk MuiInputLabel-asterisk Mui-error Mui-error"
-                >
-                   
-                  *
-                </span>
-              </label>
-              <div
-                class="MuiInputBase-root MuiInput-root MuiInput-underline Mui-error Mui-error MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
-              >
-                <input
-                  aria-invalid="true"
-                  class="MuiInputBase-input MuiInput-input"
-                  name="city"
-                  placeholder="Warszawa"
-                  required=""
-                  type="text"
-                  value=""
-                />
-              </div>
-              <p
-                class="MuiFormHelperText-root Mui-error Mui-required"
-              >
-                Field is required
-              </p>
-            </div>
-          </div>
-          <div
-            style="width: 33.33%; padding: 0px 0.75rem;"
-          >
-            <div
-              class="MuiFormControl-root MuiTextField-root makeStyles-textField-233 MuiFormControl-fullWidth"
-            >
-              <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink Mui-error Mui-error Mui-required Mui-required"
-                data-shrink="true"
-              >
-                Office street/Business Center
-                <span
-                  class="MuiFormLabel-asterisk MuiInputLabel-asterisk Mui-error Mui-error"
-                >
-                   
-                  *
-                </span>
-              </label>
-              <div
-                class="MuiInputBase-root MuiInput-root MuiInput-underline Mui-error Mui-error MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
-              >
-                <input
-                  aria-invalid="true"
-                  class="MuiInputBase-input MuiInput-input"
-                  name="street"
-                  placeholder="Grunwaldzka 34"
-                  required=""
-                  type="text"
-                  value=""
-                />
-              </div>
-              <p
-                class="MuiFormHelperText-root Mui-error Mui-required"
-              >
-                Field is required
-              </p>
-            </div>
-          </div>
-          <div
-            style="width: 33.33%;"
-          >
-            <div
-              class="MuiFormGroup-root MuiFormGroup-row"
-              style="position: realtive; padding: 20px 0.5rem;"
-            >
-              <div
-                class="MuiFormControl-root"
-              >
-                <div
-                  class="MuiFormGroup-root"
-                >
-                  <label
-                    class="MuiFormControlLabel-root"
-                  >
-                    <span
-                      aria-disabled="false"
-                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-151 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
-                    >
-                      <span
-                        class="MuiIconButton-label"
-                      >
-                        <input
-                          class="PrivateSwitchBase-input-154"
-                          data-indeterminate="false"
-                          name="remote"
-                          type="checkbox"
-                          value=""
-                        />
-                        <svg
-                          aria-hidden="true"
-                          class="MuiSvgIcon-root"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-                          />
-                        </svg>
-                      </span>
-                      <span
-                        class="MuiTouchRipple-root"
-                      />
-                    </span>
-                    <span
-                      class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
-                    >
-                      Fully Remote
-                    </span>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          style="height: 300px; width: 100%;"
-        >
-          <div
-            class="leaflet-container leaflet-grab leaflet-touch-drag"
-            style="position: relative;"
-            tabindex="0"
-          >
-            <div
-              class="leaflet-pane leaflet-map-pane"
-              style="left: 0px; top: 0px;"
-            >
-              <div
-                class="leaflet-pane leaflet-tile-pane"
-              >
-                <div
-                  class="leaflet-layer "
-                  style="z-index: 1;"
-                >
-                  <div
-                    class="leaflet-tile-container leaflet-zoom-animated"
-                    style="z-index: 18; left: 0px; top: 0px;"
-                  >
-                    <img
-                      alt=""
-                      class="leaflet-tile"
-                      role="presentation"
-                      src="https://c.tile.openstreetmap.org/12/2287/1348.png"
-                      style="width: 256px; height: 256px; left: -44px; top: -251px;"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div
-                class="leaflet-pane leaflet-shadow-pane"
-              />
-              <div
-                class="leaflet-pane leaflet-overlay-pane"
-              />
-              <div
-                class="leaflet-pane leaflet-marker-pane"
-              >
-                <img
-                  alt=""
-                  class="leaflet-marker-icon leaflet-zoom-hide leaflet-interactive"
-                  src="QuestionMark.png"
-                  style="margin-left: -5px; margin-top: -55px; width: 40px; height: 40px; left: 0px; top: 0px; z-index: 0; z-index: 0; z-index: 0;"
-                  tabindex="0"
-                />
-              </div>
-              <div
-                class="leaflet-pane leaflet-tooltip-pane"
-              />
-              <div
-                class="leaflet-pane leaflet-popup-pane"
-              />
-            </div>
-            <div
-              class="leaflet-control-container"
-            >
-              <div
-                class="leaflet-top leaflet-left"
-              >
-                <div
-                  class="leaflet-control-zoom leaflet-bar leaflet-control"
-                >
-                  <a
-                    aria-label="Zoom in"
-                    class="leaflet-control-zoom-in"
-                    href="#"
-                    role="button"
-                    title="Zoom in"
-                  >
-                    +
-                  </a>
-                  <a
-                    aria-label="Zoom out"
-                    class="leaflet-control-zoom-out"
-                    href="#"
-                    role="button"
-                    title="Zoom out"
-                  >
-                    −
-                  </a>
-                </div>
-              </div>
-              <div
-                class="leaflet-top leaflet-right"
-              />
-              <div
-                class="leaflet-bottom leaflet-left"
-              />
-              <div
-                class="leaflet-bottom leaflet-right"
-              >
-                <div
-                  class="leaflet-control-attribution leaflet-control"
-                >
-                  <a
-                    href="https://leafletjs.com"
-                    title="A JS library for interactive maps"
-                  >
-                    Leaflet
-                  </a>
-                   | © 
-                  <a
-                    href="http://osm.org/copyright"
-                  >
-                    OpenStreetMap
-                  </a>
-                   contributors
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="technologyMargin"
-        >
-          <div
-            style="width: 100%; display: flex; justify-content: center;"
-          >
-            Choose main technology
-          </div>
-          <div
-            class="technologies"
-          >
-            <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
-            >
-              <button
-                class="MuiButtonBase-root"
-                tabindex="0"
-                type="button"
-              >
-                <img
-                  alt="Logo"
-                  src="JS.png"
-                  style="height: 40px; width: 40px;"
-                />
-                 
-              </button>
-              <div
-                class="test"
-              >
-                JS
-              </div>
-            </div>
-            <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
-            >
-              <button
-                class="MuiButtonBase-root"
-                tabindex="0"
-                type="button"
-              >
-                <img
-                  alt="Logo"
-                  src="HTML.png"
-                  style="height: 40px; width: 40px;"
-                />
-                 
-              </button>
-              <div
-                class="test"
-              >
-                HTML
-              </div>
-            </div>
-            <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
-            >
-              <button
-                class="MuiButtonBase-root"
-                tabindex="0"
-                type="button"
-              >
-                <img
-                  alt="Logo"
-                  src="Php.png"
-                  style="height: 40px; width: 40px;"
-                />
-                 
-              </button>
-              <div
-                class="test"
-              >
-                PHP
-              </div>
-            </div>
-            <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
-            >
-              <button
-                class="MuiButtonBase-root"
-                tabindex="0"
-                type="button"
-              >
-                <img
-                  alt="Logo"
-                  src="Ruby.png"
-                  style="height: 40px; width: 40px;"
-                />
-                 
-              </button>
-              <div
-                class="test"
-              >
-                Ruby
-              </div>
-            </div>
-            <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
-            >
-              <button
-                class="MuiButtonBase-root"
-                tabindex="0"
-                type="button"
-              >
-                <img
-                  alt="Logo"
-                  src="Python.png"
-                  style="height: 40px; width: 40px;"
-                />
-                 
-              </button>
-              <div
-                class="test"
-              >
-                Python
-              </div>
-            </div>
-            <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
-            >
-              <button
-                class="MuiButtonBase-root"
-                tabindex="0"
-                type="button"
-              >
-                <img
-                  alt="Logo"
-                  src="Java.png"
-                  style="height: 40px; width: 40px;"
-                />
-                 
-              </button>
-              <div
-                class="test"
-              >
-                Java
-              </div>
-            </div>
-            <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
-            >
-              <button
-                class="MuiButtonBase-root"
-                tabindex="0"
-                type="button"
-              >
-                <img
-                  alt="Logo"
-                  src="Net.png"
-                  style="height: 40px; width: 40px;"
-                />
-                 
-              </button>
-              <div
-                class="test"
-              >
-                .Net
-              </div>
-            </div>
-            <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
-            >
-              <button
-                class="MuiButtonBase-root"
-                tabindex="0"
-                type="button"
-              >
-                <img
-                  alt="Logo"
-                  src="Scala.png"
-                  style="height: 40px; width: 40px;"
-                />
-                 
-              </button>
-              <div
-                class="test"
-              >
-                Scala
-              </div>
-            </div>
-            <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
-            >
-              <button
-                class="MuiButtonBase-root"
-                tabindex="0"
-                type="button"
-              >
-                <img
-                  alt="Logo"
-                  src="C++.png"
-                  style="height: 40px; width: 40px;"
-                />
-                 
-              </button>
-              <div
-                class="test"
-              >
-                C
-              </div>
-            </div>
-            <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
-            >
-              <button
-                class="MuiButtonBase-root"
-                tabindex="0"
-                type="button"
-              >
-                <img
-                  alt="Logo"
-                  src="Mobile.png"
-                  style="height: 40px; width: 40px;"
-                />
-                 
-              </button>
-              <div
-                class="test"
-              >
-                Mobile
-              </div>
-            </div>
-            <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
-            >
-              <button
-                class="MuiButtonBase-root"
-                tabindex="0"
-                type="button"
-              >
-                <img
-                  alt="Logo"
-                  src="Testing.png"
-                  style="height: 40px; width: 40px;"
-                />
-                 
-              </button>
-              <div
-                class="test"
-              >
-                Testing
-              </div>
-            </div>
-            <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
-            >
-              <button
-                class="MuiButtonBase-root"
-                tabindex="0"
-                type="button"
-              >
-                <img
-                  alt="Logo"
-                  src="DevOps.png"
-                  style="height: 40px; width: 40px;"
-                />
-                 
-              </button>
-              <div
-                class="test"
-              >
-                DevOps
-              </div>
-            </div>
-            <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
-            >
-              <button
-                class="MuiButtonBase-root"
-                tabindex="0"
-                type="button"
-              >
-                <img
-                  alt="Logo"
-                  src="UX:UI.png"
-                  style="height: 40px; width: 40px;"
-                />
-                 
-              </button>
-              <div
-                class="test"
-              >
-                UX/UI
-              </div>
-            </div>
-            <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
-            >
-              <button
-                class="MuiButtonBase-root"
-                tabindex="0"
-                type="button"
-              >
-                <img
-                  alt="Logo"
-                  src="PM.png"
-                  style="height: 40px; width: 40px;"
-                />
-                 
-              </button>
-              <div
-                class="test"
-              >
-                PM
-              </div>
-            </div>
-            <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
-            >
-              <button
-                class="MuiButtonBase-root"
-                tabindex="0"
-                type="button"
-              >
-                <img
-                  alt="Logo"
-                  src="Game.png"
-                  style="height: 40px; width: 40px;"
-                />
-                 
-              </button>
-              <div
-                class="test"
-              >
-                Game
-              </div>
-            </div>
-            <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
-            >
-              <button
-                class="MuiButtonBase-root"
-                tabindex="0"
-                type="button"
-              >
-                <img
-                  alt="Logo"
-                  src="Security.png"
-                  style="height: 40px; width: 40px;"
-                />
-                 
-              </button>
-              <div
-                class="test"
-              >
-                Security
-              </div>
-            </div>
-            <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
-            >
-              <button
-                class="MuiButtonBase-root"
-                tabindex="0"
-                type="button"
-              >
-                <img
-                  alt="Logo"
-                  src="Data.png"
-                  style="height: 40px; width: 40px;"
-                />
-                 
-              </button>
-              <div
-                class="test"
-              >
-                Data
-              </div>
-            </div>
-            <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
-            >
-              <button
-                class="MuiButtonBase-root"
-                tabindex="0"
-                type="button"
-              >
-                <img
-                  alt="Logo"
-                  src="Goo.png"
-                  style="height: 40px; width: 40px;"
-                />
-                 
-              </button>
-              <div
-                class="test"
-              >
-                Go
-              </div>
-            </div>
-            <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
-            >
-              <button
-                class="MuiButtonBase-root"
-                tabindex="0"
-                type="button"
-              >
-                <img
-                  alt="Logo"
-                  src="SAP.png"
-                  style="height: 40px; width: 40px;"
-                />
-                 
-              </button>
-              <div
-                class="test"
-              >
-                SAP
-              </div>
-            </div>
-            <div
-              style="display: flex; flex-direction: column; margin-top: 10px; padding: 8px;"
-            >
-              <button
-                class="MuiButtonBase-root"
-                tabindex="0"
-                type="button"
-              >
-                <img
-                  alt="Logo"
-                  src="Other.png"
-                  style="height: 40px; width: 40px;"
-                />
-                 
-              </button>
-              <div
-                class="test"
-              >
-                Other
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          style="display: flex; flex-direction: column; width: 100%;"
-        >
-          <h3
-            style="margin: 20px 0px 10px 10px;"
-          >
-            How to apply
-          </h3>
-          <div
-            style="width: 33%; padding: 0px 0.75rem;"
-          >
-            <div
-              class="MuiFormControl-root MuiTextField-root makeStyles-textField-2 MuiFormControl-fullWidth"
-            >
-              <label
-                class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated Mui-error Mui-error Mui-required Mui-required"
-                data-shrink="false"
-              >
-                Enter apply email or paste link
-                <span
-                  class="MuiFormLabel-asterisk MuiInputLabel-asterisk Mui-error Mui-error"
-                >
-                   
-                  *
-                </span>
-              </label>
-              <div
-                class="MuiInputBase-root MuiInput-root MuiInput-underline Mui-error Mui-error MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
-              >
-                <input
-                  aria-invalid="true"
-                  class="MuiInputBase-input MuiInput-input"
-                  name="email"
-                  required=""
-                  type="text"
-                  value=""
-                />
-              </div>
-              <p
-                class="MuiFormHelperText-root Mui-error Mui-required"
-              >
-                Email or link is invalid
-              </p>
-            </div>
-          </div>
-          <h3
-            style="margin: 20px 0px 10px 10px;"
-          >
-            Agreements
-          </h3>
-          <h4
-            style="margin: 5px 0px 10px 20px; color: lightGrey;"
-          >
-            Information clause
-          </h4>
-          <div
-            style="width: 100%; padding: 0px 0.75rem;"
-          >
-            <textarea
-              class="makeStyles-textField-6"
-              rows="1"
-              style="height: -20px; overflow: hidden;"
-            />
-            <textarea
-              aria-hidden="true"
-              class="makeStyles-textField-6"
-              readonly=""
-              style="visibility: hidden; position: absolute; overflow: hidden; height: 0px; top: 0px; left: 0px; transform: translateZ(0); width: 98%;"
-              tabindex="-1"
-            />
-          </div>
-          <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-button-5 MuiButton-containedPrimary"
+            class="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-button-7 MuiButton-containedPrimary"
             tabindex="0"
             type="button"
           >

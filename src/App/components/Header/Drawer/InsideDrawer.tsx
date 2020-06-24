@@ -16,7 +16,7 @@ import {userInterface} from "../../../utils/const";
 
 
 
-type InsideDrawerProps = {
+export type InsideDrawerProps = {
     user: userInterface,
     setOpen:  React.Dispatch<React.SetStateAction<boolean>>
 }

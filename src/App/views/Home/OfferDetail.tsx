@@ -27,13 +27,14 @@ import {Field, Form} from "react-final-form";
 import {TextField, Checkboxes} from "mui-rff";
 import FormGroup from "@material-ui/core/FormGroup";
 import {filtersInterface, offerInterface, formValuesCV} from "../../utils/const";
+import {API_HOST} from "../../utils/api";
 
 interface MatchParams {
     offerTitle: string;
 }
 
 
-interface OfferDetailProps extends RouteComponentProps<MatchParams> {
+export interface OfferDetailProps extends RouteComponentProps<MatchParams> {
     offersList: offerInterface[],
     filters: filtersInterface,
     fetching: boolean,
@@ -43,12 +44,11 @@ interface OfferDetailProps extends RouteComponentProps<MatchParams> {
 
 
 
-const OfferDetail: React.FC<OfferDetailProps> = ({offersList, match, history, filters, fetching, setHideFilter}) => {
+export const OfferDetail: React.FC<OfferDetailProps> = ({offersList, match, history, filters, fetching, setHideFilter}) => {
     const offers = [...offersList]
     const offer = offers.filter(e => (match.params.offerTitle === slugify(`${e.company}-${e.title}`, {
         lower: true
     })))[0];
-
     const useStyles = makeStyles(createStyles({
         root: {
             color: 'rgb(255, 255, 255)',
@@ -83,27 +83,27 @@ const OfferDetail: React.FC<OfferDetailProps> = ({offersList, match, history, fi
 
     const classes = useStyles();
 
-    const [CVSent, setCVSent] = useState(false)
-
+    const [show, setShow] = useState(false)
 
     const onSubmit = async (values:formValuesCV) => {
+
         const form = new FormData();
         form.append('name', values.name)
         form.append('email', values.email)
         form.append('message', values.message)
-        form.append('checkbox', values.checkbox)
+        form.append('checkbox', String(values.checkbox))
         if(values.file) {
             form.append('file', values.file, values.file.name)
         }
         form.append('offerID', offer._id)
         try{
-            let request = await fetch('http://192.168.10.25:7000/cv/upload', {
+            let request = await fetch(`${API_HOST}/cv/upload`, {
                 method: 'POST',
                 body: form,
                 credentials: "include"
             })
             if (request.ok){
-                setCVSent(true)
+                setShow(true)
             }
         }catch(e){
             console.log('Error upload failed', e)
@@ -133,7 +133,7 @@ const OfferDetail: React.FC<OfferDetailProps> = ({offersList, match, history, fi
     ];
     let desc;
     const checkboxData = [
-        {label: 'Processing data in future recruitment', value: Boolean}]
+        {label: 'Processing data in future recruitment', value: false}]
     const required = (value: string) => (value ? undefined : `Field is required`);
     const mail = (value: string) => {
         const reMail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -180,6 +180,8 @@ const OfferDetail: React.FC<OfferDetailProps> = ({offersList, match, history, fi
             setHideFilter(true)
         }
     }, [])
+
+    let values = {checkbox: false}
     return (
         <div className={styles.offerDetailContainer}>
             {fetching === true ? <div className={styles.loadingContainer}><Loading className={styles.loadingDimensions}/></div> : ""}
@@ -291,109 +293,113 @@ const OfferDetail: React.FC<OfferDetailProps> = ({offersList, match, history, fi
                                 </div>
                             </div>
                         </div>
-                        <div  style={{display: CVSent ? 'none' :'block'}} className={styles.sectionCard}>
-                            <div className={styles.titleTech}>Apply for this job</div>
-                            <Form
-                                onSubmit={onSubmit}
-                                render={({handleSubmit, values}) => (
-                                    <form onSubmit={handleSubmit} noValidate>
-                                <div id="apply" className={styles.cvContainer}>
+                        {show ? <div className={styles.CVSent}><img alt="cv-sent" src={CVSentIcon}/><span className={styles.spanSent}>Great! Your application was successfully sent to: </span><span className={styles.spanSentCompany}>{offer.company}</span></div> :
+                            <div  className={styles.sectionCard}>
+                                <div className={styles.titleTech}>Apply for this job</div>
+                                <Form
+                                    initialValues={values}
+                                    onSubmit={onSubmit}
+                                    render={({handleSubmit, values}) => (
+                                        <form onSubmit={handleSubmit} noValidate>
+                                            <div id="apply" className={styles.cvContainer}>
 
-                                    <div className={styles.inputsDirection}>
+                                                <div className={styles.inputsDirection}>
 
-                                        <div className={`${styles.inputs} ${styles.marginName}`}>
+                                                    <div className={`${styles.inputs} ${styles.marginName}`}>
 
-                                            <TextField
-                                                fieldProps={{validate: required}}
-                                                name="name"
-                                                variant="outlined"
-                                                label="First and last name" required={true}
-                                                InputProps={{
-                                                    startAdornment: (
-                                                        <InputAdornment position="start">
-                                                            <PersonOutlineOutlinedIcon/>
-                                                        </InputAdornment>
-                                                    ),
-                                                }}
-                                            />
-                                        </div>
-                                        <div className={`${styles.inputs} ${styles.marginMail}`}>
-                                            <TextField
-                                                fieldProps={{validate: mail}}
-                                                variant="outlined"
-                                                name="email"
-                                                label="Email" required={true}
-                                                InputProps={{
-                                                    startAdornment: (
-                                                        <InputAdornment position="start">
-                                                            <MailIcon/>
-                                                        </InputAdornment>
-                                                    ),
-                                                }}
-                                            />
-                                        </div>
-                                    </div>
+                                                        <TextField
+                                                            id="name"
+                                                            fieldProps={{validate: required}}
+                                                            name="name"
+                                                            variant="outlined"
+                                                            label="First and last name" required={true}
+                                                            InputProps={{
+                                                                startAdornment: (
+                                                                    <InputAdornment position="start">
+                                                                        <PersonOutlineOutlinedIcon/>
+                                                                    </InputAdornment>
+                                                                ),
+                                                            }}
+                                                        />
+                                                    </div>
+                                                    <div className={`${styles.inputs} ${styles.marginMail}`}>
+                                                        <TextField
+                                                            id="email"
+                                                            fieldProps={{validate: mail}}
+                                                            variant="outlined"
+                                                            name="email"
+                                                            label="Email" required={true}
+                                                            InputProps={{
+                                                                startAdornment: (
+                                                                    <InputAdornment position="start">
+                                                                        <MailIcon/>
+                                                                    </InputAdornment>
+                                                                ),
+                                                            }}
+                                                        />
+                                                    </div>
+                                                </div>
 
-                                    <div className={styles.introCV}>
-                                        <div className={styles.about}>
-                                        <TextField
-                                            rows="4"
-                                            multiline={true}
-                                                variant="outlined"
-                                                name="message"
-                                                label="Introduce yourself (linkedin/github links)"
-                                                InputProps={{
-                                                    startAdornment: (
-                                                        <InputAdornment position="start">
-                                                            <CreateIcon/>
-                                                        </InputAdornment>
-                                                    ),
-                                                }}
-                                            />
-                                        </div>
+                                                <div className={styles.introCV}>
+                                                    <div className={styles.about}>
+                                                        <TextField
+                                                            rows="4"
+                                                            multiline={true}
+                                                            variant="outlined"
+                                                            name="message"
+                                                            label="Introduce yourself (linkedin/github links)"
+                                                            InputProps={{
+                                                                startAdornment: (
+                                                                    <InputAdornment position="start">
+                                                                        <CreateIcon/>
+                                                                    </InputAdornment>
+                                                                ),
+                                                            }}
+                                                        />
+                                                    </div>
 
-                                        <div className={styles.CV}>
-                                            <Field name="file">
-                                                {props => (
-                                            <Dropzone values={values} onChange={props.input.onChange}/>
-                                                )}</Field>
-                                        </div>
-                                    </div>
-                                    <div className={styles.checkBox}>
-                                        <FormGroup>
+                                                    <div className={styles.CV}>
+                                                        <Field name="file">
+                                                            {props => (
+                                                                <Dropzone values={values} onChange={props.input.onChange}/>
+                                                            )}</Field>
+                                                    </div>
+                                                </div>
+                                                <div className={styles.checkBox}>
+                                                    <FormGroup>
 
-                                            <Checkboxes
-                                                name="checkbox"
-                                                data={checkboxData}
-                                            />
-
-
-                                        </FormGroup>
-                                    </div>
-                                    <div className={styles.bottomSection}>
-                                        <p className={styles.captchaStyling}>This site is
-                                            protected by reCAPTCHA and the Google Privacy Policy and Terms of Service
-                                            apply.
-                                        </p>
-
-                                            <ButtonBase
-                                                classes={{root: classes.root}}
-                                                color="primary"
-                                                type="submit"
-                                                onClick={() => handleSubmit}
-                                            >
-                                                Apply
+                                                        <Checkboxes
+                                                            name="checkbox"
+                                                            data={checkboxData}
+                                                        />
 
 
-                                            </ButtonBase>
+                                                    </FormGroup>
+                                                </div>
+                                                <div className={styles.bottomSection}>
+                                                    <p className={styles.captchaStyling}>This site is
+                                                        protected by reCAPTCHA and the Google Privacy Policy and Terms of Service
+                                                        apply.
+                                                    </p>
 
-                                    </div>
-                                    </div>
-                                    </form>
+                                                    <ButtonBase
+                                                        classes={{root: classes.root}}
+                                                        color="primary"
+                                                        type="submit"
+                                                        onClick={() => handleSubmit}
+                                                    >
+                                                        Apply CV
+
+
+                                                    </ButtonBase>
+
+                                                </div>
+                                            </div>
+                                        </form>
                                     )}
                                 />
-                                </div>
-                                <div className={styles.CVSent} style={{display: CVSent ? "flex" : "none"}}><img alt="cv-sent" src={CVSentIcon}/><span className={styles.spanSent}>Great! Your application was successfully sent to: </span><span className={styles.spanSentCompany}>{offer.company}</span></div>
+                            </div>}
+
 
                         </div>
 

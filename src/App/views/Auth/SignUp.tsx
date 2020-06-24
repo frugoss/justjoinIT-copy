@@ -13,9 +13,10 @@ import Alert from "@material-ui/lab/Alert";
 import Hidden from "@material-ui/core/Hidden";
 import {userInterface} from "../../utils/const";
 import {createStyles, makeStyles} from "@material-ui/core/styles";
+import{API_HOST} from "../../utils/api";
 
 
-interface SignUpProps extends RouteComponentProps {
+export interface SignUpProps extends RouteComponentProps {
     user: userInterface,
     setUser: React.Dispatch<React.SetStateAction<userInterface>>,
 }
@@ -37,7 +38,7 @@ const SignUp: React.FC<SignUpProps> = ({history, user, setUser}) => {
     const register = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         try {
-            const response = await fetch("http://192.168.10.25:7000/devs/signup", {
+            const response = await fetch(`${API_HOST}/devs/signup`, {
                 method: "POST",
                 body: JSON.stringify(values),
                 headers: {"Content-Type": "application/json"},

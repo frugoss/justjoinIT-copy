@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DrawerButton /> drawer button snapshot 1`] = `
+<div>
+  <a
+    class="linkStyle"
+    href="/to"
+  >
+    <li
+      class="MuiListItem-root makeStyles-listItem-2 MuiListItem-gutters"
+    >
+      <div
+        class="MuiListItemIcon-root makeStyles-listIcon-3"
+      >
+        img
+      </div>
+      <div
+        class="MuiListItemText-root makeStyles-root-1"
+      >
+        <span
+          class="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+        >
+          text
+        </span>
+      </div>
+    </li>
+  </a>
+   
+</div>
+`;

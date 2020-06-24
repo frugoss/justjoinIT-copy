@@ -7,7 +7,7 @@ import { makeStyles,createStyles } from '@material-ui/core/styles';
 import styles from './drawer.module.scss'
 
 
-type DrawerButtonProps = {
+export type DrawerButtonProps = {
     to: string,
     text: string,
     img: React.ReactNode,

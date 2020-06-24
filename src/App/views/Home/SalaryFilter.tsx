@@ -10,8 +10,12 @@ import {filtersInterface} from "../../utils/const";
 
 const filterStyles = makeStyles(createStyles({
     root: {
-        color: "rgb(171, 71, 188)"
+        color: "rgb(171, 71, 188)",
+        marginTop: 10
     },
+    popoverSize: {
+        height: 270
+    }
 }));
 
 const useStyles = makeStyles(createStyles({
@@ -76,6 +80,7 @@ const SalaryFilter: React.FC<SalaryFilterProps> = ({valuetext, filters, handleSl
                <AttachMoneyIcon className={buttonClass.icon}/> Salary {salaryCases} <ArrowDropDownIcon/>
             </Button>
             <Popover
+                className={sliderClass.popoverSize}
                 id={id}
                 open={open}
                 anchorEl={anchorEl}
