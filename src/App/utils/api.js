@@ -1,4 +1,4 @@
-export let API_HOST = 'http://localhost:7000'
+export let API_HOST = 'http://159.69.14.12:7000'
 if (process.env.NODE_ENV === 'test') {
-  API_HOST = 'http://localhost'
+  API_HOST = 'http://159.69.14.12'
 }
