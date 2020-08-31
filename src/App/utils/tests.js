@@ -15,7 +15,6 @@ export const renderWithRouter = (
     )
     return {
         ...render(ui, { wrapper: Wrapper }),
-
         history,
     }
 }

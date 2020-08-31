@@ -1,3 +1,24 @@
+.noOffersDash{
+  text-align: center;
+  font-size: 30px;
+
+}
+.dashboardText{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexJustify{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.linkRoute {
+  text-decoration:none
+}
 .main {
   height: 80px;
   background: white;
@@ -31,14 +52,21 @@
     }
   }
 }
-
+.flexRow {
+  display:flex;
+}
 .flex {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-
+.salary{
+  color: rgb(30, 198, 108);
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10px;
+}
 .flexEnd {
   justify-content: flex-end;
   align-items: center;
@@ -179,7 +207,7 @@
   }
 }
 
-.itskills {
+.itSkills {
   display: flex;
   justify-content: space-between;
   transform: translateY(-50%);
@@ -210,7 +238,7 @@
   }
 }
 
-.skillcircle {
+.skillCircle {
   box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 2px 0px, rgba(0, 0, 0, 0.06) 0px 1px 5px 0px;
   display: flex;
   justify-content: center;
@@ -223,7 +251,7 @@
   padding: 8px;
 }
 
-.companydetails {
+.companyDetails {
   white-space: nowrap;
   color: rgb(153, 161, 171);
   font-size: 11px;
@@ -268,7 +296,9 @@
   margin: 0px 0px -20px;
 }
 
-
+.hrStyle {
+  margin-bottom: 8px
+}
 .techSkill {
   display: flex;
   justify-content: flex-start;
@@ -280,8 +310,14 @@
 .description {
   padding: 30px;
 }
-
-.additionaldesc {
+.spanSent{
+  color: rgb(153, 161, 171);
+  margin: 20px 0px 5px 0px;
+}
+.spanSentCompany{
+  color: #47b300;
+}
+.additionalDesc {
   color: rgb(55, 71, 79);
   font-size: 14px;
   line-height: 1.5;
@@ -656,6 +692,7 @@
 }
 
 .dashboardCVContainer{
+  text-align:center;
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -695,4 +732,12 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 400
+}
+
+.width90{
+  width: 90%
+}
+
+.width100{
+  width: 100%
 }

@@ -9,6 +9,9 @@
   box-shadow: 0 2px 18px 10px rgba(225,232,240,0.7);
 }
 
+.linkRoute{
+  text-decoration: none;
+}
 .row{
   margin-left: auto;
   margin-right: auto;
@@ -134,6 +137,14 @@
   padding: 0 0.75rem;
 }
 
+.topContainerCompany{
+  display: flex;
+  flex-direction: column;
+  width: 33.33%;
+  padding: 0 0.75rem;
+  margin-top: 68px;
+}
+
 .middleContainer{
   display: flex;
   width: 100%;
@@ -151,7 +162,18 @@
   display: flex;
   width:100%;
 }
+.mapContainer{
+height: 300px;
+  width: 100%
+}
 
+.width100{
+  width: 100%
+}
+.techStackContainer{
+  padding: 0 0.75rem;
+  margin-left: 10px
+}
 .technologyTitle{
   width: 100%;
   display: flex;
@@ -164,6 +186,12 @@
 
 .titleMargin{
   margin: 15px 0px 10px 10px;
+}
+
+
+.headerInformation{
+  margin: 15px 0px 10px 10px;
+  color: lightGrey
 }
 
 .checkboxContainer{
