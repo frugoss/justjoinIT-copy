@@ -10,7 +10,7 @@ const useStyles = makeStyles(createStyles({
         color: "rgb(117, 117, 117)",
         fontFamily: "Open Sans,sans-serif",
         textTransform: "none",
-        minWidth: 177,
+        minWidth: 190,
         width: "100%",
         height: 50,
         textAlign: "center",
