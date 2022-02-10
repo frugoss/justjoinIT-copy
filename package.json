@@ -33,7 +33,7 @@
     "moment": "^2.24.0",
     "msw": "^0.19.4",
     "mui-rff": "^2.1.9",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "opencage-api-client": "^0.7.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
